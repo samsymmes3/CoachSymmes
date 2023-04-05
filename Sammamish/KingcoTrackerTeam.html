@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Symmes Coaching</title>
+  <meta charset="UTF-8">
+  <style>
+    a {
+      color: black;
+      text-decoration: none;
+    }
+
+    body {
+      margin-top: 0;
+    }
+    .wrapper .sidebar {
+      background: rgb(10, 136, 208);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 190px;
+      height: 100%;
+      padding: 0px 0;
+      transition: all 0.5s ease;
+    }
+    .header {
+      background: rgb(8, 102, 156);
+      position: fixed;
+      height: 50px;
+      left: 190px;
+      width: 80%;
+      padding: 0px 0;
+      transition: all 0.5s ease;
+    }
+    .headeritem {
+      background: inherit;
+      position: fixed;
+      height: 50px;
+      width: 26.6%;
+      padding: 0px 0;
+      transition: all 0.5s ease;
+    }
+    .header h1 {
+      margin-left: 5px;
+      margin-top: 10px;
+      margin-bottom: 0px;
+      text-align: center;
+    }
+    .boys {
+      background: rgb(240, 240, 240);
+      position: fixed;
+      top: 300px;
+      left: 190px;
+      width: 80%;
+      height: 300px;
+      padding: 10px 0;
+      transition: all 0.5s ease;
+    }
+    .boysBlockE{
+      background: rgb(255, 100, 100);
+      position: fixed;
+      height: 25px;
+      width: 25px;
+    }
+    .boysBlockF{
+      background: rgb(255, 50, 50);
+      position: fixed;
+      height: 25px;
+      width: 25px;
+    }
+    .boysBlockH{
+      background: rgb(255, 200, 200);
+      position: fixed;
+      height: 25px;
+      width: 25px;
+    }
+    .boysBlockL{
+      background: rgb(255, 150, 150);
+      position: fixed;
+      height: 25px;
+      width: 25px;
+    }
+    .boysBlockR{
+      background: rgb(255, 0, 0);
+      position: fixed;
+      height: 25px;
+      width: 25px;
+    }
+    .boysBlockS{
+      background: rgb(10, 180, 10);
+      position: fixed;
+      height: 25px;
+      width: 25px;
+    }
+    .boysBlockT{
+      background: rgb(255, 250, 250);
+      position: fixed;
+      height: 25px;
+      width: 25px;
+    }
+    .boys h1 {
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .boys h2 {
+      margin-left: 5px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .boys h4 {
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .boys h5 {
+      margin-left: 35px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .boys h6 {
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      text-align: center;
+    }
+    .girls {
+      background: rgb(240, 240, 240);
+      position: fixed;
+      top: 300px;
+      left: 190px;
+      width: 80%;
+      height: 300px;
+      padding: 10px 0;
+      transition: all 0.5s ease;
+    }
+    .girlsBlockE{
+      background: rgb(255, 100, 100);
+      position: fixed;
+      height: 25px;
+      width: 25px;
+    }
+    .girlsBlockF{
+      background: rgb(255, 0, 0);
+      position: fixed;
+      height: 25px;
+      width: 25px;
+    }
+    .girlsBlockH{
+      background: rgb(255, 200, 200);
+      position: fixed;
+      height: 25px;
+      width: 25px;
+    }
+    .girlsBlockL{
+      background: rgb(255, 150, 150);
+      position: fixed;
+      height: 25px;
+      width: 25px;
+    }
+    .girlsBlockR{
+      background: rgb(255, 50, 50);
+      position: fixed;
+      height: 25px;
+      width: 25px;
+    }
+    .girlsBlockS{
+      background: rgb(10, 180, 10);
+      position: fixed;
+      height: 25px;
+      width: 25px;
+    }
+    .girlsBlockT{
+      background: rgb(255, 250, 250);
+      position: fixed;
+      height: 25px;
+      width: 25px;
+    }
+    .girls h1 {
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .girls h2 {
+      margin-left: 5px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .girls h4 {
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .girls h5 {
+      margin-left: 35px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .girls h6 {
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      text-align: center;
+    }
+    .sidebarh {
+      width: 100%;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .sidebarh h1{
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 5px
+    }
+    .sidebarh h2 {
+      margin-top: 5px;
+      margin-bottom: 0px;
+      margin-left: 15px;
+    }
+    .sidebarh h4 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-left: 25px;
+    }
+    body{
+      background: #f5f6fa;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="sidebar">
+      <a href="index.html">
+        <div class="sidebarh">
+          <h1>Home</h1>
+        </div>
+      </a>
+      <a href="Sammamish/index.html">
+        <div class="sidebarh">
+          <h2>Sammamish</h2>
+        </div>
+      </a>
+      <a href="Sammamish/KingcoTracker.html">
+        <div class="sidebarh">
+          <h4>Kingco Tracker</h4>
+        </div>
+      </a>
+      <a href="Sammamish/KingcoTracker.html">
+        <div class="sidebarh">
+          <h4>State Tracker</h4>
+        </div>
+      </a>
+      <a href="Skyline/index.html">
+        <div class="sidebarh">
+          <h2>Skyline</h2>
+        </div>
+      </a>
+      <a href="Skyline/KingcoTracker.html">
+        <div class="sidebarh">
+          <h4>Kingco Tracker</h4>
+        </div>
+      </a>
+    </div>
+    <div class="header">
+      <div class="headeritem">
+        <h1>By Event</h1>
+      </div>
+      <div class="headeritem" style="left: 46.6%">
+        <h1>By Individual</h1>
+      </div>
+      <div class="headeritem" style="left: 73.2%">
+        <h1>Team</h1>
+      </div>
+    </div>
+
+    <div class="boys">
+      <div style="top:60px;left:200px;position:fixed;">
+        <h2>Boys</h2>
+      </div>
+
+      <div style="top:75px;left:425px;width:25px;position:fixed;">
+      <h6>100</h6>
+      </div>
+      <div class=girlsBlockH style="top:100px;left:425px">
+      <h2>H</h2>
+      </div>
+      <div class=girlsBlockS style="top:125px;left:425px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockR style="top:150px;left:425px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockS style="top:175px;left:425px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockE style="top:200px;left:425px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockS style="top:225px;left:425px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockH style="top:250px;left:425px">
+      <h2>H</h2>
+      </div>
+      <div class=girlsBlockR style="top:275px;left:425px">
+      <h2>R</h2>
+      </div>
+      <div style="top:75px;left:450px;width:25px;position:fixed;">
+      <h6>200</h6>
+      </div>
+      <div class=girlsBlockS style="top:100px;left:450px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockE style="top:125px;left:450px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockS style="top:150px;left:450px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockR style="top:175px;left:450px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockH style="top:200px;left:450px">
+      <h2>H</h2>
+      </div>
+      <div class=girlsBlockS style="top:225px;left:450px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockS style="top:250px;left:450px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockH style="top:275px;left:450px">
+      <h2>H</h2>
+      </div>
+      <div style="top:75px;left:475px;width:25px;position:fixed;">
+      <h6>400</h6>
+      </div>
+      <div class=girlsBlockS style="top:100px;left:475px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockS style="top:125px;left:475px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockH style="top:150px;left:475px">
+      <h2>H</h2>
+      </div>
+      <div class=girlsBlockS style="top:175px;left:475px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockL style="top:200px;left:475px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockL style="top:225px;left:475px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockT style="top:250px;left:475px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockR style="top:275px;left:475px">
+      <h2>R</h2>
+      </div>
+      <div style="top:75px;left:500px;width:25px;position:fixed;">
+      <h6>800</h6>
+      </div>
+      <div class=girlsBlockS style="top:100px;left:500px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockE style="top:125px;left:500px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockL style="top:150px;left:500px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockL style="top:175px;left:500px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockR style="top:200px;left:500px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockF style="top:225px;left:500px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockS style="top:250px;left:500px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockF style="top:275px;left:500px">
+      <h2>F</h2>
+      </div>
+      <div style="top:75px;left:525px;width:25px;position:fixed;">
+      <h6>1600</h6>
+      </div>
+      <div class=girlsBlockR style="top:100px;left:525px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockR style="top:125px;left:525px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockF style="top:150px;left:525px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockS style="top:175px;left:525px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockE style="top:200px;left:525px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockR style="top:225px;left:525px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockL style="top:250px;left:525px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockR style="top:275px;left:525px">
+      <h2>R</h2>
+      </div>
+      <div style="top:75px;left:550px;width:25px;position:fixed;">
+      <h6>3200</h6>
+      </div>
+      <div class=girlsBlockR style="top:100px;left:550px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockR style="top:125px;left:550px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockF style="top:150px;left:550px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockR style="top:175px;left:550px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockL style="top:200px;left:550px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockS style="top:225px;left:550px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockS style="top:250px;left:550px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockH style="top:275px;left:550px">
+      <h2>H</h2>
+      </div>
+      <div style="top:75px;left:575px;width:25px;position:fixed;">
+      <h6>110H</h6>
+      </div>
+      <div class=girlsBlockS style="top:100px;left:575px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockS style="top:125px;left:575px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockS style="top:150px;left:575px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockL style="top:175px;left:575px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockL style="top:200px;left:575px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockL style="top:225px;left:575px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockE style="top:250px;left:575px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockF style="top:275px;left:575px">
+      <h2>F</h2>
+      </div>
+      <div style="top:75px;left:600px;width:25px;position:fixed;">
+      <h6>300H</h6>
+      </div>
+      <div class=girlsBlockS style="top:100px;left:600px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockS style="top:125px;left:600px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockS style="top:150px;left:600px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockL style="top:175px;left:600px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockL style="top:200px;left:600px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockS style="top:225px;left:600px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockE style="top:250px;left:600px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockS style="top:275px;left:600px">
+      <h2>S</h2>
+      </div>
+      <div style="top:75px;left:625px;width:25px;position:fixed;">
+      <h6>Shot</h6>
+      </div>
+      <div class=girlsBlockR style="top:100px;left:625px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockH style="top:125px;left:625px">
+      <h2>H</h2>
+      </div>
+      <div class=girlsBlockT style="top:150px;left:625px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockF style="top:175px;left:625px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockR style="top:200px;left:625px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockH style="top:225px;left:625px">
+      <h2>H</h2>
+      </div>
+      <div class=girlsBlockS style="top:250px;left:625px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockR style="top:275px;left:625px">
+      <h2>R</h2>
+      </div>
+      <div style="top:75px;left:650px;width:25px;position:fixed;">
+      <h6>Disc</h6>
+      </div>
+      <div class=girlsBlockR style="top:100px;left:650px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockR style="top:125px;left:650px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockT style="top:150px;left:650px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockR style="top:175px;left:650px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockF style="top:200px;left:650px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockR style="top:225px;left:650px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockS style="top:250px;left:650px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockE style="top:275px;left:650px">
+      <h2>E</h2>
+      </div>
+      <div style="top:75px;left:675px;width:25px;position:fixed;">
+      <h6>Jav</h6>
+      </div>
+      <div class=girlsBlockR style="top:100px;left:675px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockE style="top:125px;left:675px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockF style="top:150px;left:675px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockL style="top:175px;left:675px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockF style="top:200px;left:675px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockS style="top:225px;left:675px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockS style="top:250px;left:675px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockF style="top:275px;left:675px">
+      <h2>F</h2>
+      </div>
+      <div style="top:75px;left:700px;width:25px;position:fixed;">
+      <h6>HJ</h6>
+      </div>
+      <div class=girlsBlockS style="top:100px;left:700px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockR style="top:125px;left:700px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockS style="top:150px;left:700px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockR style="top:175px;left:700px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockR style="top:200px;left:700px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockF style="top:225px;left:700px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockF style="top:250px;left:700px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockL style="top:275px;left:700px">
+      <h2>L</h2>
+      </div>
+      <div style="top:75px;left:725px;width:25px;position:fixed;">
+      <h6>PV</h6>
+      </div>
+      <div class=girlsBlockS style="top:100px;left:725px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockF style="top:125px;left:725px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockF style="top:150px;left:725px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockS style="top:175px;left:725px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockS style="top:200px;left:725px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockS style="top:225px;left:725px">
+      <h2>S</h2>
+      </div>
+      <div style="top:75px;left:750px;width:25px;position:fixed;">
+      <h6>LJ</h6>
+      </div>
+      <div class=girlsBlockE style="top:100px;left:750px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockR style="top:125px;left:750px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockH style="top:150px;left:750px">
+      <h2>H</h2>
+      </div>
+      <div class=girlsBlockS style="top:175px;left:750px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockF style="top:200px;left:750px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockR style="top:225px;left:750px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockS style="top:250px;left:750px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockE style="top:275px;left:750px">
+      <h2>E</h2>
+      </div>
+      <div style="top:75px;left:775px;width:25px;position:fixed;">
+      <h6>TJ</h6>
+      </div>
+      <div class=girlsBlockR style="top:100px;left:775px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockR style="top:125px;left:775px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockF style="top:150px;left:775px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockS style="top:175px;left:775px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockE style="top:200px;left:775px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockS style="top:225px;left:775px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockR style="top:250px;left:775px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockR style="top:275px;left:775px">
+      <h2>R</h2>
+      </div>
+      <div class="boysBlockS" style="top:100px;left:200px;width:150px;height:25px;">
+      <h2>Sammamish</h2>
+      </div>
+      <div class="boysBlockS" style="top:100px;left:350px;width:50px;height:25px;background:rgb(0, 255, 10);">
+      <h2 style="text-align:right">196</h2>
+      </div>
+      <div class="boysBlockR" style="top:125px;left:200px;width:150px;height:25px;">
+      <h2>Renton</h2>
+      </div>
+      <div class="boysBlockR" style="top:125px;left:350px;width:50px;height:25px;background:rgb(44, 211, 10);">
+      <h2 style="text-align:right">162</h2>
+      </div>
+      <div class="boysBlockF" style="top:150px;left:200px;width:150px;height:25px;">
+      <h2>Foster</h2>
+      </div>
+      <div class="boysBlockF" style="top:150px;left:350px;width:50px;height:25px;background:rgb(169, 86, 10);">
+      <h2 style="text-align:right">66</h2>
+      </div>
+      <div class="boysBlockE" style="top:175px;left:200px;width:150px;height:25px;">
+      <h2>Evergreen (Seattle)</h2>
+      </div>
+      <div class="boysBlockE" style="top:175px;left:350px;width:50px;height:25px;background:rgb(187, 68, 10);">
+      <h2 style="text-align:right">52</h2>
+      </div>
+      <div class="boysBlockL" style="top:200px;left:200px;width:150px;height:25px;">
+      <h2>Lindbergh</h2>
+      </div>
+      <div class="boysBlockL" style="top:200px;left:350px;width:50px;height:25px;background:rgb(188, 67, 10);">
+      <h2 style="text-align:right">51</h2>
+      </div>
+      <div class="boysBlockH" style="top:225px;left:200px;width:150px;height:25px;">
+      <h2>Highline</h2>
+      </div>
+      <div class="boysBlockH" style="top:225px;left:350px;width:50px;height:25px;background:rgb(201, 54, 10);">
+      <h2 style="text-align:right">41</h2>
+      </div>
+      <div class="boysBlockT" style="top:250px;left:200px;width:150px;height:25px;">
+      <h2>Tyee</h2>
+      </div>
+      <div class="boysBlockT" style="top:250px;left:350px;width:50px;height:25px;background:rgb(236, 19, 10);">
+      <h2 style="text-align:right">14</h2>
+      </div>
+
+
+    </div>
+
+    <div class="girls">
+      <div style="top:310px;left:200px;position:fixed;">
+        <h2>Girls</h2>
+      </div>
+      <div style="top:335px;left:425px;width:25px;position:fixed;">
+      <h6>100</h6>
+      </div>
+      <div class=girlsBlockS style="top:360px;left:425px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockR style="top:385px;left:425px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockF style="top:410px;left:425px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockL style="top:435px;left:425px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockE style="top:460px;left:425px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockS style="top:485px;left:425px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockH style="top:510px;left:425px">
+      <h2>H</h2>
+      </div>
+      <div class=girlsBlockR style="top:535px;left:425px">
+      <h2>R</h2>
+      </div>
+      <div style="top:335px;left:450px;width:25px;position:fixed;">
+      <h6>200</h6>
+      </div>
+      <div class=girlsBlockS style="top:360px;left:450px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockS style="top:385px;left:450px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockF style="top:410px;left:450px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockF style="top:435px;left:450px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockR style="top:460px;left:450px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockF style="top:485px;left:450px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockE style="top:510px;left:450px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockH style="top:535px;left:450px">
+      <h2>H</h2>
+      </div>
+      <div style="top:335px;left:475px;width:25px;position:fixed;">
+      <h6>400</h6>
+      </div>
+      <div class=girlsBlockS style="top:360px;left:475px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockR style="top:385px;left:475px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockS style="top:410px;left:475px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockH style="top:435px;left:475px">
+      <h2>H</h2>
+      </div>
+      <div class=girlsBlockF style="top:460px;left:475px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockH style="top:485px;left:475px">
+      <h2>H</h2>
+      </div>
+      <div class=girlsBlockL style="top:510px;left:475px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockE style="top:535px;left:475px">
+      <h2>E</h2>
+      </div>
+      <div style="top:335px;left:500px;width:25px;position:fixed;">
+      <h6>800</h6>
+      </div>
+      <div class=girlsBlockS style="top:360px;left:500px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockS style="top:385px;left:500px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockH style="top:410px;left:500px">
+      <h2>H</h2>
+      </div>
+      <div class=girlsBlockR style="top:435px;left:500px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockT style="top:460px;left:500px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockH style="top:485px;left:500px">
+      <h2>H</h2>
+      </div>
+      <div class=girlsBlockF style="top:510px;left:500px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockR style="top:535px;left:500px">
+      <h2>R</h2>
+      </div>
+      <div style="top:335px;left:525px;width:25px;position:fixed;">
+      <h6>1600</h6>
+      </div>
+      <div class=girlsBlockS style="top:360px;left:525px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockH style="top:385px;left:525px">
+      <h2>H</h2>
+      </div>
+      <div class=girlsBlockS style="top:410px;left:525px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockR style="top:435px;left:525px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockR style="top:460px;left:525px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockS style="top:485px;left:525px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockS style="top:510px;left:525px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockS style="top:535px;left:525px">
+      <h2>S</h2>
+      </div>
+      <div style="top:335px;left:550px;width:25px;position:fixed;">
+      <h6>3200</h6>
+      </div>
+      <div class=girlsBlockS style="top:360px;left:550px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockR style="top:385px;left:550px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockS style="top:410px;left:550px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockS style="top:435px;left:550px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockS style="top:460px;left:550px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockH style="top:485px;left:550px">
+      <h2>H</h2>
+      </div>
+      <div style="top:335px;left:575px;width:25px;position:fixed;">
+      <h6>110H</h6>
+      </div>
+      <div class=girlsBlockE style="top:360px;left:575px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockS style="top:385px;left:575px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockF style="top:410px;left:575px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockS style="top:435px;left:575px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockE style="top:460px;left:575px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockF style="top:485px;left:575px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockE style="top:510px;left:575px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockT style="top:535px;left:575px">
+      <h2>T</h2>
+      </div>
+      <div style="top:335px;left:600px;width:25px;position:fixed;">
+      <h6>300H</h6>
+      </div>
+      <div class=girlsBlockS style="top:360px;left:600px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockS style="top:385px;left:600px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockF style="top:410px;left:600px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockL style="top:435px;left:600px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockS style="top:460px;left:600px">
+      <h2>S</h2>
+      </div>
+      <div style="top:335px;left:625px;width:25px;position:fixed;">
+      <h6>Shot</h6>
+      </div>
+      <div class=girlsBlockF style="top:360px;left:625px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockL style="top:385px;left:625px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockF style="top:410px;left:625px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockF style="top:435px;left:625px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockR style="top:460px;left:625px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockS style="top:485px;left:625px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockR style="top:510px;left:625px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockH style="top:535px;left:625px">
+      <h2>H</h2>
+      </div>
+      <div style="top:335px;left:650px;width:25px;position:fixed;">
+      <h6>Disc</h6>
+      </div>
+      <div class=girlsBlockL style="top:360px;left:650px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockR style="top:385px;left:650px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockF style="top:410px;left:650px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockF style="top:435px;left:650px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockR style="top:460px;left:650px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockS style="top:485px;left:650px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockF style="top:510px;left:650px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockF style="top:535px;left:650px">
+      <h2>F</h2>
+      </div>
+      <div style="top:335px;left:675px;width:25px;position:fixed;">
+      <h6>Jav</h6>
+      </div>
+      <div class=girlsBlockS style="top:360px;left:675px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockF style="top:385px;left:675px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockF style="top:410px;left:675px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockF style="top:435px;left:675px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockF style="top:460px;left:675px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockF style="top:485px;left:675px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockR style="top:510px;left:675px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockL style="top:535px;left:675px">
+      <h2>L</h2>
+      </div>
+      <div style="top:335px;left:700px;width:25px;position:fixed;">
+      <h6>HJ</h6>
+      </div>
+      <div class=girlsBlockF style="top:360px;left:700px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockS style="top:385px;left:700px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockF style="top:410px;left:700px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockL style="top:435px;left:700px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockF style="top:460px;left:700px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockH style="top:485px;left:700px">
+      <h2>H</h2>
+      </div>
+      <div class=girlsBlockF style="top:510px;left:700px">
+      <h2>F</h2>
+      </div>
+      <div style="top:335px;left:725px;width:25px;position:fixed;">
+      <h6>PV</h6>
+      </div>
+      <div class=girlsBlockF style="top:360px;left:725px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockF style="top:385px;left:725px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockF style="top:410px;left:725px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockS style="top:435px;left:725px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockF style="top:460px;left:725px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockF style="top:485px;left:725px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockF style="top:510px;left:725px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockF style="top:535px;left:725px">
+      <h2>F</h2>
+      </div>
+      <div style="top:335px;left:750px;width:25px;position:fixed;">
+      <h6>LJ</h6>
+      </div>
+      <div class=girlsBlockS style="top:360px;left:750px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockE style="top:385px;left:750px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockR style="top:410px;left:750px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockE style="top:435px;left:750px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockE style="top:460px;left:750px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockS style="top:485px;left:750px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockS style="top:510px;left:750px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockE style="top:535px;left:750px">
+      <h2>E</h2>
+      </div>
+      <div style="top:335px;left:775px;width:25px;position:fixed;">
+      <h6>TJ</h6>
+      </div>
+      <div class=girlsBlockE style="top:360px;left:775px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockS style="top:385px;left:775px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockS style="top:410px;left:775px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockL style="top:435px;left:775px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockF style="top:460px;left:775px">
+      <h2>F</h2>
+      </div>
+      <div class="girlsBlockS" style="top:360px;left:200px;width:150px;height:25px;">
+      <h2>Sammamish</h2>
+      </div>
+      <div class="girlsBlockS" style="top:360px;left:350px;width:50px;height:25px;background:rgb(0, 255, 10);">
+      <h2 style="text-align:right">205</h2>
+      </div>
+      <div class="girlsBlockF" style="top:385px;left:200px;width:150px;height:25px;">
+      <h2>Foster</h2>
+      </div>
+      <div class="girlsBlockF" style="top:385px;left:350px;width:50px;height:25px;background:rgb(53, 202, 10);">
+      <h2 style="text-align:right">162</h2>
+      </div>
+      <div class="girlsBlockR" style="top:410px;left:200px;width:150px;height:25px;">
+      <h2>Renton</h2>
+      </div>
+      <div class="girlsBlockR" style="top:410px;left:350px;width:50px;height:25px;background:rgb(167, 88, 10);">
+      <h2 style="text-align:right">70</h2>
+      </div>
+      <div class="girlsBlockE" style="top:435px;left:200px;width:150px;height:25px;">
+      <h2>Evergreen (Seattle)</h2>
+      </div>
+      <div class="girlsBlockE" style="top:435px;left:350px;width:50px;height:25px;background:rgb(191, 64, 10);">
+      <h2 style="text-align:right">51</h2>
+      </div>
+      <div class="girlsBlockL" style="top:460px;left:200px;width:150px;height:25px;">
+      <h2>Lindbergh</h2>
+      </div>
+      <div class="girlsBlockL" style="top:460px;left:350px;width:50px;height:25px;background:rgb(204, 51, 10);">
+      <h2 style="text-align:right">41</h2>
+      </div>
+      <div class="girlsBlockH" style="top:485px;left:200px;width:150px;height:25px;">
+      <h2>Highline</h2>
+      </div>
+      <div class="girlsBlockH" style="top:485px;left:350px;width:50px;height:25px;background:rgb(211, 44, 10);">
+      <h2 style="text-align:right">35</h2>
+      </div>
+      <div class="girlsBlockT" style="top:510px;left:200px;width:150px;height:25px;">
+      <h2>Tyee</h2>
+      </div>
+      <div class="girlsBlockT" style="top:510px;left:350px;width:50px;height:25px;background:rgb(248, 7, 10);">
+      <h2 style="text-align:right">5</h2>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

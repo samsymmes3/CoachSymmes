@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Symmes Coaching</title>
+  <meta charset="UTF-8">
+  <style>
+    a {
+      color: black;
+      text-decoration: none;
+    }
+
+    body {
+      margin-top: 0;
+    }
+    .wrapper .sidebar {
+      background: rgb(10, 136, 208);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 190px;
+      height: 100%;
+      padding: 0px 0;
+      transition: all 0.5s ease;
+    }
+    .header {
+      background: rgb(8, 102, 156);
+      position: fixed;
+      height: 50px;
+      left: 190px;
+      width: 80%;
+      padding: 0px 0;
+      transition: all 0.5s ease;
+    }
+    .headeritem {
+      background: inherit;
+      position: fixed;
+      height: 50px;
+      width: 26.6%;
+      padding: 0px 0;
+      transition: all 0.5s ease;
+    }
+    .header h1 {
+      margin-left: 5px;
+      margin-top: 10px;
+      margin-bottom: 0px;
+      text-align: center;
+    }
+    .boys {
+      background: rgb(240, 240, 240);
+      position: fixed;
+      top: 300px;
+      left: 190px;
+      width: 80%;
+      height: 300px;
+      padding: 10px 0;
+      transition: all 0.5s ease;
+    }
+    .boysBlockSammamish{
+      background: rgb(10, 180, 10);
+      position: fixed;
+      height: 25px;
+      width: 25px;
+    }
+    .boysBlockSqualicum{background: rgb(255, 0, 0);position: fixed;height: 25px;width: 25px;}.boysBlockEphrata{background: rgb(255, 6, 6);position: fixed;height: 25px;width: 25px;}.boysBlockEllensburg{background: rgb(255, 12, 12);position: fixed;height: 25px;width: 25px;}.boysBlockAnacortes{background: rgb(255, 18, 18);position: fixed;height: 25px;width: 25px;}.boysBlockSehome{background: rgb(255, 25, 25);position: fixed;height: 25px;width: 25px;}.boysBlockLynden{background: rgb(255, 31, 31);position: fixed;height: 25px;width: 25px;}.boysBlockTumwater{background: rgb(255, 37, 37);position: fixed;height: 25px;width: 25px;}.boysBlockBellingham{background: rgb(255, 43, 43);position: fixed;height: 25px;width: 25px;}.boysBlockFranklinPierce{background: rgb(255, 50, 50);position: fixed;height: 25px;width: 25px;}.boysBlockEnumclaw{background: rgb(255, 56, 56);position: fixed;height: 25px;width: 25px;}.boysBlockSedroWoolley{background: rgb(255, 62, 62);position: fixed;height: 25px;width: 25px;}.boysBlockAberdeen{background: rgb(255, 68, 68);position: fixed;height: 25px;width: 25px;}.boysBlockBurlingtonEdison{background: rgb(255, 75, 75);position: fixed;height: 25px;width: 25px;}.boysBlockWestValleySpokane{background: rgb(255, 81, 81);position: fixed;height: 25px;width: 25px;}.boysBlockRidgefield{background: rgb(255, 87, 87);position: fixed;height: 25px;width: 25px;}.boysBlockSelah{background: rgb(255, 93, 93);position: fixed;height: 25px;width: 25px;}.boysBlockSequim{background: rgb(255, 100, 100);position: fixed;height: 25px;width: 25px;}.boysBlockNorthKitsap{background: rgb(255, 106, 106);position: fixed;height: 25px;width: 25px;}.boysBlockRogersSpokane{background: rgb(255, 112, 112);position: fixed;height: 25px;width: 25px;}.boysBlockWFWest{background: rgb(255, 118, 118);position: fixed;height: 25px;width: 25px;}.boysBlockCloverPark{background: rgb(255, 125, 125);position: fixed;height: 25px;width: 25px;}.boysBlockWoodland{background: rgb(255, 131, 131);position: fixed;height: 25px;width: 25px;}.boysBlockEastValleySpokane{background: rgb(255, 137, 137);position: fixed;height: 25px;width: 25px;}.boysBlockColumbiaRiver{background: rgb(255, 143, 143);position: fixed;height: 25px;width: 25px;}.boysBlockPullman{background: rgb(255, 150, 150);position: fixed;height: 25px;width: 25px;}.boysBlockRALong{background: rgb(255, 156, 156);position: fixed;height: 25px;width: 25px;}.boysBlockFortVancouver{background: rgb(255, 162, 162);position: fixed;height: 25px;width: 25px;}.boysBlockArchbishopMurphy{background: rgb(255, 168, 168);position: fixed;height: 25px;width: 25px;}.boysBlockWhiteRiver{background: rgb(255, 175, 175);position: fixed;height: 25px;width: 25px;}.boysBlockShadlePark{background: rgb(255, 181, 181);position: fixed;height: 25px;width: 25px;}.boysBlockBlackHills{background: rgb(255, 187, 187);position: fixed;height: 25px;width: 25px;}.boysBlockGrandview{background: rgb(255, 193, 193);position: fixed;height: 25px;width: 25px;}.boysBlockCedarcrest{background: rgb(255, 200, 200);position: fixed;height: 25px;width: 25px;}.boysBlockWashougal{background: rgb(255, 206, 206);position: fixed;height: 25px;width: 25px;}.boysBlockLakewood{background: rgb(255, 212, 212);position: fixed;height: 25px;width: 25px;}.boysBlockBremerton{background: rgb(255, 218, 218);position: fixed;height: 25px;width: 25px;}.boysBlockFife{background: rgb(255, 225, 225);position: fixed;height: 25px;width: 25px;}.boysBlockOlympic{background: rgb(255, 231, 231);position: fixed;height: 25px;width: 25px;}.boysBlockSteilacoom{background: rgb(255, 237, 237);position: fixed;height: 25px;width: 25px;}.boysBlockShelton{background: rgb(255, 243, 243);position: fixed;height: 25px;width: 25px;}.boysBlockRenton{background: rgb(255, 250, 250);position: fixed;height: 25px;width: 25px;}
+    .boys h1 {
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .boys h2 {
+      margin-left: 5px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .boys h4 {
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .boys h5 {
+      margin-left: 35px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .boys h6 {
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      text-align: center;
+    }
+    .girls {
+      background: rgb(240, 240, 240);
+      position: fixed;
+      top: 360px;
+      left: 190px;
+      width: 80%;
+      height: 300px;
+      padding: 10px 0;
+      transition: all 0.5s ease;
+    }
+    .girlsBlockSammamish{
+      background: rgb(10, 180, 10);
+      position: fixed;
+      height: 25px;
+      width: 25px;
+    }
+    .girlsBlockTumwater{background: rgb(255, 0, 0);position: fixed;height: 25px;width: 25px;}.girlsBlockLynden{background: rgb(255, 6, 6);position: fixed;height: 25px;width: 25px;}.girlsBlockWashougal{background: rgb(255, 12, 12);position: fixed;height: 25px;width: 25px;}.girlsBlockBellingham{background: rgb(255, 18, 18);position: fixed;height: 25px;width: 25px;}.girlsBlockBurlingtonEdison{background: rgb(255, 25, 25);position: fixed;height: 25px;width: 25px;}.girlsBlockSedroWoolley{background: rgb(255, 31, 31);position: fixed;height: 25px;width: 25px;}.girlsBlockAnacortes{background: rgb(255, 37, 37);position: fixed;height: 25px;width: 25px;}.girlsBlockEastValleySpokane{background: rgb(255, 43, 43);position: fixed;height: 25px;width: 25px;}.girlsBlockCedarcrest{background: rgb(255, 50, 50);position: fixed;height: 25px;width: 25px;}.girlsBlockOlympic{background: rgb(255, 56, 56);position: fixed;height: 25px;width: 25px;}.girlsBlockOrting{background: rgb(255, 62, 62);position: fixed;height: 25px;width: 25px;}.girlsBlockWestValleySpokane{background: rgb(255, 68, 68);position: fixed;height: 25px;width: 25px;}.girlsBlockRALong{background: rgb(255, 75, 75);position: fixed;height: 25px;width: 25px;}.girlsBlockEllensburg{background: rgb(255, 81, 81);position: fixed;height: 25px;width: 25px;}.girlsBlockRogersSpokane{background: rgb(255, 87, 87);position: fixed;height: 25px;width: 25px;}.girlsBlockSelah{background: rgb(255, 93, 93);position: fixed;height: 25px;width: 25px;}.girlsBlockProsser{background: rgb(255, 100, 100);position: fixed;height: 25px;width: 25px;}.girlsBlockColumbiaRiver{background: rgb(255, 106, 106);position: fixed;height: 25px;width: 25px;}.girlsBlockSehome{background: rgb(255, 112, 112);position: fixed;height: 25px;width: 25px;}.girlsBlockWFWest{background: rgb(255, 118, 118);position: fixed;height: 25px;width: 25px;}.girlsBlockRidgefield{background: rgb(255, 125, 125);position: fixed;height: 25px;width: 25px;}.girlsBlockNorthKitsap{background: rgb(255, 131, 131);position: fixed;height: 25px;width: 25px;}.girlsBlockWhiteRiver{background: rgb(255, 137, 137);position: fixed;height: 25px;width: 25px;}.girlsBlockShadlePark{background: rgb(255, 143, 143);position: fixed;height: 25px;width: 25px;}.girlsBlockFife{background: rgb(255, 150, 150);position: fixed;height: 25px;width: 25px;}.girlsBlockCloverPark{background: rgb(255, 156, 156);position: fixed;height: 25px;width: 25px;}.girlsBlockEphrata{background: rgb(255, 162, 162);position: fixed;height: 25px;width: 25px;}.girlsBlockWoodland{background: rgb(255, 168, 168);position: fixed;height: 25px;width: 25px;}.girlsBlockEastValleyYakima{background: rgb(255, 175, 175);position: fixed;height: 25px;width: 25px;}.girlsBlockHockinson{background: rgb(255, 181, 181);position: fixed;height: 25px;width: 25px;}.girlsBlockRochester{background: rgb(255, 187, 187);position: fixed;height: 25px;width: 25px;}.girlsBlockClarkston{background: rgb(255, 193, 193);position: fixed;height: 25px;width: 25px;}.girlsBlockPullman{background: rgb(255, 200, 200);position: fixed;height: 25px;width: 25px;}.girlsBlockBlackHills{background: rgb(255, 206, 206);position: fixed;height: 25px;width: 25px;}.girlsBlockBremerton{background: rgb(255, 212, 212);position: fixed;height: 25px;width: 25px;}.girlsBlockSequim{background: rgb(255, 218, 218);position: fixed;height: 25px;width: 25px;}.girlsBlockNorthMason{background: rgb(255, 225, 225);position: fixed;height: 25px;width: 25px;}.girlsBlockLakewood{background: rgb(255, 231, 231);position: fixed;height: 25px;width: 25px;}.girlsBlockShelton{background: rgb(255, 237, 237);position: fixed;height: 25px;width: 25px;}.girlsBlockEnumclaw{background: rgb(255, 243, 243);position: fixed;height: 25px;width: 25px;}.girlsBlockSqualicum{background: rgb(255, 250, 250);position: fixed;height: 25px;width: 25px;}
+    .girls h1 {
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .girls h2 {
+      margin-left: 5px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .girls h4 {
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .girls h5 {
+      margin-left: 35px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .girls h6 {
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      text-align: center;
+    }
+    .sidebarh {
+      width: 100%;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .sidebarh h1{
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 5px
+    }
+    .sidebarh h2 {
+      margin-top: 5px;
+      margin-bottom: 0px;
+      margin-left: 15px;
+    }
+    .sidebarh h4 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-left: 25px;
+    }
+    body{
+      background: #f5f6fa;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="sidebar">
+      <a href="index.html">
+        <div class="sidebarh">
+          <h1>Home</h1>
+        </div>
+      </a>
+      <a href="Sammamish/index.html">
+        <div class="sidebarh">
+          <h2>Sammamish</h2>
+        </div>
+      </a>
+      <a href="Sammamish/KingcoTracker.html">
+        <div class="sidebarh">
+          <h4>Kingco Tracker</h4>
+        </div>
+      </a>
+      <a href="Sammamish/KingcoTracker.html">
+        <div class="sidebarh">
+          <h4>State Tracker</h4>
+        </div>
+      </a>
+      <a href="Skyline/index.html">
+        <div class="sidebarh">
+          <h2>Skyline</h2>
+        </div>
+      </a>
+      <a href="Skyline/KingcoTracker.html">
+        <div class="sidebarh">
+          <h4>Kingco Tracker</h4>
+        </div>
+      </a>
+    </div>
+    <div class="header">
+      <div class="headeritem">
+        <h1>By Event</h1>
+      </div>
+      <div class="headeritem" style="left: 46.6%">
+        <h1>By Individual</h1>
+      </div>
+      <div class="headeritem" style="left: 73.2%">
+        <h1>Team</h1>
+      </div>
+    </div>
+
+    <div class="boys">
+      <div style="top:60px;left:200px;position:fixed;">
+        <h2>Boys</h2>
+      </div>
+
+      <div style="top:75px;left:425px;width:25px;position:fixed;">
+      <h6>100</h6>
+      </div>
+      <div class=boysBlockSehome style="top:100px;left:425px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockEllensburg style="top:125px;left:425px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockAnacortes style="top:150px;left:425px">
+      <h2>A</h2>
+      </div>
+      <div class=boysBlockWhiteRiver style="top:175px;left:425px">
+      <h2>W</h2>
+      </div>
+      <div class=boysBlockBellingham style="top:200px;left:425px">
+      <h2>B</h2>
+      </div>
+      <div class=boysBlockSqualicum style="top:225px;left:425px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockAnacortes style="top:250px;left:425px">
+      <h2>A</h2>
+      </div>
+      <div class=boysBlockWhiteRiver style="top:275px;left:425px">
+      <h2>W</h2>
+      </div>
+      <div style="top:75px;left:450px;width:25px;position:fixed;">
+      <h6>200</h6>
+      </div>
+      <div class=boysBlockAnacortes style="top:100px;left:450px">
+      <h2>A</h2>
+      </div>
+      <div class=boysBlockEphrata style="top:125px;left:450px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockSqualicum style="top:150px;left:450px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockLynden style="top:175px;left:450px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockAnacortes style="top:200px;left:450px">
+      <h2>A</h2>
+      </div>
+      <div class=boysBlockNorthKitsap style="top:225px;left:450px">
+      <h2>N</h2>
+      </div>
+      <div class=boysBlockRidgefield style="top:250px;left:450px">
+      <h2>R</h2>
+      </div>
+      <div class=boysBlockEllensburg style="top:275px;left:450px">
+      <h2>E</h2>
+      </div>
+      <div style="top:75px;left:475px;width:25px;position:fixed;">
+      <h6>400</h6>
+      </div>
+      <div class=boysBlockSehome style="top:100px;left:475px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockSammamish style="top:125px;left:475px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockFranklinPierce style="top:150px;left:475px">
+      <h2>F</h2>
+      </div>
+      <div class=boysBlockLynden style="top:175px;left:475px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockCedarcrest style="top:200px;left:475px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockLynden style="top:225px;left:475px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockSqualicum style="top:250px;left:475px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockSteilacoom style="top:275px;left:475px">
+      <h2>S</h2>
+      </div>
+      <div style="top:75px;left:500px;width:25px;position:fixed;">
+      <h6>800</h6>
+      </div>
+      <div class=boysBlockSehome style="top:100px;left:500px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockSqualicum style="top:125px;left:500px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockSqualicum style="top:150px;left:500px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockPullman style="top:175px;left:500px">
+      <h2>P</h2>
+      </div>
+      <div class=boysBlockEnumclaw style="top:200px;left:500px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockEphrata style="top:225px;left:500px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockAberdeen style="top:250px;left:500px">
+      <h2>A</h2>
+      </div>
+      <div class=boysBlockNorthKitsap style="top:275px;left:500px">
+      <h2>N</h2>
+      </div>
+      <div style="top:75px;left:525px;width:25px;position:fixed;">
+      <h6>1600</h6>
+      </div>
+      <div class=boysBlockSehome style="top:100px;left:525px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockSqualicum style="top:125px;left:525px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockSqualicum style="top:150px;left:525px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockEnumclaw style="top:175px;left:525px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockSqualicum style="top:200px;left:525px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockEnumclaw style="top:225px;left:525px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockAberdeen style="top:250px;left:525px">
+      <h2>A</h2>
+      </div>
+      <div class=boysBlockShadlePark style="top:275px;left:525px">
+      <h2>S</h2>
+      </div>
+      <div style="top:75px;left:550px;width:25px;position:fixed;">
+      <h6>3200</h6>
+      </div>
+      <div class=boysBlockEnumclaw style="top:100px;left:550px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockAnacortes style="top:125px;left:550px">
+      <h2>A</h2>
+      </div>
+      <div class=boysBlockSqualicum style="top:150px;left:550px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockSelah style="top:175px;left:550px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockSelah style="top:200px;left:550px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockTumwater style="top:225px;left:550px">
+      <h2>T</h2>
+      </div>
+      <div class=boysBlockEnumclaw style="top:250px;left:550px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockShelton style="top:275px;left:550px">
+      <h2>S</h2>
+      </div>
+      <div style="top:75px;left:575px;width:25px;position:fixed;">
+      <h6>110H</h6>
+      </div>
+      <div class=boysBlockEllensburg style="top:100px;left:575px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockEphrata style="top:125px;left:575px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockRogersSpokane style="top:150px;left:575px">
+      <h2>R</h2>
+      </div>
+      <div class=boysBlockSequim style="top:175px;left:575px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockLynden style="top:200px;left:575px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockColumbiaRiver style="top:225px;left:575px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockTumwater style="top:250px;left:575px">
+      <h2>T</h2>
+      </div>
+      <div class=boysBlockTumwater style="top:275px;left:575px">
+      <h2>T</h2>
+      </div>
+      <div style="top:75px;left:600px;width:25px;position:fixed;">
+      <h6>300H</h6>
+      </div>
+      <div class=boysBlockEllensburg style="top:100px;left:600px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockEphrata style="top:125px;left:600px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockRidgefield style="top:150px;left:600px">
+      <h2>R</h2>
+      </div>
+      <div class=boysBlockShadlePark style="top:175px;left:600px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockRALong style="top:200px;left:600px">
+      <h2>R</h2>
+      </div>
+      <div class=boysBlockNorthKitsap style="top:225px;left:600px">
+      <h2>N</h2>
+      </div>
+      <div class=boysBlockRogersSpokane style="top:250px;left:600px">
+      <h2>R</h2>
+      </div>
+      <div class=boysBlockWashougal style="top:275px;left:600px">
+      <h2>W</h2>
+      </div>
+      <div style="top:75px;left:625px;width:25px;position:fixed;">
+      <h6>4x1</h6>
+      </div>
+      <div class=boysBlockCloverPark style="top:100px;left:625px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockAnacortes style="top:125px;left:625px">
+      <h2>A</h2>
+      </div>
+      <div class=boysBlockEphrata style="top:150px;left:625px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockSedroWoolley style="top:175px;left:625px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockRogersSpokane style="top:200px;left:625px">
+      <h2>R</h2>
+      </div>
+      <div class=boysBlockEllensburg style="top:225px;left:625px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockSammamish style="top:250px;left:625px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockTumwater style="top:275px;left:625px">
+      <h2>T</h2>
+      </div>
+      <div style="top:75px;left:650px;width:25px;position:fixed;">
+      <h6>4x4</h6>
+      </div>
+      <div class=boysBlockSqualicum style="top:100px;left:650px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockEphrata style="top:125px;left:650px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockEllensburg style="top:150px;left:650px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockTumwater style="top:175px;left:650px">
+      <h2>T</h2>
+      </div>
+      <div class=boysBlockSelah style="top:200px;left:650px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockPullman style="top:225px;left:650px">
+      <h2>P</h2>
+      </div>
+      <div class=boysBlockWestValleySpokane style="top:250px;left:650px">
+      <h2>W</h2>
+      </div>
+      <div class=boysBlockLynden style="top:275px;left:650px">
+      <h2>L</h2>
+      </div>
+      <div style="top:75px;left:675px;width:25px;position:fixed;">
+      <h6>Shot</h6>
+      </div>
+      <div class=boysBlockBellingham style="top:100px;left:675px">
+      <h2>B</h2>
+      </div>
+      <div class=boysBlockEphrata style="top:125px;left:675px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockAberdeen style="top:150px;left:675px">
+      <h2>A</h2>
+      </div>
+      <div class=boysBlockFortVancouver style="top:175px;left:675px">
+      <h2>F</h2>
+      </div>
+      <div class=boysBlockAberdeen style="top:200px;left:675px">
+      <h2>A</h2>
+      </div>
+      <div class=boysBlockFortVancouver style="top:225px;left:675px">
+      <h2>F</h2>
+      </div>
+      <div class=boysBlockLakewood style="top:250px;left:675px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockSehome style="top:275px;left:675px">
+      <h2>S</h2>
+      </div>
+      <div style="top:75px;left:700px;width:25px;position:fixed;">
+      <h6>Disc</h6>
+      </div>
+      <div class=boysBlockBellingham style="top:100px;left:700px">
+      <h2>B</h2>
+      </div>
+      <div class=boysBlockEphrata style="top:125px;left:700px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockAberdeen style="top:150px;left:700px">
+      <h2>A</h2>
+      </div>
+      <div class=boysBlockBlackHills style="top:175px;left:700px">
+      <h2>B</h2>
+      </div>
+      <div class=boysBlockRALong style="top:200px;left:700px">
+      <h2>R</h2>
+      </div>
+      <div class=boysBlockBremerton style="top:225px;left:700px">
+      <h2>B</h2>
+      </div>
+      <div class=boysBlockLynden style="top:250px;left:700px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockGrandview style="top:275px;left:700px">
+      <h2>G</h2>
+      </div>
+      <div style="top:75px;left:725px;width:25px;position:fixed;">
+      <h6>Jav</h6>
+      </div>
+      <div class=boysBlockWoodland style="top:100px;left:725px">
+      <h2>W</h2>
+      </div>
+      <div class=boysBlockWFWest style="top:125px;left:725px">
+      <h2>W</h2>
+      </div>
+      <div class=boysBlockSedroWoolley style="top:150px;left:725px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockWestValleySpokane style="top:175px;left:725px">
+      <h2>W</h2>
+      </div>
+      <div class=boysBlockGrandview style="top:200px;left:725px">
+      <h2>G</h2>
+      </div>
+      <div class=boysBlockFife style="top:225px;left:725px">
+      <h2>F</h2>
+      </div>
+      <div class=boysBlockSelah style="top:250px;left:725px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockRenton style="top:275px;left:725px">
+      <h2>R</h2>
+      </div>
+      <div style="top:75px;left:750px;width:25px;position:fixed;">
+      <h6>HJ</h6>
+      </div>
+      <div class=boysBlockBurlingtonEdison style="top:100px;left:750px">
+      <h2>B</h2>
+      </div>
+      <div class=boysBlockArchbishopMurphy style="top:125px;left:750px">
+      <h2>A</h2>
+      </div>
+      <div class=boysBlockLynden style="top:150px;left:750px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockTumwater style="top:175px;left:750px">
+      <h2>T</h2>
+      </div>
+      <div class=boysBlockWestValleySpokane style="top:200px;left:750px">
+      <h2>W</h2>
+      </div>
+      <div class=boysBlockOlympic style="top:225px;left:750px">
+      <h2>O</h2>
+      </div>
+      <div class=boysBlockSequim style="top:250px;left:750px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockLakewood style="top:275px;left:750px">
+      <h2>L</h2>
+      </div>
+      <div style="top:75px;left:775px;width:25px;position:fixed;">
+      <h6>PV</h6>
+      </div>
+      <div class=boysBlockEastValleySpokane style="top:100px;left:775px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockSequim style="top:125px;left:775px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockColumbiaRiver style="top:150px;left:775px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockNorthKitsap style="top:175px;left:775px">
+      <h2>N</h2>
+      </div>
+      <div class=boysBlockFranklinPierce style="top:200px;left:775px">
+      <h2>F</h2>
+      </div>
+      <div class=boysBlockWFWest style="top:225px;left:775px">
+      <h2>W</h2>
+      </div>
+      <div class=boysBlockWashougal style="top:250px;left:775px">
+      <h2>W</h2>
+      </div>
+      <div class=boysBlockBurlingtonEdison style="top:275px;left:775px">
+      <h2>B</h2>
+      </div>
+      <div style="top:75px;left:800px;width:25px;position:fixed;">
+      <h6>LJ</h6>
+      </div>
+      <div class=boysBlockLynden style="top:100px;left:800px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockTumwater style="top:125px;left:800px">
+      <h2>T</h2>
+      </div>
+      <div class=boysBlockWestValleySpokane style="top:150px;left:800px">
+      <h2>W</h2>
+      </div>
+      <div class=boysBlockAnacortes style="top:175px;left:800px">
+      <h2>A</h2>
+      </div>
+      <div class=boysBlockFranklinPierce style="top:200px;left:800px">
+      <h2>F</h2>
+      </div>
+      <div class=boysBlockBurlingtonEdison style="top:225px;left:800px">
+      <h2>B</h2>
+      </div>
+      <div class=boysBlockSedroWoolley style="top:250px;left:800px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockRidgefield style="top:275px;left:800px">
+      <h2>R</h2>
+      </div>
+      <div style="top:75px;left:825px;width:25px;position:fixed;">
+      <h6>TJ</h6>
+      </div>
+      <div class=boysBlockFranklinPierce style="top:100px;left:825px">
+      <h2>F</h2>
+      </div>
+      <div class=boysBlockSedroWoolley style="top:125px;left:825px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockRidgefield style="top:150px;left:825px">
+      <h2>R</h2>
+      </div>
+      <div class=boysBlockEllensburg style="top:175px;left:825px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockBurlingtonEdison style="top:200px;left:825px">
+      <h2>B</h2>
+      </div>
+      <div class=boysBlockLynden style="top:225px;left:825px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockTumwater style="top:250px;left:825px">
+      <h2>T</h2>
+      </div>
+      <div class=boysBlockSedroWoolley style="top:275px;left:825px">
+      <h2>S</h2>
+      </div>
+      <div class="boysBlockSqualicum" style="top:100px;left:200px;width:150px;height:25px;">
+      <h2>Squalicum</h2>
+      </div>
+      <div class="boysBlockSqualicum" style="top:100px;left:350px;width:50px;height:25px;background:rgb(10, 180, 10);">
+      <h2 style="text-align:right">59</h2>
+      </div>
+      <div class="boysBlockEphrata" style="top:125px;left:200px;width:150px;height:25px;">
+      <h2>Ephrata</h2>
+      </div>
+      <div class="boysBlockEphrata" style="top:125px;left:350px;width:50px;height:25px;background:rgb(15, 175, 10);">
+      <h2 style="text-align:right">57</h2>
+      </div>
+      <div class="boysBlockEllensburg" style="top:150px;left:200px;width:150px;height:25px;">
+      <h2>Ellensburg</h2>
+      </div>
+      <div class="boysBlockEllensburg" style="top:150px;left:350px;width:50px;height:25px;background:rgb(56, 134, 10);">
+      <h2 style="text-align:right">43</h2>
+      </div>
+      <div class="boysBlockAnacortes" style="top:175px;left:200px;width:150px;height:25px;">
+      <h2>Anacortes</h2>
+      </div>
+      <div class="boysBlockAnacortes" style="top:175px;left:350px;width:50px;height:25px;background:rgb(56, 134, 10);">
+      <h2 style="text-align:right">43</h2>
+      </div>
+      <div class="boysBlockSehome" style="top:200px;left:200px;width:150px;height:25px;">
+      <h2>Sehome</h2>
+      </div>
+      <div class="boysBlockSehome" style="top:200px;left:350px;width:50px;height:25px;background:rgb(61, 129, 10);">
+      <h2 style="text-align:right">41</h2>
+      </div>
+      <div class="boysBlockLynden" style="top:225px;left:200px;width:150px;height:25px;">
+      <h2>Lynden</h2>
+      </div>
+      <div class="boysBlockLynden" style="top:225px;left:350px;width:50px;height:25px;background:rgb(67, 123, 10);">
+      <h2 style="text-align:right">39</h2>
+      </div>
+      <div class="boysBlockTumwater" style="top:250px;left:200px;width:150px;height:25px;">
+      <h2>Tumwater</h2>
+      </div>
+      <div class="boysBlockTumwater" style="top:250px;left:350px;width:50px;height:25px;background:rgb(102, 88, 10);">
+      <h2 style="text-align:right">27</h2>
+      </div>
+      <div class="boysBlockBellingham" style="top:275px;left:200px;width:150px;height:25px;">
+      <h2>Bellingham</h2>
+      </div>
+      <div class="boysBlockBellingham" style="top:275px;left:350px;width:50px;height:25px;background:rgb(110, 80, 10);">
+      <h2 style="text-align:right">24</h2>
+      </div>
+      <div class="boysBlockFranklinPierce" style="top:300px;left:200px;width:150px;height:25px;">
+      <h2>Franklin Pierce</h2>
+      </div>
+      <div class="boysBlockFranklinPierce" style="top:300px;left:350px;width:50px;height:25px;background:rgb(110, 80, 10);">
+      <h2 style="text-align:right">24</h2>
+      </div>
+      <div class="boysBlockEnumclaw" style="top:325px;left:200px;width:150px;height:25px;">
+      <h2>Enumclaw</h2>
+      </div>
+      <div class="boysBlockEnumclaw" style="top:325px;left:350px;width:50px;height:25px;background:rgb(110, 80, 10);">
+      <h2 style="text-align:right">24</h2>
+      </div>
+
+
+    </div>
+
+    <div class="girls">
+      <div style="top:370px;left:200px;position:fixed;">
+        <h2>Girls</h2>
+      </div>
+
+      <div style="top:395px;left:425px;width:25px;position:fixed;">
+      <h6>100</h6>
+      </div>
+      <div class=girlsBlockTumwater style="top:420px;left:425px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockBellingham style="top:445px;left:425px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockRogersSpokane style="top:470px;left:425px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockRALong style="top:495px;left:425px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockCedarcrest style="top:520px;left:425px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockRidgefield style="top:545px;left:425px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockSedroWoolley style="top:570px;left:425px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockOrting style="top:595px;left:425px">
+      <h2>O</h2>
+      </div>
+      <div style="top:395px;left:450px;width:25px;position:fixed;">
+      <h6>200</h6>
+      </div>
+      <div class=girlsBlockTumwater style="top:420px;left:450px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockWestValleySpokane style="top:445px;left:450px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockRogersSpokane style="top:470px;left:450px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockCedarcrest style="top:495px;left:450px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockLynden style="top:520px;left:450px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockOrting style="top:545px;left:450px">
+      <h2>O</h2>
+      </div>
+      <div class=girlsBlockSedroWoolley style="top:570px;left:450px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockFife style="top:595px;left:450px">
+      <h2>F</h2>
+      </div>
+      <div style="top:395px;left:475px;width:25px;position:fixed;">
+      <h6>400</h6>
+      </div>
+      <div class=girlsBlockTumwater style="top:420px;left:475px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockLynden style="top:445px;left:475px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockBurlingtonEdison style="top:470px;left:475px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockTumwater style="top:495px;left:475px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockWashougal style="top:520px;left:475px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockRidgefield style="top:545px;left:475px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockNorthKitsap style="top:570px;left:475px">
+      <h2>N</h2>
+      </div>
+      <div class=girlsBlockTumwater style="top:595px;left:475px">
+      <h2>T</h2>
+      </div>
+      <div style="top:395px;left:500px;width:25px;position:fixed;">
+      <h6>800</h6>
+      </div>
+      <div class=girlsBlockWashougal style="top:420px;left:500px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockNorthKitsap style="top:445px;left:500px">
+      <h2>N</h2>
+      </div>
+      <div class=girlsBlockAnacortes style="top:470px;left:500px">
+      <h2>A</h2>
+      </div>
+      <div class=girlsBlockAnacortes style="top:495px;left:500px">
+      <h2>A</h2>
+      </div>
+      <div class=girlsBlockTumwater style="top:520px;left:500px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockTumwater style="top:545px;left:500px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockWestValleySpokane style="top:570px;left:500px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockWashougal style="top:595px;left:500px">
+      <h2>W</h2>
+      </div>
+      <div style="top:395px;left:525px;width:25px;position:fixed;">
+      <h6>1600</h6>
+      </div>
+      <div class=girlsBlockAnacortes style="top:420px;left:525px">
+      <h2>A</h2>
+      </div>
+      <div class=girlsBlockWashougal style="top:445px;left:525px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockEastValleySpokane style="top:470px;left:525px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockRidgefield style="top:495px;left:525px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockWashougal style="top:520px;left:525px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockNorthKitsap style="top:545px;left:525px">
+      <h2>N</h2>
+      </div>
+      <div class=girlsBlockColumbiaRiver style="top:570px;left:525px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockWestValleySpokane style="top:595px;left:525px">
+      <h2>W</h2>
+      </div>
+      <div style="top:395px;left:550px;width:25px;position:fixed;">
+      <h6>3200</h6>
+      </div>
+      <div class=girlsBlockEastValleySpokane style="top:420px;left:550px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockWashougal style="top:445px;left:550px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockWhiteRiver style="top:470px;left:550px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockWestValleySpokane style="top:495px;left:550px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockBurlingtonEdison style="top:520px;left:550px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockNorthMason style="top:545px;left:550px">
+      <h2>N</h2>
+      </div>
+      <div class=girlsBlockSehome style="top:570px;left:550px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockBellingham style="top:595px;left:550px">
+      <h2>B</h2>
+      </div>
+      <div style="top:395px;left:575px;width:25px;position:fixed;">
+      <h6>110H</h6>
+      </div>
+      <div class=girlsBlockSehome style="top:420px;left:575px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockSedroWoolley style="top:445px;left:575px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockWhiteRiver style="top:470px;left:575px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockEastValleySpokane style="top:495px;left:575px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockAnacortes style="top:520px;left:575px">
+      <h2>A</h2>
+      </div>
+      <div class=girlsBlockCedarcrest style="top:545px;left:575px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockOrting style="top:570px;left:575px">
+      <h2>O</h2>
+      </div>
+      <div class=girlsBlockLynden style="top:595px;left:575px">
+      <h2>L</h2>
+      </div>
+      <div style="top:395px;left:600px;width:25px;position:fixed;">
+      <h6>300H</h6>
+      </div>
+      <div class=girlsBlockLynden style="top:420px;left:600px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockOrting style="top:445px;left:600px">
+      <h2>O</h2>
+      </div>
+      <div class=girlsBlockSedroWoolley style="top:470px;left:600px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockBellingham style="top:495px;left:600px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockBurlingtonEdison style="top:520px;left:600px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockSammamish style="top:545px;left:600px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockLynden style="top:570px;left:600px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockRALong style="top:595px;left:600px">
+      <h2>R</h2>
+      </div>
+      <div style="top:395px;left:625px;width:25px;position:fixed;">
+      <h6>4x1</h6>
+      </div>
+      <div class=girlsBlockTumwater style="top:420px;left:625px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockSedroWoolley style="top:445px;left:625px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockLynden style="top:470px;left:625px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockRogersSpokane style="top:495px;left:625px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockColumbiaRiver style="top:520px;left:625px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockSehome style="top:545px;left:625px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockLakewood style="top:570px;left:625px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockHockinson style="top:595px;left:625px">
+      <h2>H</h2>
+      </div>
+      <div style="top:395px;left:650px;width:25px;position:fixed;">
+      <h6>4x2</h6>
+      </div>
+      <div class=girlsBlockTumwater style="top:420px;left:650px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockLynden style="top:445px;left:650px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockSedroWoolley style="top:470px;left:650px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockBurlingtonEdison style="top:495px;left:650px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockColumbiaRiver style="top:520px;left:650px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockSammamish style="top:545px;left:650px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockOrting style="top:570px;left:650px">
+      <h2>O</h2>
+      </div>
+      <div class=girlsBlockOlympic style="top:595px;left:650px">
+      <h2>O</h2>
+      </div>
+      <div style="top:395px;left:675px;width:25px;position:fixed;">
+      <h6>4x4</h6>
+      </div>
+      <div class=girlsBlockTumwater style="top:420px;left:675px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockLynden style="top:445px;left:675px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockEllensburg style="top:470px;left:675px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockAnacortes style="top:495px;left:675px">
+      <h2>A</h2>
+      </div>
+      <div class=girlsBlockWestValleySpokane style="top:520px;left:675px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockWashougal style="top:545px;left:675px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockSelah style="top:570px;left:675px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockSqualicum style="top:595px;left:675px">
+      <h2>S</h2>
+      </div>
+      <div style="top:395px;left:700px;width:25px;position:fixed;">
+      <h6>Shot</h6>
+      </div>
+      <div class=girlsBlockOlympic style="top:420px;left:700px">
+      <h2>O</h2>
+      </div>
+      <div class=girlsBlockEphrata style="top:445px;left:700px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockRochester style="top:470px;left:700px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockCloverPark style="top:495px;left:700px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockBremerton style="top:520px;left:700px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockBlackHills style="top:545px;left:700px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockEastValleySpokane style="top:570px;left:700px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockColumbiaRiver style="top:595px;left:700px">
+      <h2>C</h2>
+      </div>
+      <div style="top:395px;left:725px;width:25px;position:fixed;">
+      <h6>Disc</h6>
+      </div>
+      <div class=girlsBlockOlympic style="top:420px;left:725px">
+      <h2>O</h2>
+      </div>
+      <div class=girlsBlockCedarcrest style="top:445px;left:725px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockRALong style="top:470px;left:725px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockBurlingtonEdison style="top:495px;left:725px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockWashougal style="top:520px;left:725px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockEllensburg style="top:545px;left:725px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockBlackHills style="top:570px;left:725px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockSelah style="top:595px;left:725px">
+      <h2>S</h2>
+      </div>
+      <div style="top:395px;left:750px;width:25px;position:fixed;">
+      <h6>Jav</h6>
+      </div>
+      <div class=girlsBlockWFWest style="top:420px;left:750px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockProsser style="top:445px;left:750px">
+      <h2>P</h2>
+      </div>
+      <div class=girlsBlockColumbiaRiver style="top:470px;left:750px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockWFWest style="top:495px;left:750px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockSelah style="top:520px;left:750px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockEastValleySpokane style="top:545px;left:750px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockShelton style="top:570px;left:750px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockSelah style="top:595px;left:750px">
+      <h2>S</h2>
+      </div>
+      <div style="top:395px;left:775px;width:25px;position:fixed;">
+      <h6>HJ</h6>
+      </div>
+      <div class=girlsBlockShadlePark style="top:420px;left:775px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockFife style="top:445px;left:775px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockClarkston style="top:470px;left:775px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockWoodland style="top:495px;left:775px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockSequim style="top:520px;left:775px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockWoodland style="top:545px;left:775px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockEnumclaw style="top:570px;left:775px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockRogersSpokane style="top:595px;left:775px">
+      <h2>R</h2>
+      </div>
+      <div style="top:395px;left:800px;width:25px;position:fixed;">
+      <h6>PV</h6>
+      </div>
+      <div class=girlsBlockSelah style="top:420px;left:800px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockBurlingtonEdison style="top:445px;left:800px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockBellingham style="top:470px;left:800px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockHockinson style="top:495px;left:800px">
+      <h2>H</h2>
+      </div>
+      <div class=girlsBlockEastValleySpokane style="top:520px;left:800px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockRidgefield style="top:545px;left:800px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockRALong style="top:570px;left:800px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockShadlePark style="top:595px;left:800px">
+      <h2>S</h2>
+      </div>
+      <div style="top:395px;left:825px;width:25px;position:fixed;">
+      <h6>LJ</h6>
+      </div>
+      <div class=girlsBlockBellingham style="top:420px;left:825px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockEastValleyYakima style="top:445px;left:825px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockProsser style="top:470px;left:825px">
+      <h2>P</h2>
+      </div>
+      <div class=girlsBlockRALong style="top:495px;left:825px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockOrting style="top:520px;left:825px">
+      <h2>O</h2>
+      </div>
+      <div class=girlsBlockCedarcrest style="top:545px;left:825px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockEllensburg style="top:570px;left:825px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockBellingham style="top:595px;left:825px">
+      <h2>B</h2>
+      </div>
+      <div style="top:395px;left:850px;width:25px;position:fixed;">
+      <h6>TJ</h6>
+      </div>
+      <div class=girlsBlockBellingham style="top:420px;left:850px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockEllensburg style="top:445px;left:850px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockPullman style="top:470px;left:850px">
+      <h2>P</h2>
+      </div>
+      <div class=girlsBlockCloverPark style="top:495px;left:850px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockProsser style="top:520px;left:850px">
+      <h2>P</h2>
+      </div>
+      <div class=girlsBlockBurlingtonEdison style="top:545px;left:850px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockFife style="top:570px;left:850px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockShadlePark style="top:595px;left:850px">
+      <h2>S</h2>
+      </div>
+      <div class="girlsBlockTumwater" style="top:420px;left:200px;width:150px;height:25px;">
+      <h2>Tumwater</h2>
+      </div>
+      <div class="girlsBlockTumwater" style="top:420px;left:350px;width:50px;height:25px;background:rgb(10, 180, 10);">
+      <h2 style="text-align:right">73</h2>
+      </div>
+      <div class="girlsBlockLynden" style="top:445px;left:200px;width:150px;height:25px;">
+      <h2>Lynden</h2>
+      </div>
+      <div class="girlsBlockLynden" style="top:445px;left:350px;width:50px;height:25px;background:rgb(70, 120, 10);">
+      <h2 style="text-align:right">47</h2>
+      </div>
+      <div class="girlsBlockWashougal" style="top:470px;left:200px;width:150px;height:25px;">
+      <h2>Washougal</h2>
+      </div>
+      <div class="girlsBlockWashougal" style="top:470px;left:350px;width:50px;height:25px;background:rgb(82, 108, 10);">
+      <h2 style="text-align:right">42</h2>
+      </div>
+      <div class="girlsBlockBellingham" style="top:495px;left:200px;width:150px;height:25px;">
+      <h2>Bellingham</h2>
+      </div>
+      <div class="girlsBlockBellingham" style="top:495px;left:350px;width:50px;height:25px;background:rgb(84, 106, 10);">
+      <h2 style="text-align:right">41</h2>
+      </div>
+      <div class="girlsBlockBurlingtonEdison" style="top:520px;left:200px;width:150px;height:25px;">
+      <h2>Burlington-Edison</h2>
+      </div>
+      <div class="girlsBlockBurlingtonEdison" style="top:520px;left:350px;width:50px;height:25px;background:rgb(98, 92, 10);">
+      <h2 style="text-align:right">35</h2>
+      </div>
+      <div class="girlsBlockSedroWoolley" style="top:545px;left:200px;width:150px;height:25px;">
+      <h2>Sedro-Woolley</h2>
+      </div>
+      <div class="girlsBlockSedroWoolley" style="top:545px;left:350px;width:50px;height:25px;background:rgb(105, 85, 10);">
+      <h2 style="text-align:right">32</h2>
+      </div>
+      <div class="girlsBlockAnacortes" style="top:570px;left:200px;width:150px;height:25px;">
+      <h2>Anacortes</h2>
+      </div>
+      <div class="girlsBlockAnacortes" style="top:570px;left:350px;width:50px;height:25px;background:rgb(110, 80, 10);">
+      <h2 style="text-align:right">30</h2>
+      </div>
+      <div class="girlsBlockEastValleySpokane" style="top:595px;left:200px;width:150px;height:25px;">
+      <h2>East Valley (Spokane)</h2>
+      </div>
+      <div class="girlsBlockEastValleySpokane" style="top:595px;left:350px;width:50px;height:25px;background:rgb(110, 80, 10);">
+      <h2 style="text-align:right">30</h2>
+      </div>
+      <div class="girlsBlockCedarcrest" style="top:620px;left:200px;width:150px;height:25px;">
+      <h2>Cedarcrest</h2>
+      </div>
+      <div class="girlsBlockCedarcrest" style="top:620px;left:350px;width:50px;height:25px;background:rgb(126, 64, 10);">
+      <h2 style="text-align:right">23</h2>
+      </div>
+      <div class="girlsBlockOlympic" style="top:645px;left:200px;width:150px;height:25px;">
+      <h2>Olympic</h2>
+      </div>
+      <div class="girlsBlockOlympic" style="top:645px;left:350px;width:50px;height:25px;background:rgb(131, 59, 10);">
+      <h2 style="text-align:right">21</h2>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

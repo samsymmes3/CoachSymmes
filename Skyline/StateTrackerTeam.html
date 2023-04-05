@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Symmes Coaching</title>
+  <meta charset="UTF-8">
+  <style>
+    a {
+      color: black;
+      text-decoration: none;
+    }
+
+    body {
+      margin-top: 0;
+    }
+    .wrapper .sidebar {
+      background: rgb(10, 136, 208);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 190px;
+      height: 100%;
+      padding: 0px 0;
+      transition: all 0.5s ease;
+    }
+    .header {
+      background: rgb(8, 102, 156);
+      position: fixed;
+      height: 50px;
+      left: 190px;
+      width: 80%;
+      padding: 0px 0;
+      transition: all 0.5s ease;
+    }
+    .headeritem {
+      background: inherit;
+      position: fixed;
+      height: 50px;
+      width: 26.6%;
+      padding: 0px 0;
+      transition: all 0.5s ease;
+    }
+    .header h1 {
+      margin-left: 5px;
+      margin-top: 10px;
+      margin-bottom: 0px;
+      text-align: center;
+    }
+    .boys {
+      background: rgb(240, 240, 240);
+      position: fixed;
+      top: 300px;
+      left: 190px;
+      width: 80%;
+      height: 300px;
+      padding: 10px 0;
+      transition: all 0.5s ease;
+    }
+    .boysBlockSkyline{
+      background: rgb(10, 180, 10);
+      position: fixed;
+      height: 25px;
+      width: 25px;
+    }
+    .boysBlockLakeStevens{background: rgb(255, 0, 0);position: fixed;height: 25px;width: 25px;}.boysBlockFederalWay{background: rgb(255, 6, 6);position: fixed;height: 25px;width: 25px;}.boysBlockCurtis{background: rgb(255, 13, 13);position: fixed;height: 25px;width: 25px;}.boysBlockCentralValley{background: rgb(255, 20, 20);position: fixed;height: 25px;width: 25px;}.boysBlockKamiak{background: rgb(255, 27, 27);position: fixed;height: 25px;width: 25px;}.boysBlockEastlake{background: rgb(255, 34, 34);position: fixed;height: 25px;width: 25px;}.boysBlockKentridge{background: rgb(255, 41, 41);position: fixed;height: 25px;width: 25px;}.boysBlockIssaquah{background: rgb(255, 48, 48);position: fixed;height: 25px;width: 25px;}.boysBlockCamas{background: rgb(255, 55, 55);position: fixed;height: 25px;width: 25px;}.boysBlockRichland{background: rgb(255, 62, 62);position: fixed;height: 25px;width: 25px;}.boysBlockNorthCreek{background: rgb(255, 69, 69);position: fixed;height: 25px;width: 25px;}.boysBlockChiawana{background: rgb(255, 76, 76);position: fixed;height: 25px;width: 25px;}.boysBlockMosesLake{background: rgb(255, 83, 83);position: fixed;height: 25px;width: 25px;}.boysBlockRogersPuyallup{background: rgb(255, 90, 90);position: fixed;height: 25px;width: 25px;}.boysBlockRedmond{background: rgb(255, 97, 97);position: fixed;height: 25px;width: 25px;}.boysBlockSunnyside{background: rgb(255, 104, 104);position: fixed;height: 25px;width: 25px;}.boysBlockEmeraldRidge{background: rgb(255, 111, 111);position: fixed;height: 25px;width: 25px;}.boysBlockMariner{background: rgb(255, 118, 118);position: fixed;height: 25px;width: 25px;}.boysBlockKamiakin{background: rgb(255, 125, 125);position: fixed;height: 25px;width: 25px;}.boysBlockMtSi{background: rgb(255, 131, 131);position: fixed;height: 25px;width: 25px;}.boysBlockEastmont{background: rgb(255, 138, 138);position: fixed;height: 25px;width: 25px;}.boysBlockWestValleyYakima{background: rgb(255, 145, 145);position: fixed;height: 25px;width: 25px;}.boysBlockHanford{background: rgb(255, 152, 152);position: fixed;height: 25px;width: 25px;}.boysBlockEisenhower{background: rgb(255, 159, 159);position: fixed;height: 25px;width: 25px;}.boysBlockSouthKitsap{background: rgb(255, 166, 166);position: fixed;height: 25px;width: 25px;}.boysBlockNewportBellevue{background: rgb(255, 173, 173);position: fixed;height: 25px;width: 25px;}.boysBlockBellarminePrep{background: rgb(255, 180, 180);position: fixed;height: 25px;width: 25px;}.boysBlockGlacierPeak{background: rgb(255, 187, 187);position: fixed;height: 25px;width: 25px;}.boysBlockTahoma{background: rgb(255, 194, 194);position: fixed;height: 25px;width: 25px;}.boysBlockBothell{background: rgb(255, 201, 201);position: fixed;height: 25px;width: 25px;}.boysBlockOlympia{background: rgb(255, 208, 208);position: fixed;height: 25px;width: 25px;}.boysBlockGrahamKapowsin{background: rgb(255, 215, 215);position: fixed;height: 25px;width: 25px;}.boysBlockSkyview{background: rgb(255, 222, 222);position: fixed;height: 25px;width: 25px;}.boysBlockWenatchee{background: rgb(255, 229, 229);position: fixed;height: 25px;width: 25px;}.boysBlockKennedyCatholic{background: rgb(255, 236, 236);position: fixed;height: 25px;width: 25px;}.boysBlockLewisandClark{background: rgb(255, 243, 243);position: fixed;height: 25px;width: 25px;}.boysBlockPuyallup{background: rgb(255, 250, 250);position: fixed;height: 25px;width: 25px;}
+    .boys h1 {
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .boys h2 {
+      margin-left: 5px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .boys h4 {
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .boys h5 {
+      margin-left: 35px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .boys h6 {
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      text-align: center;
+    }
+    .girls {
+      background: rgb(240, 240, 240);
+      position: fixed;
+      top: 360px;
+      left: 190px;
+      width: 80%;
+      height: 300px;
+      padding: 10px 0;
+      transition: all 0.5s ease;
+    }
+    .girlsBlockSkyline{
+      background: rgb(10, 180, 10);
+      position: fixed;
+      height: 25px;
+      width: 25px;
+    }
+    .girlsBlockEmeraldRidge{background: rgb(255, 0, 0);position: fixed;height: 25px;width: 25px;}.girlsBlockCurtis{background: rgb(255, 6, 6);position: fixed;height: 25px;width: 25px;}.girlsBlockKamiak{background: rgb(255, 13, 13);position: fixed;height: 25px;width: 25px;}.girlsBlockKamiakin{background: rgb(255, 19, 19);position: fixed;height: 25px;width: 25px;}.girlsBlockTahoma{background: rgb(255, 26, 26);position: fixed;height: 25px;width: 25px;}.girlsBlockFederalWay{background: rgb(255, 32, 32);position: fixed;height: 25px;width: 25px;}.girlsBlockLakeStevens{background: rgb(255, 39, 39);position: fixed;height: 25px;width: 25px;}.girlsBlockBothell{background: rgb(255, 46, 46);position: fixed;height: 25px;width: 25px;}.girlsBlockGlacierPeak{background: rgb(255, 52, 52);position: fixed;height: 25px;width: 25px;}.girlsBlockGrahamKapowsin{background: rgb(255, 59, 59);position: fixed;height: 25px;width: 25px;}.girlsBlockKentwood{background: rgb(255, 65, 65);position: fixed;height: 25px;width: 25px;}.girlsBlockIssaquah{background: rgb(255, 72, 72);position: fixed;height: 25px;width: 25px;}.girlsBlockRichland{background: rgb(255, 78, 78);position: fixed;height: 25px;width: 25px;}.girlsBlockEastlake{background: rgb(255, 85, 85);position: fixed;height: 25px;width: 25px;}.girlsBlockSouthKitsap{background: rgb(255, 92, 92);position: fixed;height: 25px;width: 25px;}.girlsBlockMtSi{background: rgb(255, 98, 98);position: fixed;height: 25px;width: 25px;}.girlsBlockCentralValley{background: rgb(255, 105, 105);position: fixed;height: 25px;width: 25px;}.girlsBlockWenatchee{background: rgb(255, 111, 111);position: fixed;height: 25px;width: 25px;}.girlsBlockInglemoor{background: rgb(255, 118, 118);position: fixed;height: 25px;width: 25px;}.girlsBlockGonagaPrep{background: rgb(255, 125, 125);position: fixed;height: 25px;width: 25px;}.girlsBlockCamas{background: rgb(255, 131, 131);position: fixed;height: 25px;width: 25px;}.girlsBlockSkyview{background: rgb(255, 138, 138);position: fixed;height: 25px;width: 25px;}.girlsBlockEisenhower{background: rgb(255, 144, 144);position: fixed;height: 25px;width: 25px;}.girlsBlockHanford{background: rgb(255, 151, 151);position: fixed;height: 25px;width: 25px;}.girlsBlockPuyallup{background: rgb(255, 157, 157);position: fixed;height: 25px;width: 25px;}.girlsBlockChiawana{background: rgb(255, 164, 164);position: fixed;height: 25px;width: 25px;}.girlsBlockHenryJackson{background: rgb(255, 171, 171);position: fixed;height: 25px;width: 25px;}.girlsBlockSumner{background: rgb(255, 177, 177);position: fixed;height: 25px;width: 25px;}.girlsBlockBattleGround{background: rgb(255, 184, 184);position: fixed;height: 25px;width: 25px;}.girlsBlockNorthCreek{background: rgb(255, 190, 190);position: fixed;height: 25px;width: 25px;}.girlsBlockOlympia{background: rgb(255, 197, 197);position: fixed;height: 25px;width: 25px;}.girlsBlockMosesLake{background: rgb(255, 203, 203);position: fixed;height: 25px;width: 25px;}.girlsBlockBellarminePrep{background: rgb(255, 210, 210);position: fixed;height: 25px;width: 25px;}.girlsBlockUnion{background: rgb(255, 217, 217);position: fixed;height: 25px;width: 25px;}.girlsBlockMtRainier{background: rgb(255, 223, 223);position: fixed;height: 25px;width: 25px;}.girlsBlockWestValleyYakima{background: rgb(255, 230, 230);position: fixed;height: 25px;width: 25px;}.girlsBlockLakes{background: rgb(255, 236, 236);position: fixed;height: 25px;width: 25px;}.girlsBlockEastmont{background: rgb(255, 243, 243);position: fixed;height: 25px;width: 25px;}.girlsBlockKentridge{background: rgb(255, 250, 250);position: fixed;height: 25px;width: 25px;}
+    .girls h1 {
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .girls h2 {
+      margin-left: 5px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .girls h4 {
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .girls h5 {
+      margin-left: 35px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .girls h6 {
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      text-align: center;
+    }
+    .sidebarh {
+      width: 100%;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .sidebarh h1{
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 5px
+    }
+    .sidebarh h2 {
+      margin-top: 5px;
+      margin-bottom: 0px;
+      margin-left: 15px;
+    }
+    .sidebarh h4 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-left: 25px;
+    }
+    body{
+      background: #f5f6fa;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="sidebar">
+      <a href="index.html">
+        <div class="sidebarh">
+          <h1>Home</h1>
+        </div>
+      </a>
+      <a href="Sammamish/index.html">
+        <div class="sidebarh">
+          <h2>Sammamish</h2>
+        </div>
+      </a>
+      <a href="Sammamish/KingcoTracker.html">
+        <div class="sidebarh">
+          <h4>Kingco Tracker</h4>
+        </div>
+      </a>
+      <a href="Sammamish/KingcoTracker.html">
+        <div class="sidebarh">
+          <h4>State Tracker</h4>
+        </div>
+      </a>
+      <a href="Skyline/index.html">
+        <div class="sidebarh">
+          <h2>Skyline</h2>
+        </div>
+      </a>
+      <a href="Skyline/KingcoTracker.html">
+        <div class="sidebarh">
+          <h4>Kingco Tracker</h4>
+        </div>
+      </a>
+    </div>
+    <div class="header">
+      <div class="headeritem">
+        <h1>By Event</h1>
+      </div>
+      <div class="headeritem" style="left: 46.6%">
+        <h1>By Individual</h1>
+      </div>
+      <div class="headeritem" style="left: 73.2%">
+        <h1>Team</h1>
+      </div>
+    </div>
+
+    <div class="boys">
+      <div style="top:60px;left:200px;position:fixed;">
+        <h2>Boys</h2>
+      </div>
+
+      <div style="top:75px;left:425px;width:25px;position:fixed;">
+      <h6>100</h6>
+      </div>
+      <div class=boysBlockRichland style="top:100px;left:425px">
+      <h2>R</h2>
+      </div>
+      <div class=boysBlockCurtis style="top:125px;left:425px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockKamiak style="top:150px;left:425px">
+      <h2>K</h2>
+      </div>
+      <div class=boysBlockLakeStevens style="top:175px;left:425px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockMtSi style="top:200px;left:425px">
+      <h2>M</h2>
+      </div>
+      <div class=boysBlockNorthCreek style="top:225px;left:425px">
+      <h2>N</h2>
+      </div>
+      <div class=boysBlockFederalWay style="top:250px;left:425px">
+      <h2>F</h2>
+      </div>
+      <div class=boysBlockEmeraldRidge style="top:275px;left:425px">
+      <h2>E</h2>
+      </div>
+      <div style="top:75px;left:450px;width:25px;position:fixed;">
+      <h6>200</h6>
+      </div>
+      <div class=boysBlockCurtis style="top:100px;left:450px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockLakeStevens style="top:125px;left:450px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockKentridge style="top:150px;left:450px">
+      <h2>K</h2>
+      </div>
+      <div class=boysBlockSkyline style="top:175px;left:450px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockKamiak style="top:200px;left:450px">
+      <h2>K</h2>
+      </div>
+      <div class=boysBlockMtSi style="top:225px;left:450px">
+      <h2>M</h2>
+      </div>
+      <div class=boysBlockRedmond style="top:250px;left:450px">
+      <h2>R</h2>
+      </div>
+      <div class=boysBlockFederalWay style="top:275px;left:450px">
+      <h2>F</h2>
+      </div>
+      <div style="top:75px;left:475px;width:25px;position:fixed;">
+      <h6>400</h6>
+      </div>
+      <div class=boysBlockNorthCreek style="top:100px;left:475px">
+      <h2>N</h2>
+      </div>
+      <div class=boysBlockMosesLake style="top:125px;left:475px">
+      <h2>M</h2>
+      </div>
+      <div class=boysBlockRichland style="top:150px;left:475px">
+      <h2>R</h2>
+      </div>
+      <div class=boysBlockHanford style="top:175px;left:475px">
+      <h2>H</h2>
+      </div>
+      <div class=boysBlockCamas style="top:200px;left:475px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockSunnyside style="top:225px;left:475px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockNorthCreek style="top:250px;left:475px">
+      <h2>N</h2>
+      </div>
+      <div class=boysBlockCurtis style="top:275px;left:475px">
+      <h2>C</h2>
+      </div>
+      <div style="top:75px;left:500px;width:25px;position:fixed;">
+      <h6>800</h6>
+      </div>
+      <div class=boysBlockEastlake style="top:100px;left:500px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockWestValleyYakima style="top:125px;left:500px">
+      <h2>W</h2>
+      </div>
+      <div class=boysBlockRedmond style="top:150px;left:500px">
+      <h2>R</h2>
+      </div>
+      <div class=boysBlockGlacierPeak style="top:175px;left:500px">
+      <h2>G</h2>
+      </div>
+      <div class=boysBlockTahoma style="top:200px;left:500px">
+      <h2>T</h2>
+      </div>
+      <div class=boysBlockCamas style="top:225px;left:500px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockSunnyside style="top:250px;left:500px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockRogersPuyallup style="top:275px;left:500px">
+      <h2>R</h2>
+      </div>
+      <div style="top:75px;left:525px;width:25px;position:fixed;">
+      <h6>1600</h6>
+      </div>
+      <div class=boysBlockEastlake style="top:100px;left:525px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockIssaquah style="top:125px;left:525px">
+      <h2>I</h2>
+      </div>
+      <div class=boysBlockBellarminePrep style="top:150px;left:525px">
+      <h2>B</h2>
+      </div>
+      <div class=boysBlockRogersPuyallup style="top:175px;left:525px">
+      <h2>R</h2>
+      </div>
+      <div class=boysBlockEastlake style="top:200px;left:525px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockKamiak style="top:225px;left:525px">
+      <h2>K</h2>
+      </div>
+      <div class=boysBlockKamiakin style="top:250px;left:525px">
+      <h2>K</h2>
+      </div>
+      <div class=boysBlockTahoma style="top:275px;left:525px">
+      <h2>T</h2>
+      </div>
+      <div style="top:75px;left:550px;width:25px;position:fixed;">
+      <h6>3200</h6>
+      </div>
+      <div class=boysBlockEastlake style="top:100px;left:550px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockIssaquah style="top:125px;left:550px">
+      <h2>I</h2>
+      </div>
+      <div class=boysBlockIssaquah style="top:150px;left:550px">
+      <h2>I</h2>
+      </div>
+      <div class=boysBlockRedmond style="top:175px;left:550px">
+      <h2>R</h2>
+      </div>
+      <div class=boysBlockIssaquah style="top:200px;left:550px">
+      <h2>I</h2>
+      </div>
+      <div class=boysBlockKamiakin style="top:225px;left:550px">
+      <h2>K</h2>
+      </div>
+      <div class=boysBlockIssaquah style="top:250px;left:550px">
+      <h2>I</h2>
+      </div>
+      <div class=boysBlockWestValleyYakima style="top:275px;left:550px">
+      <h2>W</h2>
+      </div>
+      <div style="top:75px;left:575px;width:25px;position:fixed;">
+      <h6>110H</h6>
+      </div>
+      <div class=boysBlockKamiak style="top:100px;left:575px">
+      <h2>K</h2>
+      </div>
+      <div class=boysBlockLakeStevens style="top:125px;left:575px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockLakeStevens style="top:150px;left:575px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockSunnyside style="top:175px;left:575px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockGrahamKapowsin style="top:200px;left:575px">
+      <h2>G</h2>
+      </div>
+      <div class=boysBlockKentridge style="top:225px;left:575px">
+      <h2>K</h2>
+      </div>
+      <div class=boysBlockRichland style="top:250px;left:575px">
+      <h2>R</h2>
+      </div>
+      <div class=boysBlockEmeraldRidge style="top:275px;left:575px">
+      <h2>E</h2>
+      </div>
+      <div style="top:75px;left:600px;width:25px;position:fixed;">
+      <h6>300H</h6>
+      </div>
+      <div class=boysBlockKentridge style="top:100px;left:600px">
+      <h2>K</h2>
+      </div>
+      <div class=boysBlockKamiak style="top:125px;left:600px">
+      <h2>K</h2>
+      </div>
+      <div class=boysBlockLakeStevens style="top:150px;left:600px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockLakeStevens style="top:175px;left:600px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockIssaquah style="top:200px;left:600px">
+      <h2>I</h2>
+      </div>
+      <div class=boysBlockEmeraldRidge style="top:225px;left:600px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockEisenhower style="top:250px;left:600px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockPuyallup style="top:275px;left:600px">
+      <h2>P</h2>
+      </div>
+      <div style="top:75px;left:625px;width:25px;position:fixed;">
+      <h6>4x1</h6>
+      </div>
+      <div class=boysBlockCurtis style="top:100px;left:625px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockKamiak style="top:125px;left:625px">
+      <h2>K</h2>
+      </div>
+      <div class=boysBlockSkyline style="top:150px;left:625px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockKentridge style="top:175px;left:625px">
+      <h2>K</h2>
+      </div>
+      <div class=boysBlockSkyview style="top:200px;left:625px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockMtSi style="top:225px;left:625px">
+      <h2>M</h2>
+      </div>
+      <div class=boysBlockLakeStevens style="top:250px;left:625px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockFederalWay style="top:275px;left:625px">
+      <h2>F</h2>
+      </div>
+      <div style="top:75px;left:650px;width:25px;position:fixed;">
+      <h6>4x4</h6>
+      </div>
+      <div class=boysBlockLakeStevens style="top:100px;left:650px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockCentralValley style="top:125px;left:650px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockCamas style="top:150px;left:650px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockChiawana style="top:175px;left:650px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockEastlake style="top:200px;left:650px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockSunnyside style="top:225px;left:650px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockWenatchee style="top:250px;left:650px">
+      <h2>W</h2>
+      </div>
+      <div class=boysBlockIssaquah style="top:275px;left:650px">
+      <h2>I</h2>
+      </div>
+      <div style="top:75px;left:675px;width:25px;position:fixed;">
+      <h6>Shot</h6>
+      </div>
+      <div class=boysBlockCentralValley style="top:100px;left:675px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockMariner style="top:125px;left:675px">
+      <h2>M</h2>
+      </div>
+      <div class=boysBlockLakeStevens style="top:150px;left:675px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockSkyline style="top:175px;left:675px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockFederalWay style="top:200px;left:675px">
+      <h2>F</h2>
+      </div>
+      <div class=boysBlockEmeraldRidge style="top:225px;left:675px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockKamiak style="top:250px;left:675px">
+      <h2>K</h2>
+      </div>
+      <div class=boysBlockNorthCreek style="top:275px;left:675px">
+      <h2>N</h2>
+      </div>
+      <div style="top:75px;left:700px;width:25px;position:fixed;">
+      <h6>Disc</h6>
+      </div>
+      <div class=boysBlockCentralValley style="top:100px;left:700px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockSouthKitsap style="top:125px;left:700px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockKamiakin style="top:150px;left:700px">
+      <h2>K</h2>
+      </div>
+      <div class=boysBlockNorthCreek style="top:175px;left:700px">
+      <h2>N</h2>
+      </div>
+      <div class=boysBlockMariner style="top:200px;left:700px">
+      <h2>M</h2>
+      </div>
+      <div class=boysBlockLakeStevens style="top:225px;left:700px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockWenatchee style="top:250px;left:700px">
+      <h2>W</h2>
+      </div>
+      <div class=boysBlockCamas style="top:275px;left:700px">
+      <h2>C</h2>
+      </div>
+      <div style="top:75px;left:725px;width:25px;position:fixed;">
+      <h6>Jav</h6>
+      </div>
+      <div class=boysBlockCentralValley style="top:100px;left:725px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockCamas style="top:125px;left:725px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockMosesLake style="top:150px;left:725px">
+      <h2>M</h2>
+      </div>
+      <div class=boysBlockBothell style="top:175px;left:725px">
+      <h2>B</h2>
+      </div>
+      <div class=boysBlockNorthCreek style="top:200px;left:725px">
+      <h2>N</h2>
+      </div>
+      <div class=boysBlockKennedyCatholic style="top:225px;left:725px">
+      <h2>K</h2>
+      </div>
+      <div class=boysBlockRichland style="top:250px;left:725px">
+      <h2>R</h2>
+      </div>
+      <div class=boysBlockCamas style="top:275px;left:725px">
+      <h2>C</h2>
+      </div>
+      <div style="top:75px;left:750px;width:25px;position:fixed;">
+      <h6>HJ</h6>
+      </div>
+      <div class=boysBlockEastmont style="top:100px;left:750px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockRogersPuyallup style="top:125px;left:750px">
+      <h2>R</h2>
+      </div>
+      <div class=boysBlockFederalWay style="top:150px;left:750px">
+      <h2>F</h2>
+      </div>
+      <div class=boysBlockEisenhower style="top:175px;left:750px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockLakeStevens style="top:200px;left:750px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockCentralValley style="top:225px;left:750px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockFederalWay style="top:250px;left:750px">
+      <h2>F</h2>
+      </div>
+      <div class=boysBlockKennedyCatholic style="top:275px;left:750px">
+      <h2>K</h2>
+      </div>
+      <div style="top:75px;left:775px;width:25px;position:fixed;">
+      <h6>PV</h6>
+      </div>
+      <div class=boysBlockCurtis style="top:100px;left:775px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockNewportBellevue style="top:125px;left:775px">
+      <h2>N</h2>
+      </div>
+      <div class=boysBlockCamas style="top:150px;left:775px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockRichland style="top:175px;left:775px">
+      <h2>R</h2>
+      </div>
+      <div class=boysBlockEmeraldRidge style="top:200px;left:775px">
+      <h2>E</h2>
+      </div>
+      <div class=boysBlockHanford style="top:225px;left:775px">
+      <h2>H</h2>
+      </div>
+      <div class=boysBlockLewisandClark style="top:250px;left:775px">
+      <h2>L</h2>
+      </div>
+      <div class=boysBlockEisenhower style="top:275px;left:775px">
+      <h2>E</h2>
+      </div>
+      <div style="top:75px;left:800px;width:25px;position:fixed;">
+      <h6>LJ</h6>
+      </div>
+      <div class=boysBlockFederalWay style="top:100px;left:800px">
+      <h2>F</h2>
+      </div>
+      <div class=boysBlockCurtis style="top:125px;left:800px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockFederalWay style="top:150px;left:800px">
+      <h2>F</h2>
+      </div>
+      <div class=boysBlockChiawana style="top:175px;left:800px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockKentridge style="top:200px;left:800px">
+      <h2>K</h2>
+      </div>
+      <div class=boysBlockSkyline style="top:225px;left:800px">
+      <h2>S</h2>
+      </div>
+      <div class=boysBlockOlympia style="top:250px;left:800px">
+      <h2>O</h2>
+      </div>
+      <div class=boysBlockRichland style="top:275px;left:800px">
+      <h2>R</h2>
+      </div>
+      <div style="top:75px;left:825px;width:25px;position:fixed;">
+      <h6>TJ</h6>
+      </div>
+      <div class=boysBlockChiawana style="top:100px;left:825px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockFederalWay style="top:125px;left:825px">
+      <h2>F</h2>
+      </div>
+      <div class=boysBlockKentridge style="top:150px;left:825px">
+      <h2>K</h2>
+      </div>
+      <div class=boysBlockFederalWay style="top:175px;left:825px">
+      <h2>F</h2>
+      </div>
+      <div class=boysBlockFederalWay style="top:200px;left:825px">
+      <h2>F</h2>
+      </div>
+      <div class=boysBlockOlympia style="top:225px;left:825px">
+      <h2>O</h2>
+      </div>
+      <div class=boysBlockChiawana style="top:250px;left:825px">
+      <h2>C</h2>
+      </div>
+      <div class=boysBlockCentralValley style="top:275px;left:825px">
+      <h2>C</h2>
+      </div>
+      <div class="boysBlockLakeStevens" style="top:100px;left:200px;width:150px;height:25px;">
+      <h2>Lake Stevens</h2>
+      </div>
+      <div class="boysBlockLakeStevens" style="top:100px;left:350px;width:50px;height:25px;background:rgb(10, 180, 10);">
+      <h2 style="text-align:right">63</h2>
+      </div>
+      <div class="boysBlockFederalWay" style="top:125px;left:200px;width:150px;height:25px;">
+      <h2>Federal Way</h2>
+      </div>
+      <div class="boysBlockFederalWay" style="top:125px;left:350px;width:50px;height:25px;background:rgb(47, 143, 10);">
+      <h2 style="text-align:right">49</h2>
+      </div>
+      <div class="boysBlockCurtis" style="top:150px;left:200px;width:150px;height:25px;">
+      <h2>Curtis</h2>
+      </div>
+      <div class="boysBlockCurtis" style="top:150px;left:350px;width:50px;height:25px;background:rgb(53, 137, 10);">
+      <h2 style="text-align:right">47</h2>
+      </div>
+      <div class="boysBlockCentralValley" style="top:175px;left:200px;width:150px;height:25px;">
+      <h2>Central Valley</h2>
+      </div>
+      <div class="boysBlockCentralValley" style="top:175px;left:350px;width:50px;height:25px;background:rgb(66, 124, 10);">
+      <h2 style="text-align:right">42</h2>
+      </div>
+      <div class="boysBlockKamiak" style="top:200px;left:200px;width:150px;height:25px;">
+      <h2>Kamiak</h2>
+      </div>
+      <div class="boysBlockKamiak" style="top:200px;left:350px;width:50px;height:25px;background:rgb(69, 121, 10);">
+      <h2 style="text-align:right">41</h2>
+      </div>
+      <div class="boysBlockEastlake" style="top:225px;left:200px;width:150px;height:25px;">
+      <h2>Eastlake</h2>
+      </div>
+      <div class="boysBlockEastlake" style="top:225px;left:350px;width:50px;height:25px;background:rgb(77, 113, 10);">
+      <h2 style="text-align:right">38</h2>
+      </div>
+      <div class="boysBlockKentridge" style="top:250px;left:200px;width:150px;height:25px;">
+      <h2>Kentridge</h2>
+      </div>
+      <div class="boysBlockKentridge" style="top:250px;left:350px;width:50px;height:25px;background:rgb(88, 102, 10);">
+      <h2 style="text-align:right">34</h2>
+      </div>
+      <div class="boysBlockIssaquah" style="top:275px;left:200px;width:150px;height:25px;">
+      <h2>Issaquah</h2>
+      </div>
+      <div class="boysBlockIssaquah" style="top:275px;left:350px;width:50px;height:25px;background:rgb(90, 100, 10);">
+      <h2 style="text-align:right">33</h2>
+      </div>
+      <div class="boysBlockCamas" style="top:300px;left:200px;width:150px;height:25px;">
+      <h2>Camas</h2>
+      </div>
+      <div class="boysBlockCamas" style="top:300px;left:350px;width:50px;height:25px;background:rgb(101, 89, 10);">
+      <h2 style="text-align:right">29</h2>
+      </div>
+      <div class="boysBlockRichland" style="top:325px;left:200px;width:150px;height:25px;">
+      <h2>Richland</h2>
+      </div>
+      <div class="boysBlockRichland" style="top:325px;left:350px;width:50px;height:25px;background:rgb(109, 81, 10);">
+      <h2 style="text-align:right">26</h2>
+      </div>
+
+
+    </div>
+
+    <div class="girls">
+      <div style="top:370px;left:200px;position:fixed;">
+        <h2>Girls</h2>
+      </div>
+
+      <div style="top:395px;left:425px;width:25px;position:fixed;">
+      <h6>100</h6>
+      </div>
+      <div class=girlsBlockGlacierPeak style="top:420px;left:425px">
+      <h2>G</h2>
+      </div>
+      <div class=girlsBlockTahoma style="top:445px;left:425px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockFederalWay style="top:470px;left:425px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockGrahamKapowsin style="top:495px;left:425px">
+      <h2>G</h2>
+      </div>
+      <div class=girlsBlockKamiakin style="top:520px;left:425px">
+      <h2>K</h2>
+      </div>
+      <div class=girlsBlockCurtis style="top:545px;left:425px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockGrahamKapowsin style="top:570px;left:425px">
+      <h2>G</h2>
+      </div>
+      <div class=girlsBlockSouthKitsap style="top:595px;left:425px">
+      <h2>S</h2>
+      </div>
+      <div style="top:395px;left:450px;width:25px;position:fixed;">
+      <h6>200</h6>
+      </div>
+      <div class=girlsBlockTahoma style="top:420px;left:450px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockGlacierPeak style="top:445px;left:450px">
+      <h2>G</h2>
+      </div>
+      <div class=girlsBlockCurtis style="top:470px;left:450px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockRichland style="top:495px;left:450px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockMtSi style="top:520px;left:450px">
+      <h2>M</h2>
+      </div>
+      <div class=girlsBlockFederalWay style="top:545px;left:450px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockGonagaPrep style="top:570px;left:450px">
+      <h2>G</h2>
+      </div>
+      <div class=girlsBlockKamiak style="top:595px;left:450px">
+      <h2>K</h2>
+      </div>
+      <div style="top:395px;left:475px;width:25px;position:fixed;">
+      <h6>400</h6>
+      </div>
+      <div class=girlsBlockCurtis style="top:420px;left:475px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockTahoma style="top:445px;left:475px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockEmeraldRidge style="top:470px;left:475px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockGonagaPrep style="top:495px;left:475px">
+      <h2>G</h2>
+      </div>
+      <div class=girlsBlockCamas style="top:520px;left:475px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockKamiak style="top:545px;left:475px">
+      <h2>K</h2>
+      </div>
+      <div class=girlsBlockMtSi style="top:570px;left:475px">
+      <h2>M</h2>
+      </div>
+      <div class=girlsBlockTahoma style="top:595px;left:475px">
+      <h2>T</h2>
+      </div>
+      <div style="top:395px;left:500px;width:25px;position:fixed;">
+      <h6>800</h6>
+      </div>
+      <div class=girlsBlockSkyline style="top:420px;left:500px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockSkyline style="top:445px;left:500px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockEastlake style="top:470px;left:500px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockIssaquah style="top:495px;left:500px">
+      <h2>I</h2>
+      </div>
+      <div class=girlsBlockIssaquah style="top:520px;left:500px">
+      <h2>I</h2>
+      </div>
+      <div class=girlsBlockTahoma style="top:545px;left:500px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockEastlake style="top:570px;left:500px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockSkyview style="top:595px;left:500px">
+      <h2>S</h2>
+      </div>
+      <div style="top:395px;left:525px;width:25px;position:fixed;">
+      <h6>1600</h6>
+      </div>
+      <div class=girlsBlockSkyline style="top:420px;left:525px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockSkyline style="top:445px;left:525px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockCentralValley style="top:470px;left:525px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockIssaquah style="top:495px;left:525px">
+      <h2>I</h2>
+      </div>
+      <div class=girlsBlockTahoma style="top:520px;left:525px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockPuyallup style="top:545px;left:525px">
+      <h2>P</h2>
+      </div>
+      <div class=girlsBlockTahoma style="top:570px;left:525px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockSkyview style="top:595px;left:525px">
+      <h2>S</h2>
+      </div>
+      <div style="top:395px;left:550px;width:25px;position:fixed;">
+      <h6>3200</h6>
+      </div>
+      <div class=girlsBlockSkyline style="top:420px;left:550px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockSkyline style="top:445px;left:550px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockCentralValley style="top:470px;left:550px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockIssaquah style="top:495px;left:550px">
+      <h2>I</h2>
+      </div>
+      <div class=girlsBlockCurtis style="top:520px;left:550px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockSkyline style="top:545px;left:550px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockUnion style="top:570px;left:550px">
+      <h2>U</h2>
+      </div>
+      <div class=girlsBlockIssaquah style="top:595px;left:550px">
+      <h2>I</h2>
+      </div>
+      <div style="top:395px;left:575px;width:25px;position:fixed;">
+      <h6>110H</h6>
+      </div>
+      <div class=girlsBlockEmeraldRidge style="top:420px;left:575px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockKamiak style="top:445px;left:575px">
+      <h2>K</h2>
+      </div>
+      <div class=girlsBlockKamiak style="top:470px;left:575px">
+      <h2>K</h2>
+      </div>
+      <div class=girlsBlockPuyallup style="top:495px;left:575px">
+      <h2>P</h2>
+      </div>
+      <div class=girlsBlockLakeStevens style="top:520px;left:575px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockKentwood style="top:545px;left:575px">
+      <h2>K</h2>
+      </div>
+      <div class=girlsBlockLakeStevens style="top:570px;left:575px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockKentridge style="top:595px;left:575px">
+      <h2>K</h2>
+      </div>
+      <div style="top:395px;left:600px;width:25px;position:fixed;">
+      <h6>300H</h6>
+      </div>
+      <div class=girlsBlockKamiak style="top:420px;left:600px">
+      <h2>K</h2>
+      </div>
+      <div class=girlsBlockWenatchee style="top:445px;left:600px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockBothell style="top:470px;left:600px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockKamiak style="top:495px;left:600px">
+      <h2>K</h2>
+      </div>
+      <div class=girlsBlockKentwood style="top:520px;left:600px">
+      <h2>K</h2>
+      </div>
+      <div class=girlsBlockKamiakin style="top:545px;left:600px">
+      <h2>K</h2>
+      </div>
+      <div class=girlsBlockLakeStevens style="top:570px;left:600px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockRichland style="top:595px;left:600px">
+      <h2>R</h2>
+      </div>
+      <div style="top:395px;left:625px;width:25px;position:fixed;">
+      <h6>4x1</h6>
+      </div>
+      <div class=girlsBlockGrahamKapowsin style="top:420px;left:625px">
+      <h2>G</h2>
+      </div>
+      <div class=girlsBlockLakeStevens style="top:445px;left:625px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockCurtis style="top:470px;left:625px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockFederalWay style="top:495px;left:625px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockGlacierPeak style="top:520px;left:625px">
+      <h2>G</h2>
+      </div>
+      <div class=girlsBlockKamiakin style="top:545px;left:625px">
+      <h2>K</h2>
+      </div>
+      <div class=girlsBlockGonagaPrep style="top:570px;left:625px">
+      <h2>G</h2>
+      </div>
+      <div class=girlsBlockMtSi style="top:595px;left:625px">
+      <h2>M</h2>
+      </div>
+      <div style="top:395px;left:650px;width:25px;position:fixed;">
+      <h6>4x2</h6>
+      </div>
+      <div class=girlsBlockCurtis style="top:420px;left:650px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockKamiakin style="top:445px;left:650px">
+      <h2>K</h2>
+      </div>
+      <div class=girlsBlockMtSi style="top:470px;left:650px">
+      <h2>M</h2>
+      </div>
+      <div class=girlsBlockGrahamKapowsin style="top:495px;left:650px">
+      <h2>G</h2>
+      </div>
+      <div class=girlsBlockSkyline style="top:520px;left:650px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockFederalWay style="top:545px;left:650px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockLakeStevens style="top:570px;left:650px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockGonagaPrep style="top:595px;left:650px">
+      <h2>G</h2>
+      </div>
+      <div style="top:395px;left:675px;width:25px;position:fixed;">
+      <h6>4x4</h6>
+      </div>
+      <div class=girlsBlockEastlake style="top:420px;left:675px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockKamiak style="top:445px;left:675px">
+      <h2>K</h2>
+      </div>
+      <div class=girlsBlockSkyline style="top:470px;left:675px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockEmeraldRidge style="top:495px;left:675px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockWenatchee style="top:520px;left:675px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockCentralValley style="top:545px;left:675px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockCamas style="top:570px;left:675px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockCurtis style="top:595px;left:675px">
+      <h2>C</h2>
+      </div>
+      <div style="top:395px;left:700px;width:25px;position:fixed;">
+      <h6>Shot</h6>
+      </div>
+      <div class=girlsBlockBothell style="top:420px;left:700px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockSouthKitsap style="top:445px;left:700px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockEmeraldRidge style="top:470px;left:700px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockKamiakin style="top:495px;left:700px">
+      <h2>K</h2>
+      </div>
+      <div class=girlsBlockMtRainier style="top:520px;left:700px">
+      <h2>M</h2>
+      </div>
+      <div class=girlsBlockRichland style="top:545px;left:700px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockCamas style="top:570px;left:700px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockTahoma style="top:595px;left:700px">
+      <h2>T</h2>
+      </div>
+      <div style="top:395px;left:725px;width:25px;position:fixed;">
+      <h6>Disc</h6>
+      </div>
+      <div class=girlsBlockBothell style="top:420px;left:725px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockEisenhower style="top:445px;left:725px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockChiawana style="top:470px;left:725px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockNorthCreek style="top:495px;left:725px">
+      <h2>N</h2>
+      </div>
+      <div class=girlsBlockSouthKitsap style="top:520px;left:725px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockEmeraldRidge style="top:545px;left:725px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockEastmont style="top:570px;left:725px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockRichland style="top:595px;left:725px">
+      <h2>R</h2>
+      </div>
+      <div style="top:395px;left:750px;width:25px;position:fixed;">
+      <h6>Jav</h6>
+      </div>
+      <div class=girlsBlockEmeraldRidge style="top:420px;left:750px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockRichland style="top:445px;left:750px">
+      <h2>R</h2>
+      </div>
+      <div class=girlsBlockLakeStevens style="top:470px;left:750px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockKamiakin style="top:495px;left:750px">
+      <h2>K</h2>
+      </div>
+      <div class=girlsBlockTahoma style="top:520px;left:750px">
+      <h2>T</h2>
+      </div>
+      <div class=girlsBlockSouthKitsap style="top:545px;left:750px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockMtSi style="top:570px;left:750px">
+      <h2>M</h2>
+      </div>
+      <div class=girlsBlockOlympia style="top:595px;left:750px">
+      <h2>O</h2>
+      </div>
+      <div style="top:395px;left:775px;width:25px;position:fixed;">
+      <h6>HJ</h6>
+      </div>
+      <div class=girlsBlockEmeraldRidge style="top:420px;left:775px">
+      <h2>E</h2>
+      </div>
+      <div class=girlsBlockSkyview style="top:445px;left:775px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockKamiakin style="top:470px;left:775px">
+      <h2>K</h2>
+      </div>
+      <div class=girlsBlockLakeStevens style="top:495px;left:775px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockCurtis style="top:520px;left:775px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockGlacierPeak style="top:545px;left:775px">
+      <h2>G</h2>
+      </div>
+      <div class=girlsBlockCamas style="top:570px;left:775px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockHanford style="top:595px;left:775px">
+      <h2>H</h2>
+      </div>
+      <div style="top:395px;left:800px;width:25px;position:fixed;">
+      <h6>PV</h6>
+      </div>
+      <div class=girlsBlockInglemoor style="top:420px;left:800px">
+      <h2>I</h2>
+      </div>
+      <div class=girlsBlockHanford style="top:445px;left:800px">
+      <h2>H</h2>
+      </div>
+      <div class=girlsBlockHenryJackson style="top:470px;left:800px">
+      <h2>H</h2>
+      </div>
+      <div class=girlsBlockBothell style="top:495px;left:800px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockOlympia style="top:520px;left:800px">
+      <h2>O</h2>
+      </div>
+      <div class=girlsBlockWestValleyYakima style="top:545px;left:800px">
+      <h2>W</h2>
+      </div>
+      <div class=girlsBlockLakeStevens style="top:570px;left:800px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockMtSi style="top:595px;left:800px">
+      <h2>M</h2>
+      </div>
+      <div style="top:395px;left:825px;width:25px;position:fixed;">
+      <h6>LJ</h6>
+      </div>
+      <div class=girlsBlockFederalWay style="top:420px;left:825px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockKentwood style="top:445px;left:825px">
+      <h2>K</h2>
+      </div>
+      <div class=girlsBlockSumner style="top:470px;left:825px">
+      <h2>S</h2>
+      </div>
+      <div class=girlsBlockMosesLake style="top:495px;left:825px">
+      <h2>M</h2>
+      </div>
+      <div class=girlsBlockCurtis style="top:520px;left:825px">
+      <h2>C</h2>
+      </div>
+      <div class=girlsBlockKamiak style="top:545px;left:825px">
+      <h2>K</h2>
+      </div>
+      <div class=girlsBlockBattleGround style="top:570px;left:825px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockEisenhower style="top:595px;left:825px">
+      <h2>E</h2>
+      </div>
+      <div style="top:395px;left:850px;width:25px;position:fixed;">
+      <h6>TJ</h6>
+      </div>
+      <div class=girlsBlockFederalWay style="top:420px;left:850px">
+      <h2>F</h2>
+      </div>
+      <div class=girlsBlockKamiakin style="top:445px;left:850px">
+      <h2>K</h2>
+      </div>
+      <div class=girlsBlockKentwood style="top:470px;left:850px">
+      <h2>K</h2>
+      </div>
+      <div class=girlsBlockBellarminePrep style="top:495px;left:850px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockBattleGround style="top:520px;left:850px">
+      <h2>B</h2>
+      </div>
+      <div class=girlsBlockLakes style="top:545px;left:850px">
+      <h2>L</h2>
+      </div>
+      <div class=girlsBlockUnion style="top:570px;left:850px">
+      <h2>U</h2>
+      </div>
+      <div class=girlsBlockInglemoor style="top:595px;left:850px">
+      <h2>I</h2>
+      </div>
+      <div class="girlsBlockSkyline" style="top:420px;left:200px;width:150px;height:25px;">
+      <h2>Skyline</h2>
+      </div>
+      <div class="girlsBlockSkyline" style="top:420px;left:350px;width:50px;height:25px;background:rgb(10, 180, 10);">
+      <h2 style="text-align:right">67</h2>
+      </div>
+      <div class="girlsBlockEmeraldRidge" style="top:445px;left:200px;width:150px;height:25px;">
+      <h2>Emerald Ridge</h2>
+      </div>
+      <div class="girlsBlockEmeraldRidge" style="top:445px;left:350px;width:50px;height:25px;background:rgb(53, 137, 10);">
+      <h2 style="text-align:right">50</h2>
+      </div>
+      <div class="girlsBlockCurtis" style="top:470px;left:200px;width:150px;height:25px;">
+      <h2>Curtis</h2>
+      </div>
+      <div class="girlsBlockCurtis" style="top:470px;left:350px;width:50px;height:25px;background:rgb(58, 132, 10);">
+      <h2 style="text-align:right">48</h2>
+      </div>
+      <div class="girlsBlockKamiak" style="top:495px;left:200px;width:150px;height:25px;">
+      <h2>Kamiak</h2>
+      </div>
+      <div class="girlsBlockKamiak" style="top:495px;left:350px;width:50px;height:25px;background:rgb(68, 122, 10);">
+      <h2 style="text-align:right">44</h2>
+      </div>
+      <div class="girlsBlockKamiakin" style="top:520px;left:200px;width:150px;height:25px;">
+      <h2>Kamiakin</h2>
+      </div>
+      <div class="girlsBlockKamiakin" style="top:520px;left:350px;width:50px;height:25px;background:rgb(73, 117, 10);">
+      <h2 style="text-align:right">42</h2>
+      </div>
+      <div class="girlsBlockTahoma" style="top:545px;left:200px;width:150px;height:25px;">
+      <h2>Tahoma</h2>
+      </div>
+      <div class="girlsBlockTahoma" style="top:545px;left:350px;width:50px;height:25px;background:rgb(75, 115, 10);">
+      <h2 style="text-align:right">41</h2>
+      </div>
+      <div class="girlsBlockFederalWay" style="top:570px;left:200px;width:150px;height:25px;">
+      <h2>Federal Way</h2>
+      </div>
+      <div class="girlsBlockFederalWay" style="top:570px;left:350px;width:50px;height:25px;background:rgb(86, 104, 10);">
+      <h2 style="text-align:right">37</h2>
+      </div>
+      <div class="girlsBlockLakeStevens" style="top:595px;left:200px;width:150px;height:25px;">
+      <h2>Lake Stevens</h2>
+      </div>
+      <div class="girlsBlockLakeStevens" style="top:595px;left:350px;width:50px;height:25px;background:rgb(101, 89, 10);">
+      <h2 style="text-align:right">31</h2>
+      </div>
+      <div class="girlsBlockBothell" style="top:620px;left:200px;width:150px;height:25px;">
+      <h2>Bothell</h2>
+      </div>
+      <div class="girlsBlockBothell" style="top:620px;left:350px;width:50px;height:25px;background:rgb(101, 89, 10);">
+      <h2 style="text-align:right">31</h2>
+      </div>
+      <div class="girlsBlockGlacierPeak" style="top:645px;left:200px;width:150px;height:25px;">
+      <h2>Glacier Peak</h2>
+      </div>
+      <div class="girlsBlockGlacierPeak" style="top:645px;left:350px;width:50px;height:25px;background:rgb(116, 74, 10);">
+      <h2 style="text-align:right">25</h2>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
