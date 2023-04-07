@@ -22,17 +22,21 @@ url_D14A_boys = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=
 url_D14A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137184&depth=20&gender=f"
 
 session = HTMLSession()
-r = session.request("get",url_state4A_girls,headers=hdr)
+r = session.request("get",url_kingco4A_boys,headers=hdr)
 
 session2 = HTMLSession()
-r2 = session2.request("get",url_D14A_girls,headers=hdr)
+r2 = session2.request("get",url_D14A_boys,headers=hdr)
+
+athletesIn = 16
+athletesToShow = 24
 
 with open("tempOutput.txt", "w") as f:
     f.write(r.text)
 
 schoolName = "Skyline"
-isGirls = True
+isGirls = False
 includeRelays = True
+isState = False
 
 
 outputFile = "boysKingcoOutput.html"
@@ -606,7 +610,8 @@ for i in range(len(eventList)):
                 newMarkList.append(eventList2[i].marks[on2])
                 on2 += 1
         print("Chose: " + newMarkList[-1].mark)
-    #eventList[i].marks = newMarkList
+    if isState:
+        eventList[i].marks = newMarkList
 
 for event in eventList:
     print(event)
@@ -690,35 +695,185 @@ with open("extraCSS.html", "w") as f:
         f.write("width: 25px;")
         f.write("}")
 
+class Athlete:
+    name = ""
+    results = ""
+
+    def __init__(self, initName, initResults):
+        self.name = initName
+        self.results = initResults
+
+    def __str__(self):
+        toRet = "<h4>" + self.name + "</h4>\n"
+        for i in range(len(self.results)):
+            toRet = toRet + "<h5>"  + str(self.results[i]) + "</h5>\n"
+        return toRet + "\n"
+
+class Result:
+    rank = 1
+    event = None
+    mark = ""
+
+    def __init__(self, initRank, initEvent, initMark):
+        self.rank = initRank
+        self.event = initEvent
+        self.mark = initMark
+
+    def __str__(self):
+        return self.event.name + " - " + str(self.rank) + " - " + self.mark
+
+def addAthlete(athlete, list):
+    for i in range(len(list)):
+        if athlete.name == list[i].name:
+            list[i].results.append(athlete.results[0])
+            return
+    list.append(athlete)
+
+athleteList = []
+
 with open(outputFile, "w") as f:
     for event in eventList:
-        f.write("<h2>" + event.name + "<h2>\n")
+        f.write("<h2>" + event.name + "</h2>\n")
         f.write("<h4>In</h4>\n")
         hasAthleteIn = False
-        for i in range(min(4, len(event.marks))):
+        for i in range(min(athletesIn, len(event.marks))):
             if event.marks[i].team == schoolName:
                 hasAthleteIn = True
                 break
         if hasAthleteIn:
-            for i in range(min(4, len(event.marks))):
+            for i in range(min(athletesIn, len(event.marks))):
                 if event.marks[i].team == schoolName:
+                    addAthlete(Athlete(
+                        event.marks[i].name,
+                        [
+                            Result(
+                                i + 1,
+                                event,
+                                event.marks[i].mark
+                            )
+                        ]
+                    ),
+                    athleteList)
                     f.write("<h5>" + str(i + 1) + " - " + event.marks[i].name + " - " + event.marks[i].mark + "</h5>\n")
         else:
             f.write("<h5>None</h5>\n")
         f.write("<h4>Cutoff</h4>\n")
-        if len(event.marks) < 6:
+        if len(event.marks) < athletesIn:
             f.write("<h5>-</h5>\n")
         else:
-            f.write("<h5>" + event.marks[3].mark + "</h5>\n")
-        if len(event.marks) > 16:
+            f.write("<h5>" + event.marks[athletesIn - 1].mark + "</h5>\n")
+        if len(event.marks) > athletesIn:
             hasAthleteInTheHunt = False
-            for i in range(4, min(16, len(event.marks))):
+            for i in range(athletesIn, min(athletesToShow, len(event.marks))):
                 if event.marks[i].team == schoolName:
                     hasAthleteInTheHunt = True
                     break
             if hasAthleteInTheHunt:
                 f.write("<h4>In the Hunt</h4>\n")
-                for i in range(4, min(16, len(event.marks))):
+                for i in range(athletesIn, min(athletesToShow, len(event.marks))):
                     if event.marks[i].team == schoolName:
+                        addAthlete(Athlete(
+                            event.marks[i].name,
+                            [
+                                Result(
+                                    i + 1,
+                                    event,
+                                    event.marks[i].mark
+                                )
+                            ]
+                        ),
+                        athleteList)
                         f.write("<h5>" + str(i + 1) + " - " + event.marks[i].name + " - " + event.marks[i].mark + "</h5>\n")
         f.write("\n")
+
+def nameComesBefore(name, ref):
+    startIdxRef = 0
+    startIdxName = 0
+    for i in range(len(ref.name)):
+        if ref.name[i] == " ":
+            startIdxRef = i + 1
+            break
+    for i in range(len(name.name)):
+        if name.name[i] == " ":
+            startIdxName = i + 1
+            break
+    while startIdxRef < len(ref.name) and startIdxName < len(name.name):
+        if name.name[startIdxName] < ref.name[startIdxRef]:
+            return True
+        elif name.name[startIdxName] > ref.name[startIdxRef]:
+            return False
+        startIdxName += 1
+        startIdxRef += 1
+    if startIdxRef < len(ref.name):
+        return True
+    if startIdxName < len(name.name):
+        return False
+
+    startIdxRef = 0
+    startIdxName = 0
+    while startIdxRef < len(ref.name) and startIdxName < len(name.name):
+        if name.name[startIdxName] < ref.name[startIdxRef]:
+            return True
+        elif name.name[startIdxName] > ref.name[startIdxRef]:
+            return False
+        startIdxName += 1
+        startIdxRef += 1
+    if startIdxRef < len(ref.name):
+        return True
+    if startIdxName < len(name.name):
+        return False
+    return False
+
+def sortAthletes(a):
+    if len(a) < 2:
+        return a
+    ref = a[0]
+    #print("Ref: " + ref.name)
+    lower = []
+    higher = []
+    for i in range(1, len(a)):
+        if nameComesBefore(a[i], ref):
+            #print("Before: " + a[i].name)
+            lower.append(a[i])
+        else:
+            #print("After: " + a[i].name)
+            higher.append(a[i])
+    lower = sortAthletes(lower)
+    higher = sortAthletes(higher)
+    toRet = []
+    for i in range(len(lower)):
+        toRet.append(lower[i])
+    toRet.append(ref)
+    for i in range(len(higher)):
+        toRet.append(higher[i])
+    return toRet
+
+athleteList = sortAthletes(athleteList)
+
+with open("individual_" + outputFile, "w") as f:
+    for athlete in athleteList:
+        f.write(str(athlete))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+print("Done")
