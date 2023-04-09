@@ -22,19 +22,19 @@ url_D14A_boys = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=
 url_D14A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137184&depth=20&gender=f"
 
 session = HTMLSession()
-r = session.request("get",url_kingco4A_boys,headers=hdr)
+r = session.request("get",url_state2A_girls,headers=hdr)
 
 session2 = HTMLSession()
-r2 = session2.request("get",url_D14A_boys,headers=hdr)
+r2 = session2.request("get",url_D32A_girls,headers=hdr)
 
-athletesIn = 16
-athletesToShow = 24
+athletesIn = 6
+athletesToShow = 16
 
 with open("tempOutput.txt", "w") as f:
     f.write(r.text)
 
-schoolName = "Skyline"
-isGirls = False
+schoolName = "Sammamish"
+isGirls = True
 includeRelays = True
 isState = False
 
@@ -588,13 +588,11 @@ for i in range(len(eventList)):
     on2 = 0
     newMarkList = []
     while on1 < len(eventList[i].marks) and on2 < len(eventList2[i].marks):
-        print(eventList[i].marks[on1].mark + " vs " + eventList2[i].marks[on2].mark)
         if on1 == len(eventList[i].marks):
             newMarkList.append(eventList2[i].marks[on2])
         elif on2 == len(eventList2[i].marks):
             newMarkList.append(eventList[i].marks[on1])
         elif eventList[i].isGolfStyle:
-            print("time")
             if eventList[i].marks[on1] < eventList2[i].marks[on2]:
                 newMarkList.append(eventList[i].marks[on1])
                 on1 += 1
@@ -602,14 +600,12 @@ for i in range(len(eventList)):
                 newMarkList.append(eventList2[i].marks[on2])
                 on2 += 1
         else:
-            print("dist")
             if eventList[i].marks[on1] > eventList2[i].marks[on2]:
                 newMarkList.append(eventList[i].marks[on1])
                 on1 += 1
             else:
                 newMarkList.append(eventList2[i].marks[on2])
                 on2 += 1
-        print("Chose: " + newMarkList[-1].mark)
     if isState:
         eventList[i].marks = newMarkList
 
