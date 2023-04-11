@@ -181,22 +181,44 @@
         </a>
       </div>
       <div class="header">
-        <a href="StateTrackerEvent.html">
-        <div class="headeritem" style="left: 190px;right: 46.6%;background: rgb(132, 179, 156);">
+        <a href="KingcoTrackerEvent.html">
+        <div id="headerItem1" class="headeritem" style="left: 190px;right: 46.6%;background: rgb(132, 179, 156);">
           <h1>Qualifying</h1>
         </div>
       </a>
-      <a href="StateTrackerIndividual.html">
-        <div class="headeritem" style="left: 46.6%">
+      <a  href="KingcoTrackerIndividual.html">
+        <div id="headerItem2" class="headeritem" style="left: 46.6%">
           <h1>Rankings</h1>
         </div>
       </a>
-      <a href="StateTrackerTeam.html">
-        <div class="headeritem" style="left: 73.3%;right: 100%">
+      <a href="KingcoTrackerTeam.html">
+        <div id="headerItem3" class="headeritem" style="left: 73.3%;right: 100%">
           <h1>Team</h1>
         </div>
       </a>
       </div>
+      <script>
+        headerItem1 = document.getElementById("headerItem1");
+        headerItem2 = document.getElementById("headerItem2");
+        headerItem3 = document.getElementById("headerItem3");
+
+        function setHeaderSizes(){
+          if(window.innerWidth < 193){return;}
+          size = Math.floor((window.innerWidth - 190) / 3);
+          headerItem1.style.width = size + "px";
+          headerItem2.style.left = (190 + size) + "px";
+          headerItem2.style.width = size + "px";
+          headerItem3.left = (190 + 2 * size) + "px";
+          headerItem3.width = size + "px";
+          console.log(size)
+        }
+
+        setHeaderSizes();
+
+        window.addEventListener('resize', function(e){
+          setHeaderSizes();
+        }, true);
+      </script>
 
     <div class="boys" style="overflow: scroll;">
       <h1>Boys</h1>
