@@ -22,13 +22,13 @@ url_D14A_boys = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=
 url_D14A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137184&depth=20&gender=f"
 
 session = HTMLSession()
-r = session.request("get",url_state4A_boys,headers=hdr)
+r = session.request("get",url_kingco4A_boys,headers=hdr)
 
 session2 = HTMLSession()
 r2 = session2.request("get",url_D14A_boys,headers=hdr)
 
-athletesIn = 4
-athletesToShow = 16
+athletesIn = 16
+athletesToShow = 24
 
 with open("tempOutput.txt", "w") as f:
     f.write(r.text)
