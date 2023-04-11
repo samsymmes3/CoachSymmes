@@ -35,8 +35,8 @@ with open("tempOutput.txt", "w") as f:
 
 schoolName = "Skyline"
 isGirls = False
-includeRelays = True
-isState = False
+includeRelays = False
+isDistricts = False
 
 
 outputFile = "boysKingcoOutput.html"
@@ -174,24 +174,24 @@ class Mark:
                 curNum = ""
         if not (curNum == ""):
             markList2.append(float(curNum))
-        print(markList)
-        print(markList2)
+        #print(markList)
+        #print(markList2)
         if len(markList) > len(markList2):
-            print("here1")
+            #print("here1")
             return False
         if len(markList) < len(markList2):
-            print("here2")
+            #print("here2")
             return True
         for i in range(len(markList)):
-            print(markList[i])
-            print(markList2[i])
+            #print(markList[i])
+            #print(markList2[i])
             if markList[i] > markList2[i]:
-                print("here3")
+                #print("here3")
                 return False
             if markList[i] < markList2[i]:
-                print("here4")
+                #print("here4")
                 return True
-        print("here5")
+        #print("here5")
         return False
 
 #temp = Mark("")
@@ -606,7 +606,7 @@ for i in range(len(eventList)):
             else:
                 newMarkList.append(eventList2[i].marks[on2])
                 on2 += 1
-    if isState:
+    if isDistricts:
         eventList[i].marks = newMarkList
 
 for event in eventList:
@@ -631,9 +631,24 @@ with open(teamOutputFile, "w") as f:
         for i in range(min(len(event.marks), len(scoring))):
             topAlign += 25
             if isGirls:
-                f.write("<div class=girlsBlock" + ridSpace(event.marks[i].team) + " style=\"top:" + str(topAlign) + "px;left:" + str(leftAlign) + "px\">\n")
+                f.write("<div onmouseover=\"girlsHover(this)\" class=girlsBlock" + ridSpace(event.marks[i].team) + " style=\"top:" + str(topAlign) + "px;left:" + str(leftAlign) + "px\" ")
             else:
-                f.write("<div class=boysBlock" + ridSpace(event.marks[i].team) + " style=\"top:" + str(topAlign) + "px;left:" + str(leftAlign) + "px\">\n")
+                f.write("<div onmouseover=\"boysHover(this)\" class=boysBlock" + ridSpace(event.marks[i].team) + " style=\"top:" + str(topAlign) + "px;left:" + str(leftAlign) + "px\" ")
+            f.write("name=\"" + event.marks[i].name + "\" ")
+            startEventName = event.name
+            eventName = ""
+            for idx in range(0, len(startEventName)):
+                if startEventName[idx] == "-":
+                    eventName = eventName[:-1]
+                    break
+                else:
+                    eventName = eventName + startEventName[idx]
+            f.write("event=\"" + eventName + "\" ")
+            f.write("team=\"" + event.marks[i].team + "\" ")
+            f.write("rank=\"" + str(i + 1) + "\" ")
+            f.write("points=\"" + str(scoring[i]) + "\" ")
+            f.write("mark=\"" + event.marks[i].mark + "\">\n")
+
             f.write("<h2>" + event.marks[i].team[0] + "</h2>\n")
             f.write("</div>\n")
             if not isTeam(event.marks[i].team, teamScores):
@@ -642,6 +657,15 @@ with open(teamOutputFile, "w") as f:
 
 teamScores = sortTeams(teamScores)
 numTeams = 10
+inTop = False
+for i in range(numTeams):
+    if teamScores[i].name == schoolName:
+        inTop = True
+        break
+
+if not inTop:
+    numTeams -= 2
+
 with open(teamOutputFile, "a") as f:
     topAlign = 75
     if isGirls:
@@ -669,8 +693,29 @@ with open(teamOutputFile, "a") as f:
         f.write("<h2 style=\"text-align:right\">" + str(team.score) + "</h2>\n")
         f.write("</div>\n")
         print(team)
-
-
+    if not inTop:
+        topAlign += 50
+        for team in teamScores:
+            if team.name == schoolName:
+                r = int(170 * (teamScores[0].score - team.score) / teamScores[0].score) + 10
+                g = 190 - r
+                b = 10
+                if isGirls:
+                    f.write("<div class=\"girlsBlock" + team.nameNoSpace + "\" style=\"top:" + str(topAlign) + "px;")
+                else:
+                    f.write("<div class=\"boysBlock" + team.nameNoSpace + "\" style=\"top:" + str(topAlign) + "px;")
+                f.write("left:200px;width:150px;height:25px;\">\n")
+                f.write("<h2>" + team.name + "</h2>\n")
+                f.write("</div>\n")
+                if isGirls:
+                    f.write("<div class=\"girlsBlock" + team.nameNoSpace + "\" style=\"top:" + str(topAlign) + "px;")
+                else:
+                    f.write("<div class=\"boysBlock" + team.nameNoSpace + "\" style=\"top:" + str(topAlign) + "px;")
+                f.write("left:350px;width:50px;height:25px;background:rgb(" + str(r) + ", " + str(g) + ", " + str(b) + ");\">\n")
+                f.write("<h2 style=\"text-align:right\">" + str(team.score) + "</h2>\n")
+                f.write("</div>\n")
+                print(team)
+                break
 
 numTeams = len(teamScores) - 2
 teamCount = -1
