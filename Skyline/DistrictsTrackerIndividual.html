@@ -204,7 +204,7 @@
 
         function setHeaderSizes(){
           if(window.innerWidth < 193){return;}
-          size = Math.floor((window.innerWidth - 190) / 3);
+          size = Math.floor((document.body.clientWidth - 190) / 3);
           headerItem1.style.width = size + "px";
           headerItem2.style.left = (190 + size) + "px";
           headerItem2.style.width = size + "px";
@@ -215,9 +215,9 @@
 
         setHeaderSizes();
 
-        /*window.addEventListener('resize', function(e){
+        window.addEventListener('resize', function(e){
           setHeaderSizes();
-        }, true);*/
+        }, true);
       </script>
 
     <div class="boys" style="overflow: scroll;">
