@@ -22,10 +22,10 @@ url_D14A_boys = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=
 url_D14A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137184&depth=20&gender=f"
 
 session = HTMLSession()
-r = session.request("get",url_state4A_boys,headers=hdr)
+r = session.request("get",url_kingco4A_girls,headers=hdr)
 
 session2 = HTMLSession()
-r2 = session2.request("get",url_D14A_boys,headers=hdr)
+r2 = session2.request("get",url_D14A_girls,headers=hdr)
 
 athletesIn = 4
 athletesToShow = 16
@@ -34,8 +34,8 @@ with open("tempOutput.txt", "w") as f:
     f.write(r.text)
 
 schoolName = "Skyline"
-isGirls = False
-includeRelays = False
+isGirls = True
+includeRelays = True
 isDistricts = False
 
 
@@ -56,6 +56,7 @@ class Team:
     name = ""
     nameNoSpace = ""
     score = 0
+    scoreByCategory = []
 
     def __init__(self, initName):
         self.name = initName
@@ -64,6 +65,22 @@ class Team:
             if (initName[i] >= "a" and initName[i] < "z") or (initName[i] >= "A" and initName[i] <= "Z"):
                 self.nameNoSpace = self.nameNoSpace + initName[i]
         self.score = 0
+        self.scoreByCategory = [0, 0, 0, 0, 0]
+
+    def addScore(self, num, category):
+        self.score += num
+        if category == "Sprints":
+            self.scoreByCategory[0] += num
+        elif category == "Distance":
+            self.scoreByCategory[1] += num
+        elif category == "Hurdles":
+            self.scoreByCategory[2] += num
+        elif category == "Throws":
+            self.scoreByCategory[3] += num
+        elif category == "Jumps":
+            self.scoreByCategory[4] += num
+        else:
+            print("ERROR: Unknown Category")
 
     def __str__(self):
         return self.name + ": " + str(self.score)
@@ -74,13 +91,15 @@ class Event:
     marks = []
     isRelay = False
     isGolfStyle = True
+    category = ""
 
-    def __init__(self, initName, initShortHand, initIsRelay=False, initIsGolfStyle=True):
+    def __init__(self, initName, initShortHand, initCategory, initIsRelay=False, initIsGolfStyle=True):
         self.name = initName
         self.shortHand = initShortHand
         self.marks = []
         self.isRelay = initIsRelay
         self.isGolfStyle = initIsGolfStyle
+        self.category = initCategory
 
     def __str__(self):
         toRet = self.name + "\n"
@@ -204,80 +223,80 @@ athleteStr = "/track-and-field\">"
 
 startStr = "<body"
 eventList = [
-    Event("100 Meters", "100"),
-    Event("200 Meters", "200"),
-    Event("400 Meters", "400"),
-    Event("800 Meters", "800"),
-    Event("1600 Meters", "1600"),
-    Event("3200 Meters", "3200"),
-    Event("110m Hurdles - 39\"", "110H"),
-    Event("300m Hurdles - 36\"", "300H"),
-    Event("Shot Put - 12lb", "Shot", initIsGolfStyle=False),
-    Event("Discus - 1.6kg", "Disc", initIsGolfStyle=False),
-    Event("Javelin - 800g", "Jav", initIsGolfStyle=False),
-    Event("High Jump", "HJ", initIsGolfStyle=False),
-    Event("Pole Vault", "PV", initIsGolfStyle=False),
-    Event("Long Jump", "LJ", initIsGolfStyle=False),
-    Event("Triple Jump", "TJ", initIsGolfStyle=False)
+    Event("100 Meters", "100", "Sprints"),
+    Event("200 Meters", "200", "Sprints"),
+    Event("400 Meters", "400", "Sprints"),
+    Event("800 Meters", "800", "Distance"),
+    Event("1600 Meters", "1600", "Distance"),
+    Event("3200 Meters", "3200", "Distance"),
+    Event("110m Hurdles - 39\"", "110H", "Hurdles"),
+    Event("300m Hurdles - 36\"", "300H", "Hurdles"),
+    Event("Shot Put - 12lb", "Shot", "Throws", initIsGolfStyle=False),
+    Event("Discus - 1.6kg", "Disc", "Throws", initIsGolfStyle=False),
+    Event("Javelin - 800g", "Jav", "Throws", initIsGolfStyle=False),
+    Event("High Jump", "HJ", "Jumps", initIsGolfStyle=False),
+    Event("Pole Vault", "PV", "Jumps", initIsGolfStyle=False),
+    Event("Long Jump", "LJ", "Jumps", initIsGolfStyle=False),
+    Event("Triple Jump", "TJ", "Jumps", initIsGolfStyle=False)
 ];
 if isGirls:
     eventList = [
-        Event("100 Meters", "100"),
-        Event("200 Meters", "200"),
-        Event("400 Meters", "400"),
-        Event("800 Meters", "800"),
-        Event("1600 Meters", "1600"),
-        Event("3200 Meters", "3200"),
-        Event("100m Hurdles - 33\"", "110H"),
-        Event("300m Hurdles - 30\"", "300H"),
-        Event("Shot Put - 4kg", "Shot", initIsGolfStyle=False),
-        Event("Discus - 1kg", "Disc", initIsGolfStyle=False),
-        Event("Javelin - 600g", "Jav", initIsGolfStyle=False),
-        Event("High Jump", "HJ", initIsGolfStyle=False),
-        Event("Pole Vault", "PV", initIsGolfStyle=False),
-        Event("Long Jump", "LJ", initIsGolfStyle=False),
-        Event("Triple Jump", "TJ", initIsGolfStyle=False)
+        Event("100 Meters", "100", "Sprints"),
+        Event("200 Meters", "200", "Sprints"),
+        Event("400 Meters", "400", "Sprints"),
+        Event("800 Meters", "800", "Distance"),
+        Event("1600 Meters", "1600", "Distance"),
+        Event("3200 Meters", "3200", "Distance"),
+        Event("100m Hurdles - 33\"", "110H", "Hurdles"),
+        Event("300m Hurdles - 30\"", "300H", "Hurdles"),
+        Event("Shot Put - 4kg", "Shot", "Throws", initIsGolfStyle=False),
+        Event("Discus - 1kg", "Disc", "Throws", initIsGolfStyle=False),
+        Event("Javelin - 600g", "Jav", "Throws", initIsGolfStyle=False),
+        Event("High Jump", "HJ", "Jumps", initIsGolfStyle=False),
+        Event("Pole Vault", "PV", "Jumps", initIsGolfStyle=False),
+        Event("Long Jump", "LJ", "Jumps", initIsGolfStyle=False),
+        Event("Triple Jump", "TJ", "Jumps", initIsGolfStyle=False)
     ];
 if includeRelays:
     eventList = [
-        Event("100 Meters", "100"),
-        Event("200 Meters", "200"),
-        Event("400 Meters", "400"),
-        Event("800 Meters", "800"),
-        Event("1600 Meters", "1600"),
-        Event("3200 Meters", "3200"),
-        Event("110m Hurdles - 39\"", "110H"),
-        Event("300m Hurdles - 36\"", "300H"),
-        Event("4x100 Relay", "4x1", True),
-        Event("4x400 Relay", "4x4", True),
-        Event("Shot Put - 12lb", "Shot", initIsGolfStyle=False),
-        Event("Discus - 1.6kg", "Disc", initIsGolfStyle=False),
-        Event("Javelin - 800g", "Jav", initIsGolfStyle=False),
-        Event("High Jump", "HJ", initIsGolfStyle=False),
-        Event("Pole Vault", "PV", initIsGolfStyle=False),
-        Event("Long Jump", "LJ", initIsGolfStyle=False),
-        Event("Triple Jump", "TJ", initIsGolfStyle=False)
+        Event("100 Meters", "100", "Sprints"),
+        Event("200 Meters", "200", "Sprints"),
+        Event("400 Meters", "400", "Sprints"),
+        Event("800 Meters", "800", "Distance"),
+        Event("1600 Meters", "1600", "Distance"),
+        Event("3200 Meters", "3200", "Distance"),
+        Event("110m Hurdles - 39\"", "110H", "Hurdles"),
+        Event("300m Hurdles - 36\"", "300H", "Hurdles"),
+        Event("4x100 Relay", "4x1", "Sprints", True),
+        Event("4x400 Relay", "4x4", "Sprints", True),
+        Event("Shot Put - 12lb", "Shot", "Throws", initIsGolfStyle=False),
+        Event("Discus - 1.6kg", "Disc", "Throws", initIsGolfStyle=False),
+        Event("Javelin - 800g", "Jav", "Throws", initIsGolfStyle=False),
+        Event("High Jump", "HJ", "Jumps", initIsGolfStyle=False),
+        Event("Pole Vault", "PV", "Jumps", initIsGolfStyle=False),
+        Event("Long Jump", "LJ", "Jumps", initIsGolfStyle=False),
+        Event("Triple Jump", "TJ", "Jumps", initIsGolfStyle=False)
     ];
     if isGirls:
         eventList = [
-            Event("100 Meters", "100"),
-            Event("200 Meters", "200"),
-            Event("400 Meters", "400"),
-            Event("800 Meters", "800"),
-            Event("1600 Meters", "1600"),
-            Event("3200 Meters", "3200"),
-            Event("100m Hurdles - 33\"", "110H"),
-            Event("300m Hurdles - 30\"", "300H"),
-            Event("4x100 Relay", "4x1", True),
-            Event("4x200 Relay", "4x2", True),
-            Event("4x400 Relay", "4x4", True),
-            Event("Shot Put - 4kg", "Shot", initIsGolfStyle=False),
-            Event("Discus - 1kg", "Disc", initIsGolfStyle=False),
-            Event("Javelin - 600g", "Jav", initIsGolfStyle=False),
-            Event("High Jump", "HJ", initIsGolfStyle=False),
-            Event("Pole Vault", "PV", initIsGolfStyle=False),
-            Event("Long Jump", "LJ", initIsGolfStyle=False),
-            Event("Triple Jump", "TJ", initIsGolfStyle=False)
+            Event("100 Meters", "100", "Sprints"),
+            Event("200 Meters", "200", "Sprints"),
+            Event("400 Meters", "400", "Sprints"),
+            Event("800 Meters", "800", "Distance"),
+            Event("1600 Meters", "1600", "Distance"),
+            Event("3200 Meters", "3200", "Distance"),
+            Event("100m Hurdles - 33\"", "110H", "Hurdles"),
+            Event("300m Hurdles - 30\"", "300H", "Hurdles"),
+            Event("4x100 Relay", "4x1", "Sprints", True),
+            Event("4x200 Relay", "4x2", "Sprints", True),
+            Event("4x400 Relay", "4x4", "Sprints", True),
+            Event("Shot Put - 4kg", "Shot", "Throws", initIsGolfStyle=False),
+            Event("Discus - 1kg", "Disc", "Throws", initIsGolfStyle=False),
+            Event("Javelin - 600g", "Jav", "Throws", initIsGolfStyle=False),
+            Event("High Jump", "HJ", "Jumps", initIsGolfStyle=False),
+            Event("Pole Vault", "PV", "Jumps", initIsGolfStyle=False),
+            Event("Long Jump", "LJ", "Jumps", initIsGolfStyle=False),
+            Event("Triple Jump", "TJ", "Jumps", initIsGolfStyle=False)
         ];
 
 eventEndStr = "View full rankings"
@@ -373,80 +392,80 @@ while True:
             print(eventList[eventOn].name)
 
 eventList2 = [
-    Event("100 Meters", "100"),
-    Event("200 Meters", "200"),
-    Event("400 Meters", "400"),
-    Event("800 Meters", "800"),
-    Event("1600 Meters", "1600"),
-    Event("3200 Meters", "3200"),
-    Event("110m Hurdles - 39\"", "110H"),
-    Event("300m Hurdles - 36\"", "300H"),
-    Event("Shot Put - 12lb", "Shot", initIsGolfStyle=False),
-    Event("Discus - 1.6kg", "Disc", initIsGolfStyle=False),
-    Event("Javelin - 800g", "Jav", initIsGolfStyle=False),
-    Event("High Jump", "HJ", initIsGolfStyle=False),
-    Event("Pole Vault", "PV", initIsGolfStyle=False),
-    Event("Long Jump", "LJ", initIsGolfStyle=False),
-    Event("Triple Jump", "TJ", initIsGolfStyle=False)
+    Event("100 Meters", "100", "Sprints"),
+    Event("200 Meters", "200", "Sprints"),
+    Event("400 Meters", "400", "Sprints"),
+    Event("800 Meters", "800", "Distance"),
+    Event("1600 Meters", "1600", "Distance"),
+    Event("3200 Meters", "3200", "Distance"),
+    Event("110m Hurdles - 39\"", "110H", "Hurdles"),
+    Event("300m Hurdles - 36\"", "300H", "Hurdles"),
+    Event("Shot Put - 12lb", "Shot", "Throws", initIsGolfStyle=False),
+    Event("Discus - 1.6kg", "Disc", "Throws", initIsGolfStyle=False),
+    Event("Javelin - 800g", "Jav", "Throws", initIsGolfStyle=False),
+    Event("High Jump", "HJ", "Jumps", initIsGolfStyle=False),
+    Event("Pole Vault", "PV", "Jumps", initIsGolfStyle=False),
+    Event("Long Jump", "LJ", "Jumps", initIsGolfStyle=False),
+    Event("Triple Jump", "TJ", "Jumps", initIsGolfStyle=False)
 ];
 if isGirls:
     eventList2 = [
-        Event("100 Meters", "100"),
-        Event("200 Meters", "200"),
-        Event("400 Meters", "400"),
-        Event("800 Meters", "800"),
-        Event("1600 Meters", "1600"),
-        Event("3200 Meters", "3200"),
-        Event("100m Hurdles - 33\"", "110H"),
-        Event("300m Hurdles - 30\"", "300H"),
-        Event("Shot Put - 4kg", "Shot", initIsGolfStyle=False),
-        Event("Discus - 1kg", "Disc", initIsGolfStyle=False),
-        Event("Javelin - 600g", "Jav", initIsGolfStyle=False),
-        Event("High Jump", "HJ", initIsGolfStyle=False),
-        Event("Pole Vault", "PV", initIsGolfStyle=False),
-        Event("Long Jump", "LJ", initIsGolfStyle=False),
-        Event("Triple Jump", "TJ", initIsGolfStyle=False)
+        Event("100 Meters", "100", "Sprints"),
+        Event("200 Meters", "200", "Sprints"),
+        Event("400 Meters", "400", "Sprints"),
+        Event("800 Meters", "800", "Distance"),
+        Event("1600 Meters", "1600", "Distance"),
+        Event("3200 Meters", "3200", "Distance"),
+        Event("100m Hurdles - 33\"", "110H", "Hurdles"),
+        Event("300m Hurdles - 30\"", "300H", "Hurdles"),
+        Event("Shot Put - 4kg", "Shot", "Throws", initIsGolfStyle=False),
+        Event("Discus - 1kg", "Disc", "Throws", initIsGolfStyle=False),
+        Event("Javelin - 600g", "Jav", "Throws", initIsGolfStyle=False),
+        Event("High Jump", "HJ", "Jumps", initIsGolfStyle=False),
+        Event("Pole Vault", "PV", "Jumps", initIsGolfStyle=False),
+        Event("Long Jump", "LJ", "Jumps", initIsGolfStyle=False),
+        Event("Triple Jump", "TJ", "Jumps", initIsGolfStyle=False)
     ];
 if includeRelays:
     eventList2 = [
-        Event("100 Meters", "100"),
-        Event("200 Meters", "200"),
-        Event("400 Meters", "400"),
-        Event("800 Meters", "800"),
-        Event("1600 Meters", "1600"),
-        Event("3200 Meters", "3200"),
-        Event("110m Hurdles - 39\"", "110H"),
-        Event("300m Hurdles - 36\"", "300H"),
-        Event("4x100 Relay", "4x1", True),
-        Event("4x400 Relay", "4x4", True),
-        Event("Shot Put - 12lb", "Shot", initIsGolfStyle=False),
-        Event("Discus - 1.6kg", "Disc", initIsGolfStyle=False),
-        Event("Javelin - 800g", "Jav", initIsGolfStyle=False),
-        Event("High Jump", "HJ", initIsGolfStyle=False),
-        Event("Pole Vault", "PV", initIsGolfStyle=False),
-        Event("Long Jump", "LJ", initIsGolfStyle=False),
-        Event("Triple Jump", "TJ", initIsGolfStyle=False)
+        Event("100 Meters", "100", "Sprints"),
+        Event("200 Meters", "200", "Sprints"),
+        Event("400 Meters", "400", "Sprints"),
+        Event("800 Meters", "800", "Distance"),
+        Event("1600 Meters", "1600", "Distance"),
+        Event("3200 Meters", "3200", "Distance"),
+        Event("110m Hurdles - 39\"", "110H", "Hurdles"),
+        Event("300m Hurdles - 36\"", "300H", "Hurdles"),
+        Event("4x100 Relay", "4x1", "Sprints", True),
+        Event("4x400 Relay", "4x4", "Sprints", True),
+        Event("Shot Put - 12lb", "Shot", "Throws", initIsGolfStyle=False),
+        Event("Discus - 1.6kg", "Disc", "Throws", initIsGolfStyle=False),
+        Event("Javelin - 800g", "Jav", "Throws", initIsGolfStyle=False),
+        Event("High Jump", "HJ", "Jumps", initIsGolfStyle=False),
+        Event("Pole Vault", "PV", "Jumps", initIsGolfStyle=False),
+        Event("Long Jump", "LJ", "Jumps", initIsGolfStyle=False),
+        Event("Triple Jump", "TJ", "Jumps", initIsGolfStyle=False)
     ];
     if isGirls:
         eventList2 = [
-            Event("100 Meters", "100"),
-            Event("200 Meters", "200"),
-            Event("400 Meters", "400"),
-            Event("800 Meters", "800"),
-            Event("1600 Meters", "1600"),
-            Event("3200 Meters", "3200"),
-            Event("100m Hurdles - 33\"", "110H"),
-            Event("300m Hurdles - 30\"", "300H"),
-            Event("4x100 Relay", "4x1", True),
-            Event("4x200 Relay", "4x2", True),
-            Event("4x400 Relay", "4x4", True),
-            Event("Shot Put - 4kg", "Shot", initIsGolfStyle=False),
-            Event("Discus - 1kg", "Disc", initIsGolfStyle=False),
-            Event("Javelin - 600g", "Jav", initIsGolfStyle=False),
-            Event("High Jump", "HJ", initIsGolfStyle=False),
-            Event("Pole Vault", "PV", initIsGolfStyle=False),
-            Event("Long Jump", "LJ", initIsGolfStyle=False),
-            Event("Triple Jump", "TJ", initIsGolfStyle=False)
+            Event("100 Meters", "100", "Sprints"),
+            Event("200 Meters", "200", "Sprints"),
+            Event("400 Meters", "400", "Sprints"),
+            Event("800 Meters", "800", "Distance"),
+            Event("1600 Meters", "1600", "Distance"),
+            Event("3200 Meters", "3200", "Distance"),
+            Event("100m Hurdles - 33\"", "110H", "Hurdles"),
+            Event("300m Hurdles - 30\"", "300H", "Hurdles"),
+            Event("4x100 Relay", "4x1", "Sprints", True),
+            Event("4x200 Relay", "4x2", "Sprints", True),
+            Event("4x400 Relay", "4x4", "Sprints", True),
+            Event("Shot Put - 4kg", "Shot", "Throws", initIsGolfStyle=False),
+            Event("Discus - 1kg", "Disc", "Throws", initIsGolfStyle=False),
+            Event("Javelin - 600g", "Jav", "Throws", initIsGolfStyle=False),
+            Event("High Jump", "HJ", "Jumps", initIsGolfStyle=False),
+            Event("Pole Vault", "PV", "Jumps", initIsGolfStyle=False),
+            Event("Long Jump", "LJ", "Jumps", initIsGolfStyle=False),
+            Event("Triple Jump", "TJ", "Jumps", initIsGolfStyle=False)
         ];
 
 started = False
@@ -617,6 +636,7 @@ teamScores = []
 
 with open(teamOutputFile, "w") as f:
     leftAlign = 400
+    #leftAlign = 570
     for event in eventList:
         leftAlign += 25
         if isGirls:
@@ -653,15 +673,22 @@ with open(teamOutputFile, "w") as f:
             f.write("</div>\n")
             if not isTeam(event.marks[i].team, teamScores):
                 teamScores.append(Team(event.marks[i].team))
-            getTeam(event.marks[i].team, teamScores).score += scoring[i]
+            #getTeam(event.marks[i].team, teamScores).score += scoring[i]
+            getTeam(event.marks[i].team, teamScores).addScore(scoring[i], event.category)
 
 teamScores = sortTeams(teamScores)
+mostPointsInCategories = [0, 0, 0, 0, 0]
 numTeams = 10
 inTop = False
 for i in range(numTeams):
     if teamScores[i].name == schoolName:
         inTop = True
         break
+
+for i in range(numTeams):
+    for j in range(len(mostPointsInCategories)):
+        if teamScores[i].scoreByCategory[j] > mostPointsInCategories[j]:
+            mostPointsInCategories[j] = teamScores[i].scoreByCategory[j]
 
 if not inTop:
     numTeams -= 2
@@ -677,6 +704,12 @@ with open(teamOutputFile, "a") as f:
         r = int(170 * (teamScores[0].score - team.score) / teamScores[0].score) + 10
         g = 190 - r
         b = 10
+        rgbByCategory = []
+        for i in range(len(mostPointsInCategories)):
+            newR = int(170 * (mostPointsInCategories[i] - team.scoreByCategory[i]) / mostPointsInCategories[i]) + 10
+            newG = 190 - newR
+            newB = 10
+            rgbByCategory.append([newR, newG, newB])
         topAlign += 25
         if isGirls:
             f.write("<div class=\"girlsBlock" + team.nameNoSpace + "\" style=\"top:" + str(topAlign) + "px;")
@@ -692,6 +725,16 @@ with open(teamOutputFile, "a") as f:
         f.write("left:350px;width:50px;height:25px;background:rgb(" + str(r) + ", " + str(g) + ", " + str(b) + ");\">\n")
         f.write("<h2 style=\"text-align:right\">" + str(team.score) + "</h2>\n")
         f.write("</div>\n")
+
+        #for i in range(len(mostPointsInCategories)):
+        #    if isGirls:
+        #        f.write("<div class=\"girlsBlock" + team.nameNoSpace + "\" style=\"top:" + str(topAlign) + "px;")
+        #    else:
+        #        f.write("<div class=\"boysBlock" + team.nameNoSpace + "\" style=\"top:" + str(topAlign) + "px;")
+        #    f.write("left:" + str(405 + i * 35) + "px;width:35px;height:25px;background:rgb(" + str(rgbByCategory[i][0]) + ", " + str(rgbByCategory[i][1]) + ", " + str(rgbByCategory[i][2]) + ");\">\n")
+        #    f.write("<h2 style=\"text-align:right\">" + str(team.scoreByCategory[i]) + "</h2>\n")
+        #f.write("</div>\n")
+
         print(team)
     if not inTop:
         topAlign += 50
