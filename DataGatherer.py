@@ -16,24 +16,24 @@ url_state4A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?Di
 url_state2A_boys = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137150"
 url_state2A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137150&gender=f"
 
-url_D32A_boys = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137156&depth=20"
-url_D32A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137156&depth=20&gender=f"
+url_D32A_boys = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137156&depth=5"
+url_D32A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137156&depth=5&gender=f"
 url_D14A_boys = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137184&depth=20"
 url_D14A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137184&depth=20&gender=f"
 
 session = HTMLSession()
-r = session.request("get",url_kingco4A_girls,headers=hdr)
+r = session.request("get",url_state2A_girls,headers=hdr)
 
 session2 = HTMLSession()
-r2 = session2.request("get",url_D14A_girls,headers=hdr)
+r2 = session2.request("get",url_D32A_girls,headers=hdr)
 
-athletesIn = 4
+athletesIn = 6
 athletesToShow = 16
 
 with open("tempOutput.txt", "w") as f:
     f.write(r.text)
 
-schoolName = "Skyline"
+schoolName = "Sammamish"
 isGirls = True
 includeRelays = True
 isDistricts = False
@@ -301,6 +301,7 @@ if includeRelays:
 
 eventEndStr = "View full rankings"
 athleteEndStr = "<"
+
 started = False
 inEvent = False
 readingName = False
@@ -321,7 +322,6 @@ while True:
             if readingTeam:
                 if startedTeam:
                     if r.text[i] == "<":
-                        #print("here 1")
                         startedTeam = False
                         readingTeam = False
                         if eventList[eventOn].isRelay:
@@ -330,13 +330,11 @@ while True:
                         eventList[eventOn].marks[-1].team = eventList[eventOn].marks[-1].team + r.text[i]
                 elif r.text[i:i + 25] == "track-and-field-outdoor\">":
                     i += 24
-                    #print("here 2")
                     startedTeam = True
             if readingResult:
                 if eventList[eventOn].isRelay:
                     if r.text[i:i + 18] == eventEndStr:
                         i += 17
-                        #print("here 7")
                         inEvent = False
                         readingResult = False
                         eventOn += 1
@@ -346,37 +344,31 @@ while True:
                             break
                 if startedResult:
                     if r.text[i] == "<":
-                        #print("here 3")
                         startedResult = False
                         readingResult = False
                         readingTeam = True
                     eventList[eventOn].marks[-1].mark = eventList[eventOn].marks[-1].mark + r.text[i]
                 elif eventList[eventOn].isRelay:
-                    #print("here")
                     if r.text[i:i + 10] == "/i></span>":
                         eventList[eventOn].marks.append(Mark(""))
                         i += 9
                         startedResult = True
                 elif r.text[i:i + 13] == "href=\"/result":
                     i += 12
-                    #print("here 4")
                     startedResult = True
             elif readingName:
                 if r.text[i] == athleteEndStr:
                     eventList[eventOn].marks.append(Mark(name))
                     name = ""
-                    #print("here 5")
                     readingName = False
                     readingResult = True
                 else:
                     name = name + r.text[i]
             elif r.text[i:i + 18] == athleteStr:
                 i += 17
-                #print("here 6")
                 readingName = True
             elif r.text[i:i + 18] == eventEndStr:
                 i += 17
-                #print("here 7")
                 inEvent = False
                 eventOn += 1
                 if eventOn == len(eventList):
@@ -385,7 +377,6 @@ while True:
                     break
         elif r.text[i:i + len(eventList[eventOn].name)] == eventList[eventOn].name:
             i += len(eventList[eventOn].name) - 1
-            #print("here 8")
             inEvent = True
             if eventList[eventOn].isRelay:
                 readingResult = True
@@ -488,7 +479,6 @@ while True:
             if readingTeam:
                 if startedTeam:
                     if r2.text[i] == "<":
-                        #print("here 1")
                         startedTeam = False
                         readingTeam = False
                         if eventList2[eventOn].isRelay:
@@ -497,13 +487,11 @@ while True:
                         eventList2[eventOn].marks[-1].team = eventList2[eventOn].marks[-1].team + r2.text[i]
                 elif r2.text[i:i + 25] == "track-and-field-outdoor\">":
                     i += 24
-                    #print("here 2")
                     startedTeam = True
             if readingResult:
                 if eventList2[eventOn].isRelay:
                     if r2.text[i:i + 18] == eventEndStr:
                         i += 17
-                        #print("here 7")
                         inEvent = False
                         readingResult = False
                         eventOn += 1
@@ -513,37 +501,31 @@ while True:
                             break
                 if startedResult:
                     if r2.text[i] == "<":
-                        #print("here 3")
                         startedResult = False
                         readingResult = False
                         readingTeam = True
                     eventList2[eventOn].marks[-1].mark = eventList2[eventOn].marks[-1].mark + r2.text[i]
                 elif eventList2[eventOn].isRelay:
-                    #print("here")
                     if r2.text[i:i + 10] == "/i></span>":
                         eventList2[eventOn].marks.append(Mark(""))
                         i += 9
                         startedResult = True
                 elif r2.text[i:i + 13] == "href=\"/result":
                     i += 12
-                    #print("here 4")
                     startedResult = True
             elif readingName:
                 if r2.text[i] == athleteEndStr:
                     eventList2[eventOn].marks.append(Mark(name))
                     name = ""
-                    #print("here 5")
                     readingName = False
                     readingResult = True
                 else:
                     name = name + r2.text[i]
             elif r2.text[i:i + 18] == athleteStr:
                 i += 17
-                #print("here 6")
                 readingName = True
             elif r2.text[i:i + 18] == eventEndStr:
                 i += 17
-                #print("here 7")
                 inEvent = False
                 eventOn += 1
                 if eventOn == len(eventList2):
@@ -552,7 +534,6 @@ while True:
                     break
         elif r2.text[i:i + len(eventList2[eventOn].name)] == eventList2[eventOn].name:
             i += len(eventList2[eventOn].name) - 1
-            #print("here 8")
             inEvent = True
             if eventList2[eventOn].isRelay:
                 readingResult = True
@@ -685,7 +666,12 @@ for i in range(numTeams):
         inTop = True
         break
 
-for i in range(numTeams):
+def min(a, b):
+    if a < b:
+        return a
+    return b
+
+for i in range(min(numTeams, len(teamScores))):
     for j in range(len(mostPointsInCategories)):
         if teamScores[i].scoreByCategory[j] > mostPointsInCategories[j]:
             mostPointsInCategories[j] = teamScores[i].scoreByCategory[j]

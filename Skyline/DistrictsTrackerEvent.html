@@ -9,7 +9,7 @@
       text-decoration: none;
     }
     body {
-      margin-top: 0;
+      margin: 0;
     }
     .wrapper .sidebar {
       background: rgb(10, 136, 208);
@@ -34,7 +34,7 @@
       background: rgb(8, 102, 156);
       position: fixed;
       height: 50px;
-      width: 26.7%;
+      width: calc((100% - 190px) / 3);
       padding: 0px 0;
       transition: all 0.5s ease;
     }
@@ -187,17 +187,17 @@
       </div>
       <div class="header">
         <a href="DistrictsTrackerEvent.html">
-        <div id="headerItem1" class="headeritem" style="left: 190px;right: 46.6%;background: rgb(132, 179, 156);">
+        <div id="headerItem1" class="headeritem" style="left: 190px;background: rgb(132, 179, 156);">
           <h1>Qualifying</h1>
         </div>
       </a>
       <a  href="DistrictsTrackerIndividual.html">
-        <div id="headerItem2" class="headeritem" style="left: 46.6%">
+        <div id="headerItem2" class="headeritem" style="left: calc(((100% - 190px) / 3) + 190px)">
           <h1>Rankings</h1>
         </div>
       </a>
       <a href="DistrictsTrackerTeam.html">
-        <div id="headerItem3" class="headeritem" style="left: 73.3%;right: 100%">
+        <div id="headerItem3" class="headeritem" style="left: calc(((100% - 190px) / 3) * 2 + 190px)">
           <h1>Team</h1>
         </div>
       </a>
@@ -348,7 +348,7 @@
       <h4>In the Hunt</h4>
       <h5>10 - Nicholas Gatien - 37' 9.75</h5>
       <h5>12 - Nate Scherer Jr. - 37' 3.25</h5>
-      
+
       <h1>"</h1>
 
     </div>
