@@ -22,19 +22,19 @@ url_D14A_boys = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=
 url_D14A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137184&depth=25&gender=f"
 
 session = HTMLSession()
-r = session.request("get",url_kingco4A_girls,headers=hdr)
+r = session.request("get",url_state2A_boys,headers=hdr)
 
 session2 = HTMLSession()
-r2 = session2.request("get",url_D14A_girls,headers=hdr)
+r2 = session2.request("get",url_D32A_boys,headers=hdr)
 
-athletesIn = 4
+athletesIn = 6
 athletesToShow = 16
 
 with open("tempOutput.txt", "w") as f:
     f.write(r.text)
 
-schoolName = "Skyline"
-isGirls = True
+schoolName = "Sammamish"
+isGirls = False
 includeRelays = True
 isDistricts = False
 
@@ -711,7 +711,7 @@ teamScores = sortTeams(teamScores)
 mostPointsInCategories = [0, 0, 0, 0, 0]
 numTeams = 10
 inTop = False
-for i in range(numTeams):
+for i in range(min(numTeams, len(teamScores))):
     if teamScores[i].name == schoolName:
         inTop = True
         break
