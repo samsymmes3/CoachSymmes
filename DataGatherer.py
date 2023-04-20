@@ -11,33 +11,32 @@ url_kingco2A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?D
 url_kingco4A_boys = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137187&depth=25"
 url_kingco4A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137187&depth=25&gender=f"
 
-url_state4A_boys = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137183"
-url_state4A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137183&gender=f"
-url_state2A_boys = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137150"
-url_state2A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137150&gender=f"
+url_state4A_boys = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137183&depth=25"
+url_state4A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137183&depth=25&gender=f"
+url_state2A_boys = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137150&depth=25"
+url_state2A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137150&depth=25&gender=f"
 
-url_D32A_boys = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137156&depth=5"
-url_D32A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137156&depth=5&gender=f"
-url_D14A_boys = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137184&depth=20"
-url_D14A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137184&depth=20&gender=f"
+url_D32A_boys = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137156&depth=25"
+url_D32A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137156&depth=25&gender=f"
+url_D14A_boys = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137184&depth=25"
+url_D14A_girls = "https://www.athletic.net/TrackAndField/Division/Top.aspx?DivID=137184&depth=25&gender=f"
 
 session = HTMLSession()
-r = session.request("get",url_state2A_girls,headers=hdr)
+r = session.request("get",url_kingco4A_girls,headers=hdr)
 
 session2 = HTMLSession()
-r2 = session2.request("get",url_D32A_girls,headers=hdr)
+r2 = session2.request("get",url_D14A_girls,headers=hdr)
 
-athletesIn = 6
+athletesIn = 4
 athletesToShow = 16
 
 with open("tempOutput.txt", "w") as f:
     f.write(r.text)
 
-schoolName = "Sammamish"
+schoolName = "Skyline"
 isGirls = True
 includeRelays = True
 isDistricts = False
-
 
 outputFile = "boysKingcoOutput.html"
 teamOutputFile = "boysKingcoTeamOutput.html"
@@ -106,6 +105,16 @@ class Event:
         for i in range(len(self.marks)):
             toRet += str(self.marks[i]) + "\n"
         return toRet
+
+class Athlete:
+    name = ""
+    team = ""
+    events = []
+
+    def __init__(self, initName, initTeam):
+        self.name = initName
+        self.team = initTeam
+        self.events = []
 
 class Mark:
     name = ""
@@ -550,6 +559,18 @@ def getTeam(teamName, teamList):
             return teamList[i]
     print("ERROR: No Team Found")
 
+def getAthlete(athleteName, teamName, athleteList):
+    for athlete in athleteList:
+        if athlete.name == athleteName and athlete.team == teamName:
+            return athlete
+    return Athlete(athleteName, teamName)
+
+def hasAthlete(athleteName, teamName, athleteList):
+    for athlete in athleteList:
+        if athlete.name == athleteName and athlete.team == teamName:
+            return True
+    return False
+
 def isTeam(teamName, teamList):
     for i in range(len(teamList)):
         if teamName == teamList[i].name:
@@ -576,6 +597,35 @@ def sortTeams(a):
     for i in range(len(lower)):
         toRet.append(lower[i])
     return toRet
+
+
+
+eventPriority = [1, 2, 7, 8, 3, 4, 6, 5]
+
+eventListAlt = []
+eventListAlt2 = []
+
+for i in range(len(eventList)):
+    eventListAlt.append(Event(eventList[i].name, eventList[i].shortHand, eventList[i].category, eventList[i].isRelay, eventList[i].isGolfStyle))
+    eventListAlt2.append(Event(eventList2[i].name, eventList2[i].shortHand, eventList2[i].category, eventList2[i].isRelay, eventList2[i].isGolfStyle))
+
+if includeRelays:
+    athleteList = []
+    athleteList2 = []
+    for j in range(25):
+        for i in range(len(eventPriority)):
+            if len(eventList[eventPriority[i]].marks) > j:
+                if not hasAthlete(eventList[eventPriority[i]].marks[j].name, eventList[eventPriority[i]].marks[j].team, athleteList):
+                    athleteList.append(Athlete(eventList[eventPriority[i]].marks[j].name, eventList[eventPriority[i]].marks[j].team))
+                athlete = getAthlete(eventList[eventPriority[i]].marks[j].name, eventList[eventPriority[i]].marks[j].team, athleteList)
+                if len(athlete.events) < 2:
+                    eventListAlt[eventPriority[i]].marks.append(eventList[eventPriority[i]].marks[j])
+            if len(eventList2[eventPriority[i]].marks) > j:
+                if not hasAthlete(eventList2[eventPriority[i]].marks[j].name, eventList2[eventPriority[i]].marks[j].team, athleteList2):
+                    athleteList2.append(Athlete(eventList2[eventPriority[i]].marks[j].name, eventList2[eventPriority[i]].marks[j].team))
+                athlete = getAthlete(eventList2[eventPriority[i]].marks[j].name, eventList2[eventPriority[i]].marks[j].team, athleteList2)
+                if len(athlete.events) < 2:
+                    eventListAlt2[eventPriority[i]].marks.append(eventList2[eventPriority[i]].marks[j])
 
 for event in eventList:
     print(event)
