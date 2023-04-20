@@ -8,6 +8,9 @@
       color: black;
       text-decoration: none;
     }
+    body {
+      margin-top: 0;
+    }
     .wrapper .sidebar {
       background: rgb(10, 136, 208);
       position: fixed;
@@ -15,18 +18,32 @@
       left: 0;
       width: 190px;
       height: 100%;
-      padding: 10px 0;
+      padding: 0px 0;
       transition: all 0.5s ease;
     }
     .main {
       background: rgb(240, 240, 240);
       position: fixed;
-      top: 0;
+      top: 0px;
       left: 200px;
       width: 80%;
       height: 100%;
       padding: 10px 0;
       transition: all 0.5s ease;
+    }
+    .main h1{
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 5px
+    }
+    .main h4{
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-left: 10px
+    }
+    .main p{
+      margin-left: 20px;
+      margin-top: 0px;
     }
     .sidebarh {
       width: 100%;
@@ -34,7 +51,7 @@
       margin-bottom: 0px;
     }
     .sidebarh h1{
-      margin-top: 0px;
+      margin-top: 10px;
       margin-bottom: 10px;
       margin-left: 5px
     }
@@ -57,103 +74,84 @@
 <body>
   <div class="wrapper">
     <div class="sidebar">
-      <a href="index.html">
+      <a href="../index.html">
         <div class="sidebarh">
           <h1>Home</h1>
         </div>
       </a>
-      <a href="Sammamish/index.html">
+      <a href="../Sammamish/index.html">
         <div class="sidebarh">
           <h2>Sammamish</h2>
         </div>
       </a>
-      <a href="Sammamish/KingcoTrackerEvent.html">
+      <a href="../Sammamish/KingcoTrackerEvent.html">
         <div class="sidebarh">
           <h4>Kingco Tracker</h4>
         </div>
       </a>
-      <a href="Sammamish/DistrictsTrackerEvent.html">
+      <a href="../Sammamish/DistrictsTrackerEvent.html">
         <div class="sidebarh">
           <h4>Districts Tracker</h4>
         </div>
       </a>
-      <a href="Sammamish/StateTrackerEvent.html">
+      <a href="../Sammamish/StateTrackerEvent.html">
         <div class="sidebarh">
           <h4>State Tracker</h4>
         </div>
       </a>
-      <a href="Sammamish/XCCourseReview.html">
-        <div class="sidebarh">
+      <a href="../Sammamish/XCCourseReview.html">
+        <div class="sidebarh"  style="background: rgb(133, 196, 208);">
           <h4>XC Course Review</h4>
         </div>
       </a>
-      <a href="Skyline/index.html">
-        <div class="sidebarh">
+      <a href="../Skyline/index.html">
+        <div class="sidebarh"">
           <h2>Skyline</h2>
         </div>
       </a>
-      <a href="Skyline/KingcoTrackerEvent.html">
+      <a href="../Skyline/KingcoTrackerEvent.html">
         <div class="sidebarh">
           <h4>Kingco Tracker</h4>
         </div>
       </a>
-      <a href="Skyline/DistrictsTrackerEvent.html">
+      <a href="../Skyline/DistrictsTrackerEvent.html">
         <div class="sidebarh">
           <h4>Districts Tracker</h4>
         </div>
       </a>
-      <a href="Skyline/StateTrackerEvent.html">
+      <a href="../Skyline/StateTrackerEvent.html">
         <div class="sidebarh">
           <h4>State Tracker</h4>
         </div>
       </a>
-      <a href="Skyline/XCOutlook.html">
+      <a href="../Skyline/XCOutlook.html">
         <div class="sidebarh">
           <h4>XC Outlook</h4>
         </div>
       </a>
-      <a href="Skyline/XCCourseReview.html">
+      <a href="../Skyline/XCCourseReview.html">
         <div class="sidebarh">
           <h4>XC Course Review</h4>
         </div>
       </a>
     </div>
-    <div class="main">
-      <h1>Home Page</h1>
-      <p>
-        Use the sidebar to look at all postseason info!
-      </p>
-      <p>
-        Click School Names for more descriptions, or click the trackers to
-        dive right in!
-      </p>
-      <p>
-        Big thanks to all the athletes for coming out, parents for the support,
-        and Athletic.net for having almost no security, so I can get their data! If
-        there is any other data you would find interesting, or features you
-        would like to see, just let me (Coach Symmes) know! (Making the website
-        look better is not a feature. I'm not good at UI design)
-      </p>
-      <p style="margin-bottom:0px">
-        TODO:
-      </p>
-      <p style="margin-top:0px;margin-bottom:0px">
-         &emsp; 1: Auto-Update on-load (currently I have to run a script manually
-        to update rankings)
-      </p>
-      <p style="margin-top:0px;margin-bottom:0px">
-         &emsp; 2: Purchase Domain
-      </p>
-      <p style="margin-top:0px;margin-bottom:0px">
-         &emsp; 3: Update Districts and State Rankings to follow qualifying
-         process instead of including everyone in the state.
-      </p>
-      <p style="margin-top:0px;margin-bottom:0px">
-         &emsp; 4: Make XC Outlook less buggy (I guess I'll have to learn some
-         UI design)
-      </p>
-      <p style="margin-top:0px;margin-bottom:0px">
-         &emsp; 5: Break down scores by event groups
+    <div class="main" style="overflow: scroll;">
+      <h1>Sammamish XC Course Review</h1>
+      <h4>Robinswood - 5259m</h4>
+      <h4>North SeaTac - 5095m</h4>
+      <h4>Evergreen - 4961m</h4>
+      <h4>Twilight - 4951m</h4>
+      <h4>Hole In The Wall - 4879m</h4>
+      <h4>Kingco - 4832m</h4>
+      <h4>Districts - 4852m</h4>
+      <h4>State - 4983m</h4>
+      <p style="margin-top:20px;margin-left:40px">
+        &emsp; Process: Each course was given a distance to make athletes' times on
+        the course make the most sense (least squares). When athletes performed
+        well on a course, that performance was weighted more heavily, and poor
+        performances were given much lower weights. This means that if a few
+        athletes didn't show up to perform well on a course, their marks were not
+        counted for as much as those who showed up ready to race.
       </p>
     </div>
   </div>
