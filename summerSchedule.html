@@ -8,20 +8,40 @@
       color: black;
       text-decoration: none;
     }
-    .wrapper .sidebar {
-      background: rgb(24, 69, 59);
+    .wrapper {
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar {
+      background: rgb(200, 200, 200);
       position: fixed;
-      top: 0;
+      top: 80px;
       left: 0;
       width: 190px;
       height: 100%;
       padding: 10px 0;
       transition: all 0.5s ease;
     }
+    .header {
+      background: rgb(24, 69, 59);
+      color: rgb(200, 200, 200);
+      height: 80px;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    .header h1 {
+      text-align: center;
+      font-size: 50px;
+      margin-top: 10px;
+    }
     .main {
       background: rgb(240, 240, 240);
       position: fixed;
-      top: 0;
+      top: 80px;
       left: 190px;
       width: calc(100% - 210px);
       height: 100%;
@@ -46,7 +66,6 @@
       margin-left: 20px;
     }
     .sidebarh {
-      color: rgb(200, 200, 200);
       width: 100%;
       margin-top: 0px;
       margin-bottom: 0px;
@@ -74,6 +93,9 @@
 
 <body>
   <div class="wrapper">
+    <div class="header">
+      <h1>Skyline Spartan XC</h1>
+    </div>
     <div class="sidebar">
       <a href="index.html">
         <div class="sidebarh">
@@ -102,7 +124,7 @@
       </a>
     </div>
     <div class="main">
-      <h1>Skyline Spartan XC - Summer Schedule</h1>
+      <h1>Summer Schedule</h1>
       <p style="margin-left:10px">
         We are looking forward to a fun and productive summer! This is when you
         build the fitness that will let you carry your speed for a full 5k. We will
