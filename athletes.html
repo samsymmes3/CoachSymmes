@@ -107,6 +107,7 @@
   </style>
 </head>
 <script>sidebarClicked = false;</script>
+<script src="timeProjections.js"></script>
 <body>
   <div class="wrapper">
     <div class="header">
@@ -174,84 +175,103 @@
     </div>
     <div class="main" id="main">
       <h1>Athletes</h1>
+      <p>&emsp;Listed is everyone who ran cross country last year, with your
+        cross country 5k PRs. If you click your name, you will see Coach Symmes' AI predictions for the
+        2024 season. These are based on how athletes across Washington State in the last 15 years,
+        who posted similar times to you, ran in their following
+        cross country season. For example, 10% can be interpreted as "10% of
+        athletes who ran times like you, ran this time or better the
+        following cross country season". These are just fun and informational, and maybe you'll
+        end up like Eli and Abby did in track, and perform better than the top 0.1%!</p>
+        <p style="margin-top:5px">
+        &emsp;If your times look very similar for the Track and XC projections, that
+        doesn't mean you didn't improve, it means you improved an expected amount.
+        A few of you (especially Freshman) can see the huge leaps you made from
+        cross country to track in the data! For most of you who have slower projections
+        from track season than cross country, the amount slower is very small, and you are generally
+        the more distance-oriented athletes, who should convert better coming back
+        to the longer distance.
+        If you did not run at an invitational in cross country last season, you will
+        not have a projection. If your projection would be over 30 minutes, the data
+        will not be accurate.
       <div class="boys">
         <h2>Boys</h2>
         <p style="margin-top:5px"><b>Seniors</b></p>
-        <p style="margin-left:30px">Alexander Hong - 17:57</p>
-        <p style="margin-left:30px">Gavin Johnson - 18:42</p>
-        <p style="margin-left:30px">Tyler Foggoa - 18:48</p>
-        <p style="margin-left:30px">Aarul Motiani - 19:08</p>
-        <p style="margin-left:30px">Benjamin Nelson - 19:28</p>
-        <p style="margin-left:30px">Thatcher Olson - 19:47</p>
-        <p style="margin-left:30px">Ethan Howe - 19:53</p>
-        <p style="margin-left:30px">Dylan Shek - 20:32</p>
-        <p style="margin-left:30px">Colin Muldowney - 20:35</p>
-        <p style="margin-left:30px">Evan Allbritton - 21:47</p>
-        <p style="margin-left:30px">Jalen Wu - 24:07</p>
+        <div onclick = "clickAthlete(this)" id = "Alexander Hong"><p style="margin-left:30px">Alexander Hong - 17:57</p></div>
+        <div onclick = "clickAthlete(this)" id = "Gavin Johnson"><p style="margin-left:30px">Gavin Johnson - 18:42</p></div>
+        <div onclick = "clickAthlete(this)" id = "Tyler Foggoa"><p style="margin-left:30px">Tyler Foggoa - 18:48</p></div>
+        <div onclick = "clickAthlete(this)" id = "Aarul Motiani"><p style="margin-left:30px">Aarul Motiani - 19:08</p></div>
+        <div onclick = "clickAthlete(this)" id = "Benjamin Nelson"><p style="margin-left:30px">Benjamin Nelson - 19:28</p></div>
+        <div onclick = "clickAthlete(this)" id = "Thatcher Olson"><p style="margin-left:30px">Thatcher Olson - 19:47</p></div>
+        <div onclick = "clickAthlete(this)" id = "Ethan Howe"><p style="margin-left:30px">Ethan Howe - 19:53</p></div>
+        <div onclick = "clickAthlete(this)" id = "Dylan Shek"><p style="margin-left:30px">Dylan Shek - 20:32</p></div>
+        <div onclick = "clickAthlete(this)" id = "Colin Muldowney"><p style="margin-left:30px">Colin Muldowney - 20:35</p></div>
+        <div onclick = "clickAthlete(this)" id = "Evan Allbritton"><p style="margin-left:30px">Evan Allbritton - 21:47</p></div>
+        <div onclick = "clickAthlete(this)" id = "Jalen Wu"><p style="margin-left:30px">Jalen Wu - 24:07</p></div>
 
         <p style="margin-top:5px"><b>Juniors</b></p>
-        <p style="margin-left:30px">Logan Mucha - 16:45</p>
-        <p style="margin-left:30px">Volodymyr Kosolapov - 16:49</p>
-        <p style="margin-left:30px">Sukhshaan Brar - 17:05</p>
-        <p style="margin-left:30px">Lincoln Fraser - 17:27</p>
-        <p style="margin-left:30px">Samuel Ryan - 17:57</p>
-        <p style="margin-left:30px">Parker Dillon - 18:15</p>
-        <p style="margin-left:30px">Taylor Norris - 18:34</p>
-        <p style="margin-left:30px">Richard Kamm - 18:36</p>
-        <p style="margin-left:30px">Nicolas Horal - 18:55</p>
-        <p style="margin-left:30px">Gabriel Gaster - 18:59</p>
-        <p style="margin-left:30px">John Rohleder - 19:28</p>
-        <p style="margin-left:30px">Riki Kanazu - 19:36</p>
-        <p style="margin-left:30px">Daniel He - 19:40</p>
-        <p style="margin-left:30px">Martin Demchenko - 19:55</p>
-        <p style="margin-left:30px">Elijah Hawkinson - 20:40</p>
-        <p style="margin-left:30px">William Speer - 20:41</p>
-        <p style="margin-left:30px">Alexander Staring - 20:57</p>
-        <p style="margin-left:30px">Sebastian Eisler - 21:41</p>
-        <p style="margin-left:30px">Dylan Larsson - 21:50</p>
-        <p style="margin-left:30px">Elliot Harmon Hardy - 22:24</p>
-        <p style="margin-left:30px">Ignacio Dagnino - 22:33</p>
-        <p style="margin-left:30px">Nathan Campbell - 22:47</p>
-        <p style="margin-left:30px">Daniel Santodomingo - 23:23</p>
-        <p style="margin-left:30px">Nigel Jorgensen - 23:34</p>
-        <p style="margin-left:30px">Jack Moore - 26:49</p>
-        <p style="margin-left:30px">Dylan Sohng - 29:13</p>
+        <div onclick = "clickAthlete(this)" id = "Logan Mucha"><p style="margin-left:30px">Logan Mucha - 16:45</p></div>
+        <div onclick = "clickAthlete(this)" id = "Volodymyr Kosolapov"><p style="margin-left:30px">Volodymyr Kosolapov - 16:49</p></div>
+        <div onclick = "clickAthlete(this)" id = "Sukhshaan Brar"><p style="margin-left:30px">Sukhshaan Brar - 17:05</p></div>
+        <div onclick = "clickAthlete(this)" id = "Lincoln Fraser"><p style="margin-left:30px">Lincoln Fraser - 17:27</p></div>
+        <div onclick = "clickAthlete(this)" id = "Samuel Ryan"><p style="margin-left:30px">Samuel Ryan - 17:57</p></div>
+        <div onclick = "clickAthlete(this)" id = "Parker Dillon"><p style="margin-left:30px">Parker Dillon - 18:15</p></div>
+        <div onclick = "clickAthlete(this)" id = "Taylor Norris"><p style="margin-left:30px">Taylor Norris - 18:34</p></div>
+        <div onclick = "clickAthlete(this)" id = "Richard Kamm"><p style="margin-left:30px">Richard Kamm - 18:36</p></div>
+        <div onclick = "clickAthlete(this)" id = "Nicolas Horal"><p style="margin-left:30px">Nicolas Horal - 18:55</p></div>
+        <div onclick = "clickAthlete(this)" id = "Gabriel Gaster"><p style="margin-left:30px">Gabriel Gaster - 18:59</p></div>
+        <div onclick = "clickAthlete(this)" id = "John Rohleder"><p style="margin-left:30px">John Rohleder - 19:28</p></div>
+        <div onclick = "clickAthlete(this)" id = "Riki Kanazu"><p style="margin-left:30px">Riki Kanazu - 19:36</p></div>
+        <div onclick = "clickAthlete(this)" id = "Daniel He"><p style="margin-left:30px">Daniel He - 19:40</p></div>
+        <div onclick = "clickAthlete(this)" id = "Martin Demchenko"><p style="margin-left:30px">Martin Demchenko - 19:55</p></div>
+        <div onclick = "clickAthlete(this)" id = "Elijah Hawkinson"><p style="margin-left:30px">Elijah Hawkinson - 20:40</p></div>
+        <div onclick = "clickAthlete(this)" id = "William Speer"><p style="margin-left:30px">William Speer - 20:41</p></div>
+        <div onclick = "clickAthlete(this)" id = "Alexander Staring"><p style="margin-left:30px">Alexander Staring - 20:57</p></div>
+        <div onclick = "clickAthlete(this)" id = "Sebastian Eisler"><p style="margin-left:30px">Sebastian Eisler - 21:41</p></div>
+        <div onclick = "clickAthlete(this)" id = "Dylan Larsson"><p style="margin-left:30px">Dylan Larsson - 21:50</p></div>
+        <div onclick = "clickAthlete(this)" id = "Elliot Harmon Hardy"><p style="margin-left:30px">Elliot Harmon Hardy - 22:24</p></div>
+        <div onclick = "clickAthlete(this)" id = "Ignacio Dagnino"><p style="margin-left:30px">Ignacio Dagnino - 22:33</p></div>
+        <div onclick = "clickAthlete(this)" id = "Nathan Campbell"><p style="margin-left:30px">Nathan Campbell - 22:47</p></div>
+        <div onclick = "clickAthlete(this)" id = "Daniel Santodomingo"><p style="margin-left:30px">Daniel Santodomingo - 23:23</p></div>
+        <div onclick = "clickAthlete(this)" id = "Nigel Jorgensen"><p style="margin-left:30px">Nigel Jorgensen - 23:34</p></div>
+        <div onclick = "clickAthlete(this)" id = "Jack Moore"><p style="margin-left:30px">Jack Moore - 26:49</p></div>
+        <div onclick = "clickAthlete(this)" id = "Dylan Sohng"><p style="margin-left:30px">Dylan Sohng - 29:13</p></div>
 
         <p style="margin-top:5px"><b>Sophomores</b></p>
-        <p style="margin-left:30px">Yashveer Brar - 16:06</p>
-        <p style="margin-left:30px">Jacob Halter - 18:08</p>
-        <p style="margin-left:30px">Luke Stacey - 18:28</p>
-        <p style="margin-left:30px">Nicholas Brownlee - 19:03</p>
-        <p style="margin-left:30px">Kai Harada - 19:07</p>
-        <p style="margin-left:30px">Diego Dabare - 19:07</p>
-        <p style="margin-left:30px">Ryan Nelson - 19:32</p>
-        <p style="margin-left:30px">Conner Walker - 19:51</p>
-        <p style="margin-left:30px">Dhroov Patankar - 20:03</p>
-        <p style="margin-left:30px">Ethan Birchenall - 20:15</p>
-        <p style="margin-left:30px">Ayush Agarwal - 20:27</p>
-        <p style="margin-left:30px">Noam Ostfeld - 20:51</p>
-        <p style="margin-left:30px">Keita Foley - 21:08</p>
-        <p style="margin-left:30px">Weston Wood - 21:11</p>
-        <p style="margin-left:30px">William Kaptik - 21:18</p>
-        <p style="margin-left:30px">William Luft - 21:30</p>
-        <p style="margin-left:30px">Brayden Dino - 21:58</p>
-        <p style="margin-left:30px">Henry Dickens - 22:09</p>
-        <p style="margin-left:30px">Robert Wilson - 22:11</p>
-        <p style="margin-left:30px">Milo Soth - 22:56</p>
-        <p style="margin-left:30px">Maxwell Rawson - 23:15</p>
-        <p style="margin-left:30px">Rayn Fawzan - 23:31</p>
-        <p style="margin-left:30px">Ashish Naik - 23:49</p>
-        <p style="margin-left:30px">Abbas Shaoob - 24:25</p>
-        <p style="margin-left:30px">Shaurya Duggal - 24:40</p>
-        <p style="margin-left:30px">Noah Kaptik - 24:40</p>
-        <p style="margin-left:30px">Elliot Roper - 25:17</p>
-        <p style="margin-left:30px">Maxwell Mar - 25:25</p>
-        <p style="margin-left:30px">Sean Baik - 25:53</p>
-        <p style="margin-left:30px">Kruthik Ankam - 26:02</p>
-        <p style="margin-left:30px">Alby Kennedy - 26:36</p>
-        <p style="margin-left:30px">Ethan Gentilini - 27:20</p>
-        <p style="margin-left:30px">Krithik Vivekananthan - 28:26</p>
-        <p style="margin-left:30px">Neil Shah - 30:22</p>
+        <div onclick = "clickAthlete(this)" id = "Yashveer Brar"><p style="margin-left:30px">Yashveer Brar - 16:06</p></div>
+        <div onclick = "clickAthlete(this)" id = "Jacob Halter"><p style="margin-left:30px">Jacob Halter - 18:08</p></div>
+        <div onclick = "clickAthlete(this)" id = "Luke Stacey"><p style="margin-left:30px">Luke Stacey - 18:28</p></div>
+        <div onclick = "clickAthlete(this)" id = "Nicholas Brownlee"><p style="margin-left:30px">Nicholas Brownlee - 19:03</p></div>
+        <div onclick = "clickAthlete(this)" id = "Kai Harada"><p style="margin-left:30px">Kai Harada - 19:07</p></div>
+        <div onclick = "clickAthlete(this)" id = "Diego Dabare"><p style="margin-left:30px">Diego Dabare - 19:07</p></div>
+        <div onclick = "clickAthlete(this)" id = "Ryan Nelson"><p style="margin-left:30px">Ryan Nelson - 19:32</p></div>
+        <div onclick = "clickAthlete(this)" id = "Conner Walker"><p style="margin-left:30px">Conner Walker - 19:51</p></div>
+        <div onclick = "clickAthlete(this)" id = "Dhroov Patankar"><p style="margin-left:30px">Dhroov Patankar - 20:03</p></div>
+        <div onclick = "clickAthlete(this)" id = "Ethan Birchenall"><p style="margin-left:30px">Ethan Birchenall - 20:15</p></div>
+        <div onclick = "clickAthlete(this)" id = "Ayush Agarwal"><p style="margin-left:30px">Ayush Agarwal - 20:27</p></div>
+        <div onclick = "clickAthlete(this)" id = "Noam Ostfeld"><p style="margin-left:30px">Noam Ostfeld - 20:51</p></div>
+        <div onclick = "clickAthlete(this)" id = "Keita Foley"><p style="margin-left:30px">Keita Foley - 21:08</p></div>
+        <div onclick = "clickAthlete(this)" id = "Weston Wood"><p style="margin-left:30px">Weston Wood - 21:11</p></div>
+        <div onclick = "clickAthlete(this)" id = "William Kaptik"><p style="margin-left:30px">William Kaptik - 21:18</p></div>
+        <div onclick = "clickAthlete(this)" id = "William Luft"><p style="margin-left:30px">William Luft - 21:30</p></div>
+        <div onclick = "clickAthlete(this)" id = "Brayden Dino"><p style="margin-left:30px">Brayden Dino - 21:58</p></div>
+        <div onclick = "clickAthlete(this)" id = "Henry Dickens"><p style="margin-left:30px">Henry Dickens - 22:09</p></div>
+        <div onclick = "clickAthlete(this)" id = "Robert Wilson"><p style="margin-left:30px">Robert Wilson - 22:11</p></div>
+        <div onclick = "clickAthlete(this)" id = "Milo Soth"><p style="margin-left:30px">Milo Soth - 22:56</p></div>
+        <div onclick = "clickAthlete(this)" id = "Maxwell Rawson"><p style="margin-left:30px">Maxwell Rawson - 23:15</p></div>
+        <div onclick = "clickAthlete(this)" id = "Rayn Fawzan"><p style="margin-left:30px">Rayn Fawzan - 23:31</p></div>
+        <div onclick = "clickAthlete(this)" id = "Ashish Naik"><p style="margin-left:30px">Ashish Naik - 23:49</p></div>
+        <div onclick = "clickAthlete(this)" id = "Abbas Shaoob"><p style="margin-left:30px">Abbas Shaoob - 24:25</p></div>
+        <div onclick = "clickAthlete(this)" id = "Shaurya Duggal"><p style="margin-left:30px">Shaurya Duggal - 24:40</p></div>
+        <div onclick = "clickAthlete(this)" id = "Noah Kaptik"><p style="margin-left:30px">Noah Kaptik - 24:40</p></div>
+        <div onclick = "clickAthlete(this)" id = "Elliot Roper"><p style="margin-left:30px">Elliot Roper - 25:17</p></div>
+        <div onclick = "clickAthlete(this)" id = "Maxwell Mar"><p style="margin-left:30px">Maxwell Mar - 25:25</p></div>
+        <div onclick = "clickAthlete(this)" id = "Sean Baik"><p style="margin-left:30px">Sean Baik - 25:53</p></div>
+        <div onclick = "clickAthlete(this)" id = "Kruthik Ankam"><p style="margin-left:30px">Kruthik Ankam - 26:02</p></div>
+        <div onclick = "clickAthlete(this)" id = "Alby Kennedy"><p style="margin-left:30px">Alby Kennedy - 26:36</p></div>
+        <div onclick = "clickAthlete(this)" id = "Ethan Gentilini"><p style="margin-left:30px">Ethan Gentilini - 27:20</p></div>
+        <div onclick = "clickAthlete(this)" id = "Krithik Vivekananthan"><p style="margin-left:30px">Krithik Vivekananthan - 28:26</p></div>
+        <div onclick = "clickAthlete(this)" id = "Neil Shah"><p style="margin-left:30px">Neil Shah - 30:22</p></div>
 
         <p style="margin-top:5px"><b>Freshmen</b></p>
         <p style="margin-left:30px">-</p>
@@ -259,36 +279,36 @@
       <div class="girls">
         <h2>Girls</h2>
         <p style="margin-top:5px"><b>Seniors</b></p>
-        <p style="margin-left:30px">Sydney Collier - 17:31</p>
-        <p style="margin-left:30px">Sreenithya Kasireddy - 20:10</p>
-        <p style="margin-left:30px">Ella MacDonald - 21:10</p>
-        <p style="margin-left:30px">Aleise Robertson - 23:14</p>
-        <p style="margin-left:30px">Naomi Kang - 23:37</p>
-        <p style="margin-left:30px">Allyson Meyer - 23:42</p>
-        <p style="margin-left:30px">Faith Masseth - 23:55</p>
-        <p style="margin-left:30px">Victoria Mata - 25:28</p>
-        <p style="margin-left:30px">Isabella Duong - 26:12</p>
-        <p style="margin-left:30px">Alyse Schroeder - 26:20</p>
-        <p style="margin-left:30px">Acacia Featherstone - 26:53</p>
-        <p style="margin-left:30px">Madelyn Harden - 31:09</p>
+        <div onclick = "clickAthlete(this)" id = "Sydney Collier"><p style="margin-left:30px">Sydney Collier - 17:31</p></div>
+        <div onclick = "clickAthlete(this)" id = "Sreenithya Kasireddy"><p style="margin-left:30px">Sreenithya Kasireddy - 20:10</p></div>
+        <div onclick = "clickAthlete(this)" id = "Ella MacDonald"><p style="margin-left:30px">Ella MacDonald - 21:10</p></div>
+        <div onclick = "clickAthlete(this)" id = "Aleise Robertson"><p style="margin-left:30px">Aleise Robertson - 23:14</p></div>
+        <div onclick = "clickAthlete(this)" id = "Naomi Kang"><p style="margin-left:30px">Naomi Kang - 23:37</p></div>
+        <div onclick = "clickAthlete(this)" id = "Allyson Meyer"><p style="margin-left:30px">Allyson Meyer - 23:42</p></div>
+        <div onclick = "clickAthlete(this)" id = "Faith Masseth"><p style="margin-left:30px">Faith Masseth - 23:55</p></div>
+        <div onclick = "clickAthlete(this)" id = "Victoria Mata"><p style="margin-left:30px">Victoria Mata - 25:28</p></div>
+        <div onclick = "clickAthlete(this)" id = "Isabella Duong"><p style="margin-left:30px">Isabella Duong - 26:12</p></div>
+        <div onclick = "clickAthlete(this)" id = "Alyse Schroeder"><p style="margin-left:30px">Alyse Schroeder - 26:20</p></div>
+        <div onclick = "clickAthlete(this)" id = "Acacia Featherstone"><p style="margin-left:30px">Acacia Featherstone - 26:53</p></div>
+        <div onclick = "clickAthlete(this)" id = "Madelyn Harden"><p style="margin-left:30px">Madelyn Harden - 31:09</p></div>
 
         <p style="margin-top:5px"><b>Juniors</b></p>
-        <p style="margin-left:30px">Megan Vander Mey - 20:36</p>
-        <p style="margin-left:30px">Abigail Riley - 20:41</p>
-        <p style="margin-left:30px">Jantamanee Stibbe - 20:43</p>
-        <p style="margin-left:30px">Anika Aageson - 21:49</p>
-        <p style="margin-left:30px">Ava Miller - 23:05</p>
-        <p style="margin-left:30px">Lauren Pattillo - 24:41</p>
-        <p style="margin-left:30px">Sarah Shaikh - 25:40</p>
+        <div onclick = "clickAthlete(this)" id = "Megan Vander Mey"><p style="margin-left:30px">Megan Vander Mey - 20:36</p></div>
+        <div onclick = "clickAthlete(this)" id = "Abigail Riley"><p style="margin-left:30px">Abigail Riley - 20:41</p></div>
+        <div onclick = "clickAthlete(this)" id = "Jantamanee Stibbe"><p style="margin-left:30px">Jantamanee Stibbe - 20:43</p></div>
+        <div onclick = "clickAthlete(this)" id = "Anika Aageson"><p style="margin-left:30px">Anika Aageson - 21:49</p></div>
+        <div onclick = "clickAthlete(this)" id = "Ava Miller"><p style="margin-left:30px">Ava Miller - 23:05</p></div>
+        <div onclick = "clickAthlete(this)" id = "Lauren Pattillo"><p style="margin-left:30px">Lauren Pattillo - 24:41</p></div>
+        <div onclick = "clickAthlete(this)" id = "Sarah Shaikh"><p style="margin-left:30px">Sarah Shaikh - 25:40</p></div>
 
         <p style="margin-top:5px"><b>Sophomores</b></p>
-        <p style="margin-left:30px">Lucy Duong - 20:16</p>
-        <p style="margin-left:30px">Jasmine Ma - 25:35</p>
-        <p style="margin-left:30px">Ava Lyman - 27:11</p>
-        <p style="margin-left:30px">Ditika Gandhi - 27:29</p>
-        <p style="margin-left:30px">Manyada Alapaty - 29:14</p>
-        <p style="margin-left:30px">Kerui Xu - 31:31</p>
-        <p style="margin-left:30px">Menh Amer - 31:42</p>
+        <div onclick = "clickAthlete(this)" id = "Lucy Duong"><p style="margin-left:30px">Lucy Duong - 20:16</p></div>
+        <div onclick = "clickAthlete(this)" id = "Jasmine Ma"><p style="margin-left:30px">Jasmine Ma - 25:35</p></div>
+        <div onclick = "clickAthlete(this)" id = "Ava Lyman"><p style="margin-left:30px">Ava Lyman - 27:11</p></div>
+        <div onclick = "clickAthlete(this)" id = "Ditika Gandhi"><p style="margin-left:30px">Ditika Gandhi - 27:29</p></div>
+        <div onclick = "clickAthlete(this)" id = "Manyada Alapaty"><p style="margin-left:30px">Manyada Alapaty - 29:14</p></div>
+        <div onclick = "clickAthlete(this)" id = "Kerui Xu"><p style="margin-left:30px">Kerui Xu - 31:31</p></div>
+        <div onclick = "clickAthlete(this)" id = "Menh Amer"><p style="margin-left:30px">Menh Amer - 31:42</p></div>
 
         <p style="margin-top:5px"><b>Freshmen</b></p>
         <p style="margin-left:30px">-</p>
