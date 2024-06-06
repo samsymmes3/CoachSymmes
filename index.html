@@ -77,40 +77,73 @@
     }
   </style>
 </head>
-
+<script>sidebarClicked = false;</script>
 <body>
   <div class="wrapper">
     <div class="header">
       <h1>Skyline Spartan XC</h1>
     </div>
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
       <a href="index.html">
         <div class="sidebarh">
-          <h1>Skyline XC</h1>
+          <h1 id = "sidebarE1">Skyline XC</h1>
         </div>
       </a>
       <a href="index.html">
         <div class="sidebarh">
-          <h2>Home</h2>
+          <h2 id = "sidebarE2">Home</h2>
         </div>
       </a>
       <a href="summerSchedule.html">
         <div class="sidebarh">
-          <h4>Summer Schedule</h4>
+          <h4 id = "sidebarE3">Summer Schedule</h4>
         </div>
       </a>
       <a href="raceInfo.html">
         <div class="sidebarh">
-          <h4>Race Info</h4>
+          <h4 id = "sidebarE4">Race Info</h4>
         </div>
       </a>
       <a href="athletes.html">
         <div class="sidebarh">
-          <h4>Athletes</h4>
+          <h4 id = "sidebarE5">Athletes</h4>
         </div>
       </a>
+      <script>
+        originalE1Size = document.getElementById('sidebarE1').style.fontSize;
+        originalE2Size = document.getElementById('sidebarE2').style.fontSize;
+        originalE3Size = document.getElementById('sidebarE3').style.fontSize;
+        originalE4Size = document.getElementById('sidebarE4').style.fontSize;
+        originalE5Size = document.getElementById('sidebarE5').style.fontSize;
+      </script>
+      <div style="text-align:center;" onclick="
+        if(!sidebarClicked){
+          document.getElementById('expanderArrow').innerHTML = '&#8592;';
+          document.getElementById('sidebar').style.width = '380px';
+          document.getElementById('main').style.left = '380px';
+          document.getElementById('main').style.width = 'calc(100% - 400px)';
+          document.getElementById('sidebarE1').style.fontSize = '50px';
+          document.getElementById('sidebarE2').style.fontSize = '40px';
+          document.getElementById('sidebarE3').style.fontSize = '30px';
+          document.getElementById('sidebarE4').style.fontSize = '30px';
+          document.getElementById('sidebarE5').style.fontSize = '30px';
+        } else {
+          document.getElementById('expanderArrow').innerHTML = '&#8594;';
+          document.getElementById('sidebar').style.width = '190px';
+          document.getElementById('main').style.left = '190px';
+          document.getElementById('main').style.width = 'calc(100% - 210px)';
+          document.getElementById('sidebarE1').style.fontSize = originalE1Size;
+          document.getElementById('sidebarE2').style.fontSize = originalE2Size;
+          document.getElementById('sidebarE3').style.fontSize = originalE3Size;
+          document.getElementById('sidebarE4').style.fontSize = originalE4Size;
+          document.getElementById('sidebarE5').style.fontSize = originalE5Size;
+        }
+        sidebarClicked = !sidebarClicked;
+      ">
+        <b><h1 id = "expanderArrow">&#8594;</h1></b>
+      </div>
     </div>
-    <div class="main">
+    <div class="main" id="main">
       <h1>Home</h1>
       <p>
         Use the sidebar to look at all our Cross Country info!
