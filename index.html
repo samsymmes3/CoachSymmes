@@ -346,6 +346,10 @@
 <script>
   isTall = false;
   function increaseFontSize(e) {
+    if(e.id.includes("sidebar")){
+      return
+    }
+    var fo
     var fontSize = window.getComputedStyle(e, null).getPropertyValue('font-size');
     var newFontSize = parseInt(fontSize.substring(0, fontSize.length - 2));
     if(isTall) {newFontSize -= 8;}
