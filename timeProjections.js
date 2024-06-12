@@ -6,6 +6,13 @@ function clickAthlete(e){
     document.getElementById(athleteToPutBack).innerHTML = htmlToPutBack;
   }
 
+  if(e.id == athleteToPutBack){
+    document.getElementById(athleteToPutBack).innerHTML = htmlToPutBack;
+    athleteToPutBack = "";
+    htmlToPutBack = "";
+    return;
+  }
+
   htmlToPutBack = document.getElementById(e.id).innerHTML;
   athleteToPutBack = e.id;
 

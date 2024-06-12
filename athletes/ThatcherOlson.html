@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Spartan XC</title>
+  <meta charset="UTF-8">
+  <style>
+    a {
+      color: black;
+      text-decoration: none;
+    }
+    .wrapper {
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar {
+      background: rgb(200, 200, 200);
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 190px;
+      height: 100%;
+      padding: 10px 0;
+      transition: all 0.5s ease;
+    }
+    .header {
+      background: rgb(24, 69, 59);
+      color: rgb(200, 200, 200);
+      height: 80px;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    .header h1 {
+      text-align: center;
+      font-size: 50px;
+      margin-top: 10px;
+    }
+    .footer {
+      text-align: center;
+      width: 100%;
+      margin-top: 32px;
+    }
+    .footer p {
+      margin-left: 0px;
+      margin-top: 16px;
+    }
+    p {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-left: 24px;
+    }
+    .main {
+      background: rgb(240, 240, 240);
+      position: fixed;
+      top: 80px;
+      left: 190px;
+      width: calc(100% - 210px);
+      height: calc(100% - 80px);
+      padding: 0px 0;
+      transition: all 0.5s ease;
+      overflow: scroll;
+      margin-bottom: 50px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .main h1 {
+      margin-bottom: 0px;
+    }
+    .main h2 {
+      margin-top: 8px;
+      margin-bottom: 0px;
+      margin-left: 8px;
+    }
+    .main h4 {
+      margin-top: 8px;
+      margin-bottom: 0px;
+      margin-left: 16px;
+    }
+    .sidebarh {
+      width: 100%;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .sidebarh h1{
+      margin-top: 0px;
+      margin-bottom: 10px;
+      margin-left: 5px
+    }
+    .sidebarh h2 {
+      margin-top: 5px;
+      margin-bottom: 0px;
+      margin-left: 15px;
+    }
+    .sidebarh h4 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-left: 25px;
+    }
+    body{
+      background: #f5f6fa;
+    }
+  </style>
+</head>
+<script>sidebarClicked = false;</script>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <h1>Skyline Spartan XC</h1>
+    </div>
+    <div class="sidebar" id="sidebar">
+      <a href="index.html">
+        <div class="sidebarh">
+          <h1 id = "sidebarE1">Skyline XC</h1>
+        </div>
+      </a>
+      <a href="index.html">
+        <div class="sidebarh">
+          <h2 id = "sidebarE2">Home</h2>
+        </div>
+      </a>
+      <a href="summerSchedule.html">
+        <div class="sidebarh">
+          <h4 id = "sidebarE3">Summer Schedule</h4>
+        </div>
+      </a>
+      <a href="raceInfo.html">
+        <div class="sidebarh">
+          <h4 id = "sidebarE4">Race Info</h4>
+        </div>
+      </a>
+      <a href="athletes.html">
+        <div class="sidebarh">
+          <h4 id = "sidebarE5">Athletes</h4>
+        </div>
+      </a>
+      <script>
+        originalE1Size = document.getElementById('sidebarE1').style.fontSize;
+        originalE2Size = document.getElementById('sidebarE2').style.fontSize;
+        originalE3Size = document.getElementById('sidebarE3').style.fontSize;
+        originalE4Size = document.getElementById('sidebarE4').style.fontSize;
+        originalE5Size = document.getElementById('sidebarE5').style.fontSize;
+      </script>
+      <div style="text-align:center;" onclick="
+        if(!sidebarClicked){
+          document.getElementById('expanderArrow').innerHTML = '&#8592;';
+          document.getElementById('sidebar').style.width = '380px';
+          document.getElementById('main').style.left = '380px';
+          document.getElementById('main').style.width = 'calc(100% - 400px)';
+          document.getElementById('sidebarE1').style.fontSize = '50px';
+          document.getElementById('sidebarE2').style.fontSize = '40px';
+          document.getElementById('sidebarE3').style.fontSize = '30px';
+          document.getElementById('sidebarE4').style.fontSize = '30px';
+          document.getElementById('sidebarE5').style.fontSize = '30px';
+        } else {
+          document.getElementById('expanderArrow').innerHTML = '&#8594;';
+          document.getElementById('sidebar').style.width = '190px';
+          document.getElementById('main').style.left = '190px';
+          document.getElementById('main').style.width = 'calc(100% - 210px)';
+          document.getElementById('sidebarE1').style.fontSize = originalE1Size;
+          document.getElementById('sidebarE2').style.fontSize = originalE2Size;
+          document.getElementById('sidebarE3').style.fontSize = originalE3Size;
+          document.getElementById('sidebarE4').style.fontSize = originalE4Size;
+          document.getElementById('sidebarE5').style.fontSize = originalE5Size;
+        }
+        sidebarClicked = !sidebarClicked;
+      ">
+        <b><h1 id = "expanderArrow" style="font-size:50px">&#8594;</h1></b>
+      </div>
+    </div>
+    <div class="main" id="main">
+      <h1>Home</h1>
+      <h2>Thatcher Olson - Senior</h2>
+      <h4>PRs</h4>
+      <p>&#8226; XC 5k - 19:47 - October 8, 2022 at Hole in the Wall Invitational</p>
+      <p>&#8226; 100m - 14.64 - March 30, 2022 at Issaquah High School</p>
+      <p>&#8226; Pole Vault - 13' 0" - March 28, 2024 at Mt Si High School</p>
+
+      <h4>AI Projections for XC 2024</h4>
+      <div style="width=100%">
+
+          <div style="text-align: center;margin-top:8px;margin-left: 24px;margin-right:8px;display:inline-block;vertical-align:top">
+            <p style="margin-left:0px">XC Based</p>
+            <div style="display:inline-block;margin-right:8px">
+              <p style="margin-left:0px">Chance</p>
+              <p style="margin-left:0px">10%</p>
+              <p style="margin-left:0px">20%</p>
+              <p style="margin-left:0px">30%</p>
+              <p style="margin-left:0px">40%</p>
+              <p style="margin-left:0px">50%</p>
+              <p style="margin-left:0px">60%</p>
+              <p style="margin-left:0px">70%</p>
+              <p style="margin-left:0px">80%</p>
+              <p style="margin-left:0px">90%</p>
+            </div>
+            <div style="display:inline-block;margin-left:8px">
+              <p style="margin-left:0px">Time</p>
+              <p style="margin-left:0px">18:21</p>
+              <p style="margin-left:0px">18:48</p>
+              <p style="margin-left:0px">19:07</p>
+              <p style="margin-left:0px">19:24</p>
+              <p style="margin-left:0px">19:38</p>
+              <p style="margin-left:0px">19:53</p>
+              <p style="margin-left:0px">20:09</p>
+              <p style="margin-left:0px">20:32</p>
+              <p style="margin-left:0px">21:08</p>
+            </div>
+            <!--<img style="margin-top:8px" src="../images/GavinJohnsonXC.png" width=100%>-->
+          </div>
+
+          <div style="text-align: center;margin-top:8px;margin-left:8px;display:inline-block;vertical-align:top">
+            <p style="margin-left:0px">Track Based</p>
+            <div style="display:inline-block;margin-right:8px">
+              <p style="margin-left:0px">Chance</p>
+              <p style="margin-left:0px">10%</p>
+              <p style="margin-left:0px">20%</p>
+              <p style="margin-left:0px">30%</p>
+              <p style="margin-left:0px">40%</p>
+              <p style="margin-left:0px">50%</p>
+              <p style="margin-left:0px">60%</p>
+              <p style="margin-left:0px">70%</p>
+              <p style="margin-left:0px">80%</p>
+              <p style="margin-left:0px">90%</p>
+            </div>
+            <div style="display:inline-block;margin-left:8px">
+              <p style="margin-left:0px">Time</p>
+              <p style="margin-left:0px">-</p>
+              <p style="margin-left:0px">-</p>
+              <p style="margin-left:0px">-</p>
+              <p style="margin-left:0px">-</p>
+              <p style="margin-left:0px">-</p>
+              <p style="margin-left:0px">-</p>
+              <p style="margin-left:0px">-</p>
+              <p style="margin-left:0px">-</p>
+              <p style="margin-left:0px">-</p>
+            </div>
+            <!--<img style="margin-top:8px" src="../images/GavinJohnsonTrack.png" width=100%>-->
+          </div>
+      </div>
+
+      <div class="footer">
+        <p>Skyline Spartan XC<p>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  isTall = false;
+  function increaseFontSize(e) {
+    if(e.id.includes("sidebar")){
+      return
+    }
+    var fo
+    var fontSize = window.getComputedStyle(e, null).getPropertyValue('font-size');
+    var newFontSize = parseInt(fontSize.substring(0, fontSize.length - 2));
+    if(isTall) {newFontSize -= 8;}
+    else {newFontSize += 8;}
+    e.style.fontSize = newFontSize + "px";
+  }
+  window.addEventListener("resize", checkFontSize);
+
+  function checkFontSize(e) {
+    if(isTall && window.innerHeight > window.innerWidth){return;}
+    if(!isTall && window.innerHeight < window.innerWidth){return;}
+    for(var i = 0; i < document.getElementsByTagName("p").length; i++) {
+      increaseFontSize(document.getElementsByTagName("p")[i]);
+    }
+    for(var i = 0; i < document.getElementsByTagName("h1").length; i++) {
+      increaseFontSize(document.getElementsByTagName("h1")[i]);
+    }
+    for(var i = 0; i < document.getElementsByTagName("h2").length; i++) {
+      increaseFontSize(document.getElementsByTagName("h2")[i]);
+    }
+    for(var i = 0; i < document.getElementsByTagName("h3").length; i++) {
+      increaseFontSize(document.getElementsByTagName("h3")[i]);
+    }
+    for(var i = 0; i < document.getElementsByTagName("h4").length; i++) {
+      increaseFontSize(document.getElementsByTagName("h4")[i]);
+    }
+    isTall = !isTall;
+  }
+  checkFontSize();
+</script>
+</html>
