@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Spartan XC</title>
+  <meta charset="UTF-8">
+  <style>
+    a {
+      color: black;
+      text-decoration: none;
+    }
+    .wrapper {
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar {
+      background: rgb(200, 200, 200);
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 190px;
+      height: 100%;
+      padding: 10px 0;
+      transition: all 0.5s ease;
+    }
+    .header {
+      background: rgb(24, 69, 59);
+      color: rgb(200, 200, 200);
+      height: 80px;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    .header h1 {
+      text-align: center;
+      font-size: 50px;
+      margin-top: 10px;
+    }
+    .footer {
+      text-align: center;
+      width: 100%;
+      margin-top: 32px;
+    }
+    .main {
+      background: rgb(240, 240, 240);
+      position: fixed;
+      top: 80px;
+      left: 190px;
+      width: calc(100% - 210px);
+      height: calc(100% - 80px);
+      padding: 0px 0;
+      transition: all 0.5s ease;
+      overflow: scroll;
+      margin-bottom: 50px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .main h1 {
+      margin-left: 0px;
+      margin-bottom: 5px;
+    }
+    .main h2 {
+      margin-left: 10px;
+      margin-bottom: 0px;
+      margin-top: 4px;
+    }
+    .main h4 {
+      margin-left: 20px;
+      margin-bottom: 0px;
+      margin-top: 4px;
+    }
+    .main p {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-left: 35px;
+    }
+    .sidebarh {
+      width: 100%;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .sidebarh h1{
+      margin-top: 0px;
+      margin-bottom: 10px;
+      margin-left: 5px
+    }
+    .sidebarh h2 {
+      margin-top: 5px;
+      margin-bottom: 0px;
+      margin-left: 15px;
+    }
+    .sidebarh h4 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-left: 25px;
+    }
+    td {
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    body{
+      background: #f5f6fa;
+    }
+  </style>
+</head>
+<script>sidebarClicked = false;</script>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <h1>Skyline Spartan XC</h1>
+    </div>
+    <div class="sidebar" id="sidebar">
+      <a href="../index.html">
+        <div class="sidebarh">
+          <h1 id = "sidebarE1">Skyline XC</h1>
+        </div>
+      </a>
+      <a href="../index.html">
+        <div class="sidebarh">
+          <h2 id = "sidebarE2">Home</h2>
+        </div>
+      </a>
+      <a href="../summerSchedule.html">
+        <div class="sidebarh">
+          <h4 id = "sidebarE3">Summer Schedule</h4>
+        </div>
+      </a>
+      <a href="../raceInfo.html">
+        <div class="sidebarh">
+          <h4 id = "sidebarE4">Race Info</h4>
+        </div>
+      </a>
+      <a href="../athletes.html">
+        <div class="sidebarh">
+          <h4 id = "sidebarE5">Athletes</h4>
+        </div>
+      </a>
+      <script>
+        originalE1Size = document.getElementById('sidebarE1').style.fontSize;
+        originalE2Size = document.getElementById('sidebarE2').style.fontSize;
+        originalE3Size = document.getElementById('sidebarE3').style.fontSize;
+        originalE4Size = document.getElementById('sidebarE4').style.fontSize;
+        originalE5Size = document.getElementById('sidebarE5').style.fontSize;
+      </script>
+      <div style="text-align:center;" onclick="
+        if(!sidebarClicked){
+          document.getElementById('expanderArrow').innerHTML = '&#8592;';
+          document.getElementById('sidebar').style.width = '380px';
+          document.getElementById('main').style.left = '380px';
+          document.getElementById('main').style.width = 'calc(100% - 400px)';
+          document.getElementById('sidebarE1').style.fontSize = '50px';
+          document.getElementById('sidebarE2').style.fontSize = '40px';
+          document.getElementById('sidebarE3').style.fontSize = '30px';
+          document.getElementById('sidebarE4').style.fontSize = '30px';
+          document.getElementById('sidebarE5').style.fontSize = '30px';
+        } else {
+          document.getElementById('expanderArrow').innerHTML = '&#8594;';
+          document.getElementById('sidebar').style.width = '190px';
+          document.getElementById('main').style.left = '190px';
+          document.getElementById('main').style.width = 'calc(100% - 210px)';
+          document.getElementById('sidebarE1').style.fontSize = originalE1Size;
+          document.getElementById('sidebarE2').style.fontSize = originalE2Size;
+          document.getElementById('sidebarE3').style.fontSize = originalE3Size;
+          document.getElementById('sidebarE4').style.fontSize = originalE4Size;
+          document.getElementById('sidebarE5').style.fontSize = originalE5Size;
+        }
+        sidebarClicked = !sidebarClicked;
+      ">
+        <b><h1 id = "expanderArrow" style="font-size:50px">&#8594;</h1></b>
+      </div>
+    </div>
+    <div class="main" id="main">
+      <a href="https://www.athletic.net/CrossCountry/meet/236373/info">
+        <h1>Bellarmine Invitational</h1>
+      </a>
+      <p style="margin-left:20px;">
+        Bellarmine is a smaller Invitational, with a course that is only 2 miles.
+        This is a great low-key way to start the season, and get a first experience of
+        what Invitationals are like, and get used to racing again. Even though the
+        meet is small (26 teams), there is still great competition with teams like
+        Bishop Blanchet, Curtis, Sequim, Stadium, and Mercer Island also attending!
+      </p>
+      <h2>Date - Saturday, September 14</h2>
+      <h2>Location - Bellarmine High School, Tacoma</h2>
+
+      <h2>Schedule</h2>
+
+      <h4 id="hider1" onclick="showRaceInfo(this, false)">&#8226; 9:05am - Freshman Girls</h4>
+      <div id=hidden1>
+        <p style="margin-top:4px">This Year</p>
+        <p style="margin-left:40px;">&#8226; All Freshman Girls</p>
+        <p style="margin-top:4px">Last Year</p>
+        <p style="margin-left:40px;">&#8226; <b>Team</b> - 5th Place</p>
+        <table style="text-align:center;border:none;margin-left:50px">
+          <tr>
+            <td>1st</td>
+            <td>Lucy Duong</td>
+            <td>13:14.6</td>
+          </tr>
+          <tr>
+            <td>24th</td>
+            <td>Jasmine Ma</td>
+            <td>16:42.4</td>
+          </tr>
+          <tr>
+            <td>35th</td>
+            <td>Ava Lyman</td>
+            <td>17:48.9</td>
+          </tr>
+          <tr>
+            <td>43rd</td>
+            <td>Ditika Gandhi</td>
+            <td>19:42.1</td>
+          </tr>
+          <tr>
+            <td>47th</td>
+            <td>Kerui Xu</td>
+            <td>20:49.8</td>
+          </tr>
+          <tr>
+            <td>56th</td>
+            <td>Menh Amer</td>
+            <td>24:18.6</td>
+          </tr>
+        </table>
+      </div>
+
+      <h4 id="hider2" onclick="showRaceInfo(this, false)">&#8226; 9:35am - Freshman Boys</h4>
+      <div id=hidden2>
+        <p style="margin-top:4px">This Year</p>
+        <p style="margin-left:40px;">&#8226; All Freshman Boys</p>
+        <p style="margin-top:4px">Last Year</p>
+        <p style="margin-left:40px;">&#8226; <b>Team</b> - 3rd Place</p>
+        <table style="text-align:center;border:none;margin-left:50px">
+          <tr>
+            <td>1st</td>
+            <td>Yash Brar</td>
+            <td>10:33.1 CR</td>
+          </tr>
+          <tr>
+            <td>9th</td>
+            <td>Luke Stacey</td>
+            <td>11:42.2</td>
+          </tr>
+          <tr>
+            <td>12th</td>
+            <td>Jacob Halter</td>
+            <td>11:52.1</td>
+          </tr>
+          <tr>
+            <td>17th</td>
+            <td>Kai Harada</td>
+            <td>12:23.8</td>
+          </tr>
+          <tr>
+            <td>27th</td>
+            <td>Nick Brownlee</td>
+            <td>12:45.0</td>
+          </tr>
+          <tr>
+            <td>29th</td>
+            <td>Diego Dabare</td>
+            <td>12:46.6</td>
+          </tr>
+          <tr>
+            <td>36th</td>
+            <td>Ryan Nelson</td>
+            <td>13:05.8</td>
+          </tr>
+          <tr>
+            <td>41st</td>
+            <td>Conner Walker</td>
+            <td>13:15.6</td>
+          </tr>
+          <tr>
+            <td>52nd</td>
+            <td>Aush Agarwal</td>
+            <td>13:26.4</td>
+          </tr>
+          <tr>
+            <td>57th</td>
+            <td>Will Kaptik</td>
+            <td>13:35.5</td>
+          </tr>
+          <tr>
+            <td>60th</td>
+            <td>Dhroov Patankar</td>
+            <td>13:40.9</td>
+          </tr>
+          <tr>
+            <td>64th</td>
+            <td>Robert Wilson</td>
+            <td>13:48.4</td>
+          </tr>
+          <tr>
+            <td>66th</td>
+            <td>Weston Wood</td>
+            <td>13:59.9</td>
+          </tr>
+          <tr>
+            <td>67th</td>
+            <td>Ethan Birchenall</td>
+            <td>14:01.9</td>
+          </tr>
+          <tr>
+            <td>71st</td>
+            <td>Keita Foley</td>
+            <td>14:18.0</td>
+          </tr>
+          <tr>
+            <td>72nd</td>
+            <td>Braydon Dino</td>
+            <td>14:21.3</td>
+          </tr>
+          <tr>
+            <td>86th</td>
+            <td>Ashish Naik</td>
+            <td>14:51.2</td>
+          </tr>
+          <tr>
+            <td>90th</td>
+            <td>Max Rawson</td>
+            <td>15:07.6</td>
+          </tr>
+          <tr>
+            <td>92nd</td>
+            <td>Henry Dickens</td>
+            <td>15:10.1</td>
+          </tr>
+          <tr>
+            <td>103rd</td>
+            <td>Noah Kaptik</td>
+            <td>15:43.0</td>
+          </tr>
+          <tr>
+            <td>105th</td>
+            <td>Max Mar</td>
+            <td>15:44.2</td>
+          </tr>
+          <tr>
+            <td>112th</td>
+            <td>Ayan Hussain</td>
+            <td>16:01.2</td>
+          </tr>
+          <tr>
+            <td>120th</td>
+            <td>Abbas Shaoob</td>
+            <td>16:37.4</td>
+          </tr>
+          <tr>
+            <td>121st</td>
+            <td>Elliot Roper</td>
+            <td>16:40.7</td>
+          </tr>
+          <tr>
+            <td>122nd</td>
+            <td>Sean Baik</td>
+            <td>16:51.4</td>
+          </tr>
+          <tr>
+            <td>131st</td>
+            <td>Krithik Vivekananthan</td>
+            <td>19:59.4</td>
+          </tr>
+          <tr>
+            <td>132nd</td>
+            <td>Shamus Vajda</td>
+            <td>22:03.4</td>
+          </tr>
+        </table>
+      </div>
+
+      <h4 id="hider3" onclick="showRaceInfo(this, false)">&#8226; 10:00am - Sophomore Girls JV</h4>
+      <div id=hidden3>
+        <p style="margin-top:4px">This Year</p>
+        <p style="margin-left:40px;">&#8226; All Sophomore Girls who are not Top 7</p>
+        <p style="margin-top:4px">Last Year</p>
+        <table style="text-align:center;border:none;margin-left:50px">
+          <tr>
+            <td>11th</td>
+            <td>Ava Miller</td>
+            <td>15:20.0</td>
+          </tr>
+          <tr>
+            <td>35th</td>
+            <td>Sarah Shaikh</td>
+            <td>18:18.9</td>
+          </tr>
+        </table>
+      </div>
+
+      <h4 id="hider4" onclick="showRaceInfo(this, false)">&#8226; 10:25am - Sophomore Boys JV</h4>
+      <div id=hidden4>
+        <p style="margin-top:4px">This Year</p>
+        <p style="margin-left:40px;">&#8226; All Sophomore Boys who are not Top 7</p>
+        <p style="margin-top:4px">Last Year</p>
+        <p style="margin-left:40px;">&#8226; <b>Team</b> - 2nd Place</p>
+        <table style="text-align:center;border:none;margin-left:50px">
+          <tr>
+            <td>8th</td>
+            <td>Lincoln Fraser</td>
+            <td>11:35.8</td>
+          </tr>
+          <tr>
+            <td>15th</td>
+            <td>Logan Mucha</td>
+            <td>12:05.2</td>
+          </tr>
+          <tr>
+            <td>18th</td>
+            <td>Taylor Norris</td>
+            <td>12:22.7</td>
+          </tr>
+          <tr>
+            <td>19th</td>
+            <td>Parker Dillon</td>
+            <td>12:25.1</td>
+          </tr>
+          <tr>
+            <td>24th</td>
+            <td>John Rohleder</td>
+            <td>12:50.4</td>
+          </tr>
+          <tr>
+            <td>29th</td>
+            <td>Nico Horal</td>
+            <td>12:59.0</td>
+          </tr>
+          <tr>
+            <td>31st</td>
+            <td>Alex Staring</td>
+            <td>12:59.9</td>
+          </tr>
+          <tr>
+            <td>33rd</td>
+            <td>Riki Kanazu</td>
+            <td>13:03.1</td>
+          </tr>
+          <tr>
+            <td>37th</td>
+            <td>Martin Demchenko</td>
+            <td>13:19.3</td>
+          </tr>
+          <tr>
+            <td>44th</td>
+            <td>Will Speer</td>
+            <td>13:30.7</td>
+          </tr>
+          <tr>
+            <td>57th</td>
+            <td>Sebastian Eisler</td>
+            <td>14:02.5</td>
+          </tr>
+          <tr>
+            <td>58th</td>
+            <td>Eli Hawkinson</td>
+            <td>14:05.8</td>
+          </tr>
+          <tr>
+            <td>67th</td>
+            <td>Dylan Larsson</td>
+            <td>14:19.2</td>
+          </tr>
+          <tr>
+            <td>72nd</td>
+            <td>Ignacio Dagnino</td>
+            <td>14:37.9</td>
+          </tr>
+          <tr>
+            <td>73rd</td>
+            <td>Nigel Jorgensen</td>
+            <td>14:38.8</td>
+          </tr>
+          <tr>
+            <td>75th</td>
+            <td>Nathan Campbell</td>
+            <td>14:42.0</td>
+          </tr>
+          <tr>
+            <td>81st</td>
+            <td>Jack Moore</td>
+            <td>16:03.2</td>
+          </tr>
+          <tr>
+            <td>92nd</td>
+            <td>Dylan Sohng</td>
+            <td>19:23.8</td>
+          </tr>
+        </table>
+      </div>
+
+      <h4 id="hider5" onclick="showRaceInfo(this, false)">&#8226; 10:45am - Girls JR/SR JV</h4>
+      <div id=hidden5>
+        <p style="margin-top:4px">This Year</p>
+        <p style="margin-left:40px;">&#8226; All Junior and Senior Girls who are not Top 7</p>
+        <p style="margin-top:4px">Last Year</p>
+        <p style="margin-left:40px;">&#8226; <b>Team</b> - 2nd Place</p>
+        <table style="text-align:center;border:none;margin-left:50px">
+          <tr>
+            <td>12th</td>
+            <td>Aleise Robertson</td>
+            <td>15:13.6</td>
+          </tr>
+          <tr>
+            <td>19th</td>
+            <td>Ally Meyer</td>
+            <td>15:31.4</td>
+          </tr>
+          <tr>
+            <td>22nd</td>
+            <td>Sam DeLeo</td>
+            <td>15:36.6</td>
+          </tr>
+          <tr>
+            <td>31st</td>
+            <td>Faith Masseth</td>
+            <td>16:40.8</td>
+          </tr>
+          <tr>
+            <td>33rd</td>
+            <td>Alyse Schroeder</td>
+            <td>17:02.4</td>
+          </tr>
+          <tr>
+            <td>39th</td>
+            <td>Victoria Mata</td>
+            <td>17:23.7</td>
+          </tr>
+          <tr>
+            <td>43rd</td>
+            <td>Bella Duong</td>
+            <td>17:55.3</td>
+          </tr>
+          <tr>
+            <td>49th</td>
+            <td>Estelle Tano</td>
+            <td>19:18.9</td>
+          </tr>
+          <tr>
+            <td>52nd</td>
+            <td>Maddy Harden</td>
+            <td>20:17.8</td>
+          </tr>
+          <tr>
+            <td>58th</td>
+            <td>Tanya Jain</td>
+            <td>24:11.1</td>
+          </tr>
+        </table>
+      </div>
+
+      <h4 id="hider6" onclick="showRaceInfo(this, false)">&#8226; 11:10am - Boys JR/SR JV</h4>
+      <div id=hidden6>
+        <p style="margin-top:4px">This Year</p>
+        <p style="margin-left:40px;">&#8226; All Junior and Senior Boys who are not Top 7</p>
+        <p style="margin-top:4px">Last Year</p>
+        <p style="margin-left:40px;">&#8226; <b>Team</b> - 4th Place</p>
+        <table style="text-align:center;border:none;margin-left:50px">
+          <tr>
+            <td>16th</td>
+            <td>Gavin Johnson</td>
+            <td>12:12.6</td>
+          </tr>
+          <tr>
+            <td>20th</td>
+            <td>Tyler Foggoa</td>
+            <td>12:21.0</td>
+          </tr>
+          <tr>
+            <td>27th</td>
+            <td>Ben Nelson</td>
+            <td>12:32.1</td>
+          </tr>
+          <tr>
+            <td>28th</td>
+            <td>Aarul Motiani</td>
+            <td>12:34.1</td>
+          </tr>
+          <tr>
+            <td>33rd</td>
+            <td>Jake Wong</td>
+            <td>12:44.6</td>
+          </tr>
+          <tr>
+            <td>54th</td>
+            <td>Ethan Howe</td>
+            <td>13:53.5</td>
+          </tr>
+          <tr>
+            <td>58th</td>
+            <td>Dylan Shek</td>
+            <td>14:10.3</td>
+          </tr>
+          <tr>
+            <td>71st</td>
+            <td>Evan Allbritton</td>
+            <td>14:46.5</td>
+          </tr>
+          <tr>
+            <td>72nd</td>
+            <td>Hima Pothi Reddy</td>
+            <td>14:55.7</td>
+          </tr>
+          <tr>
+            <td>77th</td>
+            <td>Christian Lundgren</td>
+            <td>15:28.2</td>
+          </tr>
+          <tr>
+            <td>83rd</td>
+            <td>Alex Hong</td>
+            <td>17:43.0</td>
+          </tr>
+        </table>
+      </div>
+
+      <h4 id="hider7" onclick="showRaceInfo(this, false)">&#8226; 11:30am - Varsity Girls</h4>
+      <div id=hidden7>
+        <p style="margin-top:4px">This Year</p>
+        <p style="margin-left:40px;">&#8226; Top 7 Girls</p>
+        <p style="margin-top:4px">Last Year</p>
+        <p style="margin-left:40px;">&#8226; <b>Team</b> - 7th Place</p>
+        <table style="text-align:center;border:none;margin-left:50px">
+          <tr>
+            <td>6th</td>
+            <td>Sydney Collier</td>
+            <td>11:54.9</td>
+          </tr>
+          <tr>
+            <td>36th</td>
+            <td>Anika Aageson</td>
+            <td>13:40.8</td>
+          </tr>
+          <tr>
+            <td>37th</td>
+            <td>Nithya Kasireddy</td>
+            <td>13:43.4</td>
+          </tr>
+          <tr>
+            <td>42nd</td>
+            <td>Ella MacDonald</td>
+            <td>13:49.0</td>
+          </tr>
+          <tr>
+            <td>46th</td>
+            <td>Megan Vander Mey</td>
+            <td>13:59.5</td>
+          </tr>
+          <tr>
+            <td>50th</td>
+            <td>Abby Riley</td>
+            <td>14:06.9</td>
+          </tr>
+          <tr>
+            <td>63rd</td>
+            <td>Janna Stibbe</td>
+            <td>14:31.0</td>
+          </tr>
+        </table>
+      </div>
+
+      <h4 id="hider8" onclick="showRaceInfo(this, false)">&#8226; 11:50am - Varsity Boys</h4>
+      <div id=hidden8>
+        <p style="margin-top:4px">This Year</p>
+        <p style="margin-left:40px;">&#8226; Top 7 Boys</p>
+        <p style="margin-top:4px">Last Year</p>
+        <p style="margin-left:40px;">&#8226; <b>Team</b> - 5th Place</p>
+        <table style="text-align:center;border:none;margin-left:50px">
+          <tr>
+            <td>12th</td>
+            <td>Reidar Aageson</td>
+            <td>10:38.2</td>
+          </tr>
+          <tr>
+            <td>30th</td>
+            <td>Vlad Kosolapov</td>
+            <td>11:02.1</td>
+          </tr>
+          <tr>
+            <td>33rd</td>
+            <td>Anton Varsa</td>
+            <td>11:07.6</td>
+          </tr>
+          <tr>
+            <td>50th</td>
+            <td>Ian Tasky</td>
+            <td>11:24.3</td>
+          </tr>
+          <tr>
+            <td>55th</td>
+            <td>Sam Ryan</td>
+            <td>11:27.7</td>
+          </tr>
+          <tr>
+            <td>65th</td>
+            <td>Shaan Brar</td>
+            <td>11:37.6</td>
+          </tr>
+          <tr>
+            <td>76th</td>
+            <td>Finn Dunne</td>
+            <td>11:47.5</td>
+          </tr>
+        </table>
+      </div>
+
+
+
+
+      <div class="footer">
+        <p>Skyline Spartan XC<p>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+  hiddenInfo = []
+
+  for(var i = 0; i < document.getElementsByTagName("div").length; i++) {
+
+    if(document.getElementsByTagName("div")[i].id.substring(0, 6) == "hidden") {
+      var idx = parseInt(document.getElementsByTagName("div")[i].id.substring(6)) - 1;
+      while(idx > hiddenInfo.length) {
+        hiddenInfo.push("")
+      }
+      hiddenInfo[idx] = document.getElementsByTagName("div")[i].innerHTML;
+      document.getElementsByTagName("div")[i].innerHTML = "";
+    }
+  }
+
+  function showRaceInfo(e, isRecursion) {
+    var idx = parseInt(e.id.substring(5)) - 1;
+    var temp = hiddenInfo[idx];
+    hiddenInfo[idx] = document.getElementById("hidden" + (idx + 1)).innerHTML;
+    document.getElementById("hidden" + (idx + 1)).innerHTML = temp;
+    if(temp != "" && !isRecursion){
+      for(var i = 0; i < hiddenInfo.length; i++){
+        if(i == idx){continue;}
+        if(hiddenInfo[i] == ""){
+          showRaceInfo(document.getElementById("hider" + (i + 1)), true)
+        }
+      }
+    }
+  }
+
+  isTall = false;
+  function increaseFontSize(e) {
+    if(e.id.includes("sidebar")){
+      return
+    }
+    var fo
+    var fontSize = window.getComputedStyle(e, null).getPropertyValue('font-size');
+    var newFontSize = parseInt(fontSize.substring(0, fontSize.length - 2));
+    if(isTall) {newFontSize -= 8;}
+    else {newFontSize += 8;}
+    e.style.fontSize = newFontSize + "px";
+  }
+  window.addEventListener("resize", checkFontSize);
+
+  function checkFontSize(e) {
+    if(isTall && window.innerHeight > window.innerWidth){return;}
+    if(!isTall && window.innerHeight < window.innerWidth){return;}
+    for(var i = 0; i < document.getElementsByTagName("p").length; i++) {
+      increaseFontSize(document.getElementsByTagName("p")[i]);
+    }
+    for(var i = 0; i < document.getElementsByTagName("h1").length; i++) {
+      increaseFontSize(document.getElementsByTagName("h1")[i]);
+    }
+    for(var i = 0; i < document.getElementsByTagName("h2").length; i++) {
+      increaseFontSize(document.getElementsByTagName("h2")[i]);
+    }
+    for(var i = 0; i < document.getElementsByTagName("h3").length; i++) {
+      increaseFontSize(document.getElementsByTagName("h3")[i]);
+    }
+    for(var i = 0; i < document.getElementsByTagName("h4").length; i++) {
+      increaseFontSize(document.getElementsByTagName("h4")[i]);
+    }
+    isTall = !isTall;
+  }
+  checkFontSize();
+</script>
+</html>
