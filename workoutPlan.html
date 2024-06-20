@@ -162,60 +162,131 @@
       </div>
     </div>
     <div class="main" id="main">
-      <h1>Summer Schedule</h1>
-      <p style="margin-left:10px">
-        We are looking forward to a fun and productive summer! This is when you
-        build the fitness that will let you carry your speed for a full 5k. We will
-        have runs at Beaver Lake Park, and occational other locations, weight room
-        sessions, and will connect you with your upper classmen for planning of
-        fun activities outside of running. Bring water, good running attire (trainers,
-        athletic shirt, sweatshirt?, shorts), and a way to record your run (GPS watch
-        or Strava App on your phone), especially if you are new.
-      </p>
-      <a href="workoutPlan.html">
-        <h2>Workout Plan</h2>
-      </a>
-      <h2>Olympic Weightlifting Lessons</h2>
-      <p>
-        Our Javelin Coach from Track, Pat Burke, will be teaching Olympic Lifts the week
-        before we get our summer running started. All are welcome!
-      </p>
-      <p>&emsp; Monday, June 17th: 5pm</p>
-      <p>&emsp; Wednesday, June 19th: 11am</p>
-      <p>&emsp; Friday, June 21th: 11am</p>
-      <h2>Weekly Schedule | Jun 24 - Aug 23</h2>
-      <p style="margin-top:10px">Monday</p>
-      <p style="margin-left:30px">9am - Run at Beaver Lake Park</p>
-      <p style="margin-left:30px">11am - Weights at Skyline</p>
-      <p style="margin-left:40px"> - Weights are optional, but we'd love you to come!</p>
-      <p style="margin-left:40px">
-        - There is built in extra time for you to get food. Either bring food, or
-        plan with others to get food (Chipotle is the first place that comes to mind)
-        between running and lifting.
-      </p>
-      <p style="margin-top:10px">Tuesday</p>
-      <p style="margin-left:30px">9am - Run at Beaver Lake Park</p>
-      <p style="margin-top:10px">Wednesday</p>
-      <p style="margin-left:30px">9am - Run at Beaver Lake Park</p>
-      <p style="margin-left:30px">11am - Weights at Skyline</p>
-      <p style="margin-left:40px">
-        - Same built in time as Monday
-      </p>
-      <p style="margin-top:10px">Thursday</p>
-      <p style="margin-left:30px">9am - Run at Beaver Lake Park</p>
-      <p style="margin-top:10px">Friday</p>
-      <p style="margin-left:30px">10am - Adventure Runs</p>
-      <p style="margin-left:30px">We will find a place nearby to get food after each run</p>
-      <p style="margin-left:40px">June 28 - Issaquah Community Center</p>
-      <p style="margin-left:40px">July 5 - Sky Country Trailhead (Discover Pass Required)</p>
-      <p style="margin-left:40px">July 12 - Tradition Plateau (Discover Pass Required)</p>
-      <p style="margin-left:40px">July 19 - Rattlesnake Lake - SVT Tempo</p>
-      <p style="margin-left:40px">July 26 - *Bye Week for White Pass*</p>
-      <p style="margin-left:40px">Aug 2 - Sky Country Trailhead (Discover Pass Required)</p>
-      <p style="margin-left:40px">Aug 9 - SVT/North Bend Way Intersection Lot - SVT Tempo</p>
-      <p style="margin-left:40px">Aug 16 - Tradition Plateau (Discover Pass Required)</p>
-      <p style="margin-left:40px">Aug 23 - Mt Si (Discover Pass Required)</p>
-      <p style="margin-left:50px">Top group will run most of it, if you are newer, making it a hike is more than okay!</p>
+      <h1>Workout Plan</h1>
+      <h2>Paces</h2>
+      <p>Easy/Aerobic Run - Mile Time x 1.5-1.7 OR 135-150bpm Heart Rate</p>
+      <p style="margin-left:30px">Enter Mile Time</p>
+      <div style="display:inline-block;margin-left:40px">
+        <label for="easyMin">mm:</label>
+        <input type="text" size="2" id="easyMin" name="easyMin"/>
+        <label for="easySec">ss:</label>
+        <input type="text" size="2" id="easySec" name="easySec"/>
+        <button type="button" onclick="
+          var min = document.getElementById('easyMin').value;
+          var sec = document.getElementById('easySec').value;
+          if(min.length > 2 || sec.length > 2 || min.length < 1){
+            document.getElementById('easyOutput').innerHTML = 'Easy Pace: Please enter mile time between 4 and 20 minutes';
+            return;
+          }
+          if(sec == ''){sec = '0';}
+          min = parseInt(min);
+          sec = parseInt(sec);
+          if(isNaN(min) || isNaN(sec)){
+            document.getElementById('easyOutput').innerHTML = 'Easy Pace: Please enter mile time between 4 and 20 minutes';
+            return;
+          }
+          if(min < 4 || min > 20 || sec < 0 || sec > 59){
+            document.getElementById('easyOutput').innerHTML = 'Easy Pace: Please enter mile time between 4 and 20 minutes';
+            return;
+          }
+          var newSecLow = Math.floor(((min * 60) + sec) * 1.5 + 0.5);
+          var newSecHigh = Math.floor(((min * 60) + sec) * 1.7 + 0.5);
+
+          var newMinLow = Math.floor(newSecLow / 60 + 0.0001);
+          var newMinHigh = Math.floor(newSecHigh / 60 + 0.0001);
+          newSecLow = newSecLow % 60;
+          newSecHigh = newSecHigh % 60;
+          if(newSecLow < 10){newSecLow = '0' + newSecLow;}
+          if(newSecHigh < 10){newSecHigh = '0' + newSecHigh;}
+          document.getElementById('easyOutput').innerHTML = 'Easy Pace: ' + newMinLow + ':' + newSecLow + ' - ' + newMinHigh + ':' + newSecHigh;
+
+        ">Go</button>
+      </div>
+      <p style="margin-left:40px" id="easyOutput">Easy Pace: ??:?? - ??:??</p>
+      <h2>Wednesday, June 19</h2>
+      <p>9am - Easy Run in BLP. 4x 20s stride within run</p>
+      <p>11am - Weights at Skyline</p>
+
+      <h2>Thursday, June 20</h2>
+      <p>9am - Easy Run to Yellow Lake. 4x 20s stride within run</p>
+
+      <h2>Friday, June 21</h2>
+      <p>9am - Easy Run in BLP or to Soaring Eagle. 4x 20s stride within run</p>
+      <p>11am - Weights at Skyline</p>
+
+      <h2>Weekend, June 22, 23</h2>
+      <p>If you're not new to running, get at least a couple slow miles one of these days!</p>
+
+      <h2>Monday, June 24</h2>
+      <p>9am - Easy Run to Yellow Lake. 4x 20s stride within run</p>
+      <p>11am - Weights at Skyline</p>
+
+      <h2>Tuesday, June 25</h2>
+      <p>9am - 2mi Easy, 6x 30s Hill Sprint, 2mi Easy</p>
+
+      <h2>Wednesday, June 26</h2>
+      <p>9am - Easy Run in BLP or to Soaring Eagle. 4x 20s stride within run</p>
+      <p>11am - Weights at Skyline</p>
+
+      <h2>Thursday, June 27</h2>
+      <p>9am - Fartlek Workout in BLP</p>
+      <p style="margin-left:50px;margin-top:8px;">1-2mi Easy</p>
+      <p style="margin-left:50px">3-6x (</p>
+      <p style="margin-left:60px">3min on</p>
+      <p style="margin-left:60px">2min off (faster than aerobic)</p>
+      <p style="margin-left:50px">)</p>
+      <p style="margin-left:50px">1-2mi Easy</p>
+      <p style="margin-top:10px">Paces are track effort, the trails will slow you down</p>
+      <p style="margin-left:30px">Enter Mile Time</p>
+
+      <div style="display:inline-block;margin-left:40px">
+        <label for="easyMin">mm:</label>
+        <input type="text" size="2" id="jun27Min" name="easyMin"/>
+        <label for="easySec">ss:</label>
+        <input type="text" size="2" id="jun27Sec" name="easySec"/>
+        <button type="button" onclick="
+          var min = document.getElementById('jun27Min').value;
+          var sec = document.getElementById('jun27Sec').value;
+          if(min.length > 2 || sec.length > 2 || min.length < 1){
+            document.getElementById('jun27On').innerHTML = 'On Pace: Please enter mile time between 4 and 20 minutes';
+            document.getElementById('jun27Off').innerHTML = 'Off Pace: Please enter mile time between 4 and 20 minutes';
+            return;
+          }
+          if(sec == ''){sec = '0';}
+          min = parseInt(min);
+          sec = parseInt(sec);
+          if(isNaN(min) || isNaN(sec)){
+            document.getElementById('jun27On').innerHTML = 'On Pace: Please enter mile time between 4 and 20 minutes';
+            document.getElementById('jun27Off').innerHTML = 'Off Pace: Please enter mile time between 4 and 20 minutes';
+            return;
+          }
+          if(min < 4 || min > 20 || sec < 0 || sec > 59){
+            document.getElementById('jun27On').innerHTML = 'On Pace: Please enter mile time between 4 and 20 minutes';
+            document.getElementById('jun27Off').innerHTML = 'Off Pace: Please enter mile time between 4 and 20 minutes';
+            return;
+          }
+          var newSecLow = Math.floor(((min * 60) + sec) * 1.1 + 0.5);
+          var newSecHigh = Math.floor(((min * 60) + sec) * 1.3 + 0.5);
+
+          var newMinLow = Math.floor(newSecLow / 60 + 0.0001);
+          var newMinHigh = Math.floor(newSecHigh / 60 + 0.0001);
+          newSecLow = newSecLow % 60;
+          newSecHigh = newSecHigh % 60;
+          if(newSecLow < 10){newSecLow = '0' + newSecLow;}
+          if(newSecHigh < 10){newSecHigh = '0' + newSecHigh;}
+          document.getElementById('jun27On').innerHTML = 'On Pace: ~' + newMinLow + ':' + newSecLow;
+          document.getElementById('jun27Off').innerHTML = 'Off Pace: ~' + newMinHigh + ':' + newSecHigh;
+
+        ">Go</button>
+      </div>
+      <p style="margin-left:40px" id="jun27On">On Pace: ~??:??</p>
+      <p style="margin-left:40px" id="jun27Off">Off Pace: ~??:??</p>
+      <h2>Friday, June 28</h2>
+      <p>10am - Adventure run from Issaquah Community Center</p>
+      <p>12pm - Flying Pie Pizza</p>
+
+      <h2>Weekend, June 29, 30</h2>
+      <p>If you're not new to running, get at least a couple slow miles one of these days!</p>
 
       <div class="footer">
         <p>Skyline Spartan XC<p>
