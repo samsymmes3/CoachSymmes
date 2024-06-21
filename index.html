@@ -398,8 +398,8 @@
     var fo
     var fontSize = window.getComputedStyle(e, null).getPropertyValue('font-size');
     var newFontSize = parseInt(fontSize.substring(0, fontSize.length - 2));
-    if(isTall) {newFontSize -= 8;}
-    else {newFontSize += 8;}
+    if(isTall) {newFontSize -= 16;}
+    else {newFontSize += 16;}
     e.style.fontSize = newFontSize + "px";
   }
   window.addEventListener("resize", checkFontSize);
