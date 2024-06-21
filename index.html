@@ -205,6 +205,7 @@
         the Girls State Champions in 2001! He also enjoys mountain biking and
         fly fishing in his free time.
       </p>
+      <img src="images/HylandBrendan.webp" width="16%" style="margin-top:0px;margin-left:48px;align:center"/>
       <h4>&#8226; Allie Willson</h4>
       <p style="margin-top:0px;margin-left:32px">
         Coach Willson is a Science Teacher at Skyline who ran at one of the top programs in the State at Tahoma, and
@@ -217,7 +218,7 @@
         Coach Symmes ran for Coach Hyland, and graduated from Skyline in 2015. He is a
         marathon and ultra runner who also enjoys lifting weights.
       </p>
-
+      <img src="images/SamSymmes.jpeg" width="25%" style="margin-top:0px;margin-left:48px;align:center"/>
       <h2>Senior Leaders</h2>
       <h4>&#8226; Sydney Collier</h4>
       <p style="margin-top:0px;margin-left:32px">
@@ -227,6 +228,7 @@
         to Portland with the team for Nike Portland XC, and her favorite meet is
         Twilight. As we learned down in LA, Sydney's favorite animal is the Giraffe.
       </p>
+      <img src="images/SydneyState.jpeg" width="33%" style="margin-top:0px;margin-left:48px;align:center"/>
       <h4>&#8226; Nithya Kasireddy</h4>
       <p style="margin-top:0px;margin-left:32px">
         Nithya started running cross country and track freshman year of high school,
@@ -236,6 +238,7 @@
         community and positive energy everyone brings to the team. Her favorite
         animal is the Fox.
       </p>
+      <img src="images/NithyaState.jpeg" width="33%" style="margin-top:0px;margin-left:48px;align:center"/>
       <h4>&#8226; Ella MacDonald</h4>
       <p style="margin-top:0px;margin-left:32px">
         Ella began her running career as a freshman in High School, ran 25 minutes
@@ -245,6 +248,7 @@
         fun run. Her favorite animal is an (Ella)phant. Ella loves that cross country
         has an awesome community, and that everyone is so welcoming and kind.
       </p>
+      <img src="images/EllaKingco.JPEG" width="33%" style="margin-top:0px;margin-left:48px;align:center"/>
       <h4>&#8226; Aleise Robertson</h4>
       <h4>&#8226; Naomi Kang</h4>
       <h4>&#8226; Ally Meyer</h4>
@@ -318,6 +322,7 @@
         country memory is hanging out with the girls team the night before State,
         and her favorite animal is the Dolphin.
       </p>
+      <img src="images/MeganDistricts.jpeg" width="33%" style="margin-top:0px;margin-left:48px;align:center"/>
       <h4>&#8226; Abby Riley - Junior</h4>
       <p style="margin-top:0px;margin-left:32px">
         Abby started running track and cross country in middle school, and ran at
@@ -327,7 +332,9 @@
         team. Her favorite animal is a Turtle, and she has a goal to run under 19
         minutes for the 5k by senior year.
       </p>
+      <img src="images/AbbyState.jpeg" width="33%" style="margin-top:0px;margin-left:48px;align:center"/>
       <h4>&#8226; Janna Stibbe - Junior</h4>
+      <img src="images/JannaState.jpeg" width="33%" style="margin-top:0px;margin-left:48px;align:center"/>
       <h4>&#8226; Anika Aageson - Junior</h4>
       <h4>&#8226; Lucy Duong - Sophomore</h4>
       <p style="margin-top:0px;margin-left:32px">
@@ -336,6 +343,7 @@
         country memory was going to State with the team last year, and her favorite
         animal is a Bunny.
       </p>
+      <img src="images/LucyDistricts.jpeg" width="33%" style="margin-top:0px;margin-left:48px;align:center"/>
       <h4>&#8226; Logan Mucha - Junior</h4>
       <p style="margin-top:0px;margin-left:32px">
         Logan started running in 8th grade, and got down to 18:17 for a 5k Freshman
@@ -345,6 +353,7 @@
         will have to ask him about his favorite animal, the Rat, and meet Charles,
         who has run with Logan since he started running.
       </p>
+      <img src="images/LoganDistricts.jpeg" width="33%" style="margin-top:0px;margin-left:48px;align:center"/>
       <h4>&#8226; Vlad Kosolapov - Junior</h4>
       <p style="margin-top:0px;margin-left:32px">
         Vlad has run cross country and track the last few years, working down from
@@ -352,8 +361,11 @@
         Vlad's favorite memories are Nike Portland XC, and White Pass Cross Country
         Camp with the team. His favorite animal is a Dog.
       </p>
+      <img src="images/VladKingco.JPEG" width="33%" style="margin-top:0px;margin-left:48px;align:center"/>
       <h4>&#8226; Lincoln Fraser - Junior</h4>
+      <img src="images/LincolnKingco.JPEG" width="33%" style="margin-top:0px;margin-left:48px;align:center"/>
       <h4>&#8226; Shaan Brar - Junior</h4>
+      <img src="images/ShaanKingco.JPEG" width="33%" style="margin-top:0px;margin-left:48px;align:center"/>
       <h4>&#8226; Sam Ryan - Junior</h4>
       <p style="margin-top:0px;margin-left:32px">
         Sam started running competetively during track in 8th grade, and qualified
@@ -369,6 +381,7 @@
         bus that broke down in the mountains on the way home from the Eastmont
         Invitational.
       </p>
+      <img src="images/YashDistricts.jpeg" width="33%" style="margin-top:0px;margin-left:48px;align:center"/>
 
       <div class="footer">
         <p>Skyline Spartan XC<p>
@@ -377,6 +390,16 @@
   </div>
 </body>
 <script>
+  for(var i = 0; i < document.getElementsByTagName("img").length; i++) {
+    var img = document.getElementsByTagName("img")[i];
+    if(img.height > img.width){
+      var h = img.height;
+      var w = img.width;
+      img.height = img.width;
+      img.width = (img.height) * (w / h);
+    }
+  }
+
   isTall = false;
   function increaseFontSize(e) {
     if(e.id.includes("sidebar")){
