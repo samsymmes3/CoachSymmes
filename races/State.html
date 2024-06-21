@@ -64,11 +64,17 @@
     .main h2 {
       margin-left: 10px;
       margin-bottom: 0px;
+      margin-top: 4px;
+    }
+    .main h4 {
+      margin-left: 20px;
+      margin-bottom: 0px;
+      margin-top: 4px;
     }
     .main p {
       margin-top: 0px;
       margin-bottom: 0px;
-      margin-left: 20px;
+      margin-left: 35px;
     }
     .sidebarh {
       width: 100%;
@@ -90,6 +96,12 @@
       margin-bottom: 0px;
       margin-left: 25px;
     }
+    td {
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
     body{
       background: #f5f6fa;
     }
@@ -102,27 +114,27 @@
       <h1>Skyline Spartan XC</h1>
     </div>
     <div class="sidebar" id="sidebar">
-      <a href="index.html">
+      <a href="../index.html">
         <div class="sidebarh">
           <h1 id = "sidebarE1">Skyline XC</h1>
         </div>
       </a>
-      <a href="index.html">
+      <a href="../index.html">
         <div class="sidebarh">
           <h2 id = "sidebarE2">Home</h2>
         </div>
       </a>
-      <a href="summerSchedule.html">
+      <a href="../summerSchedule.html">
         <div class="sidebarh">
           <h4 id = "sidebarE3">Summer Schedule</h4>
         </div>
       </a>
-      <a href="raceInfo.html">
+      <a href="../raceInfo.html">
         <div class="sidebarh">
           <h4 id = "sidebarE4">Race Info</h4>
         </div>
       </a>
-      <a href="athletes.html">
+      <a href="../athletes.html">
         <div class="sidebarh">
           <h4 id = "sidebarE5">Athletes</h4>
         </div>
@@ -162,85 +174,92 @@
       </div>
     </div>
     <div class="main" id="main">
-      <a href="https://www.athletic.net/team/499/cross-country/2024">
-        <h1>Race Info</h1>
+      <a href="https://www.athletic.net/CrossCountry/meet/236373/info">
+        <h1>State Championship</h1>
       </a>
-      <p style="margin-left:10px">
-        This is our race schedule we have so far for the 2024 Cross Country Season!
-        A great thing with cross country is that the whole team gets to go to
-        the invitationals, so everyone is expected to run the races on Saturdays.
-        Some of the invitationals have upwards of 200 schools, but everyone is
-        put in races with athletes of a similar ability level. Invitationals are
-        a great opportunity to compete at your level.
+      <p style="margin-left:20px;">
+        The State Championship. The Top 16 teams in the State racing for the
+        podium. We would love to qualify with the team, as the team atmosphere
+        traveling to the State Championship is unbeatable. Last year, our girls
+        qualified as a team, and finished 7th (without Becca), and Reidar, Yash,
+        and Logan qualified individually. The highlights were Anna winning her
+        second Cross Country State title, Sydney with her second Top 10 finish at
+        State, and the girls team still managing to be the 7th best team in the
+        State without Becca.
       </p>
+      <h2>Date - Saturday, Nov 9</h2>
+      <h2>Location - Sun Willows Golf Course, Pasco</h2>
 
-      <a href="races/Bellarmine.html">
-        <h2>Bellarmine Invitational - Saturday, Sep 14 - Tacoma</h2>
-      </a>
+      <h2>Schedule</h2>
 
-      <a href="https://www.athletic.net/CrossCountry/meet/238053/info">
-        <h2>League Meet: Skyline/Woodinville at Newport - Wednesday, Sep 18 - Bellevue</h2>
-      </a>
-      <p>
-        We get to see how we stack up against some of the teams we will have to
-        race in the post season. League meets are a great way to practice racing
-        together, the way we want to at the invitationals.
-      </p>
-      <p style="margin-left:30px;margin-top:10px"><b>Schedule</b></p>
-      <p style="margin-left:40px">
-        <b>4:00pm</b>: Girls
-      </p>
-      <p style="margin-left:40px">
-        <b>4:50pm</b>: Boys Varisty - Under 21 minutes
-      </p>
-      <p style="margin-left:40px">
-        <b>5:20pm</b>: Boys JV - Over 21 minutes
-      </p>
+      <h4 id="hider1" onclick="showRaceInfo(this, false)">&#8226; 1:30pm - Girls</h4>
+      <div id=hidden1>
+        <p style="margin-top:4px">This Year</p>
+        <p style="margin-left:40px;">&#8226; Top 7 Girls + 2 Alternates or Individual Qualifiers</p>
+        <p style="margin-top:4px">Last Year</p>
+        <p style="margin-left:40px;">&#8226; <b>Team</b> - 7th Place</p>
+        <table style="text-align:center;border:none;margin-left:50px">
+          <tr>
+            <td>1st</td>
+            <td>Anna Callahan</td>
+            <td>17:47.0</td>
+          </tr>
+          <tr>
+            <td>8th</td>
+            <td>Sydney Collier</td>
+            <td>18:53.7</td>
+          </tr>
+          <tr>
+            <td>93rd</td>
+            <td>Janna Stibbe</td>
+            <td>20:43.7</td>
+          </tr>
+          <tr>
+            <td>116th</td>
+            <td>Lucy Duong</td>
+            <td>21:09.0</td>
+          </tr>
+          <tr>
+            <td>119th</td>
+            <td>Nithya Kasireddy</td>
+            <td>21:14.4</td>
+          </tr>
+          <tr>
+            <td>133rd</td>
+            <td>Abby Riley</td>
+            <td>21:38.9</td>
+          </tr>
+          <tr>
+            <td>150th</td>
+            <td>Megan Vander Mey</td>
+            <td>23:05.3</td>
+          </tr>
+        </table>
+      </div>
 
-      <a href="races/FortSteilacoom.html">
-        <h2>Fort Steilacoom Invitational - Saturday, Sep 21 - Lakewood</h2>
-      </a>
-
-      <a href="races/HoleInTheWall.html">
-        <h2>Hole in the Wall Invitational - Saturday, Oct 12 - Arlington</h2>
-      </a>
-
-      <a href="https://www.athletic.net/CrossCountry/meet/238411/info">
-        <h2>League Meet at Eastlake - Wednesday, Oct 16 - Sammamish</h2>
-      </a>
-      <p>
-        We get to see how we stack up against some of the teams we will have to
-        race in the post season. The teams at this meet are some of the best in the
-        State, and it's at a course you will be very familiar with, Beaver Lake Park.
-      </p>
-      <p style="margin-left:30px;margin-top:10px"><b>Schedule</b></p>
-      <p style="margin-left:40px">
-        <b>4:00pm?</b>: Boys Varsity - Top 14?
-      </p>
-      <p style="margin-left:40px">
-        <b>4:30pm?</b>: Girls Varisty - Top 14?
-      </p>
-      <p style="margin-left:40px">
-        <b>5:00pm?</b>: Boys JV A - Top half of JV
-      </p>
-      <p style="margin-left:40px">
-        <b>5:30pm?</b>: Girls JV
-      </p>
-      <p style="margin-left:40px">
-        <b>6:00pm?</b>: Boys JV B - Bottom half of JV
-      </p>
-
-      <a href="races/Kingco.html">
-        <h2>KingCo - Friday, Oct 25 - Issaquah</h2>
-      </a>
-
-      <a href="races/Districts.html">
-        <h2>Districts - Saturday, Nov 2 - Issaquah</h2>
-      </a>
-
-      <a href="races/State.html">
-        <h2>State - Saturday, Nov 9 - Pasco</h2>
-      </a>
+      <h4 id="hider2" onclick="showRaceInfo(this, false)">&#8226; 3:00pm - Boys</h4>
+      <div id=hidden2>
+        <p style="margin-top:4px">This Year</p>
+        <p style="margin-left:40px;">&#8226; Top 7 Boys + 2 Alternates or Individual Qualifiers</p>
+        <p style="margin-top:4px">Last Year</p>
+        <table style="text-align:center;border:none;margin-left:50px">
+          <tr>
+            <td>42nd</td>
+            <td>Reidar Aageson</td>
+            <td>16:47.4</td>
+          </tr>
+          <tr>
+            <td>71st</td>
+            <td>Yash Brar</td>
+            <td>17:03.4</td>
+          </tr>
+          <tr>
+            <td>98th</td>
+            <td>Logan Mucha</td>
+            <td>17:21.1</td>
+          </tr>
+        </table>
+      </div>
 
       <div class="footer">
         <p>Skyline Spartan XC<p>
@@ -250,6 +269,35 @@
 
 </body>
 <script>
+  hiddenInfo = []
+
+  for(var i = 0; i < document.getElementsByTagName("div").length; i++) {
+
+    if(document.getElementsByTagName("div")[i].id.substring(0, 6) == "hidden") {
+      var idx = parseInt(document.getElementsByTagName("div")[i].id.substring(6)) - 1;
+      while(idx > hiddenInfo.length) {
+        hiddenInfo.push("")
+      }
+      hiddenInfo[idx] = document.getElementsByTagName("div")[i].innerHTML;
+      document.getElementsByTagName("div")[i].innerHTML = "";
+    }
+  }
+
+  function showRaceInfo(e, isRecursion) {
+    var idx = parseInt(e.id.substring(5)) - 1;
+    var temp = hiddenInfo[idx];
+    hiddenInfo[idx] = document.getElementById("hidden" + (idx + 1)).innerHTML;
+    document.getElementById("hidden" + (idx + 1)).innerHTML = temp;
+    if(temp != "" && !isRecursion){
+      for(var i = 0; i < hiddenInfo.length; i++){
+        if(i == idx){continue;}
+        if(hiddenInfo[i] == ""){
+          showRaceInfo(document.getElementById("hider" + (i + 1)), true)
+        }
+      }
+    }
+  }
+
   isTall = false;
   function increaseFontSize(e) {
     if(e.id.includes("sidebar")){
