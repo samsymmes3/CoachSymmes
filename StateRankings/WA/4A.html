@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Spartan XC</title>
+  <meta charset="UTF-8">
+  <style>
+    a {
+      color: black;
+      text-decoration: none;
+    }
+    .wrapper {
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar {
+      background: rgb(200, 200, 200);
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 190px;
+      height: 100%;
+      padding: 10px 0;
+      transition: all 0.5s ease;
+    }
+    .header {
+      background: rgb(24, 69, 59);
+      color: rgb(200, 200, 200);
+      height: 80px;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    .header h1 {
+      text-align: center;
+      font-size: 50px;
+      margin-top: 10px;
+    }
+    .footer {
+      text-align: center;
+      width: 100%;
+      margin-top: 32px;
+    }
+    p {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-left: 0px;
+    }
+    .main {
+      background: rgb(240, 240, 240);
+      position: fixed;
+      top: 80px;
+      left: 190px;
+      width: calc(100% - 210px);
+      height: calc(100% - 80px);
+      padding: 0px 0;
+      transition: all 0.5s ease;
+      overflow: scroll;
+      margin-bottom: 50px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .main h1 {
+      margin-bottom: 0px;
+    }
+    .main h2 {
+      margin-top: 8px;
+      margin-bottom: 0px;
+      margin-left: 0px;
+    }
+    .main h3 {
+      margin-top: 8px;
+      margin-bottom: 0px;
+      margin-left: 20px;
+    }
+    .main h4 {
+      margin-top: 8px;
+      margin-bottom: 0px;
+      margin-left: 20px;
+    }
+    .sidebarh {
+      width: 100%;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .sidebarh h1{
+      margin-top: 0px;
+      margin-bottom: 10px;
+      margin-left: 5px
+    }
+    .sidebarh h2 {
+      margin-top: 5px;
+      margin-bottom: 0px;
+      margin-left: 15px;
+    }
+    .sidebarh h4 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-left: 25px;
+    }
+    body{
+      background: #f5f6fa;
+    }
+  </style>
+</head>
+<script>sidebarClicked = false;</script>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <h1>Skyline Spartan XC</h1>
+    </div>
+    <div class="sidebar" id="sidebar">
+      <a href="../../index.html">
+        <div class="sidebarh">
+          <h1 id = "sidebarE1">Skyline XC</h1>
+        </div>
+      </a>
+      <a href="../../index.html">
+        <div class="sidebarh">
+          <h2 id = "sidebarE2">Home</h2>
+        </div>
+      </a>
+      <a href="../../summerSchedule.html">
+        <div class="sidebarh">
+          <h4 id = "sidebarE3">Summer Schedule</h4>
+        </div>
+      </a>
+      <a href="../../raceInfo.html">
+        <div class="sidebarh">
+          <h4 id = "sidebarE4">Race Info</h4>
+        </div>
+      </a>
+      <a href="../../athletes.html">
+        <div class="sidebarh">
+          <h4 id = "sidebarE5">Athletes</h4>
+        </div>
+      </a>
+      <a href="4A.html">
+        <div class="sidebarh">
+          <h4 id = "sidebarE5">Rankings</h4>
+        </div>
+      </a>
+      <script>
+        originalE1Size = document.getElementById('sidebarE1').style.fontSize;
+        originalE2Size = document.getElementById('sidebarE2').style.fontSize;
+        originalE3Size = document.getElementById('sidebarE3').style.fontSize;
+        originalE4Size = document.getElementById('sidebarE4').style.fontSize;
+        originalE5Size = document.getElementById('sidebarE5').style.fontSize;
+      </script>
+      <div style="text-align:center;" onclick="
+        if(!sidebarClicked){
+          document.getElementById('expanderArrow').innerHTML = '&#8592;';
+          document.getElementById('sidebar').style.width = '380px';
+          document.getElementById('main').style.left = '380px';
+          document.getElementById('main').style.width = 'calc(100% - 400px)';
+          document.getElementById('sidebarE1').style.fontSize = '50px';
+          document.getElementById('sidebarE2').style.fontSize = '40px';
+          document.getElementById('sidebarE3').style.fontSize = '30px';
+          document.getElementById('sidebarE4').style.fontSize = '30px';
+          document.getElementById('sidebarE5').style.fontSize = '30px';
+        } else {
+          document.getElementById('expanderArrow').innerHTML = '&#8594;';
+          document.getElementById('sidebar').style.width = '190px';
+          document.getElementById('main').style.left = '190px';
+          document.getElementById('main').style.width = 'calc(100% - 210px)';
+          document.getElementById('sidebarE1').style.fontSize = originalE1Size;
+          document.getElementById('sidebarE2').style.fontSize = originalE2Size;
+          document.getElementById('sidebarE3').style.fontSize = originalE3Size;
+          document.getElementById('sidebarE4').style.fontSize = originalE4Size;
+          document.getElementById('sidebarE5').style.fontSize = originalE5Size;
+        }
+        sidebarClicked = !sidebarClicked;
+      ">
+        <b><h1 id = "expanderArrow" style="font-size:50px">&#8594;</h1></b>
+      </div>
+    </div>
+    <div class="main" id="main">
+      <h1>WIAA 4A XC Rankings</h1>
+      <div style="display:inline-block;vertical-align:top">
+
+        <div style="margin-left:20px;display:inline-block;vertical-align:top">
+          <h2 style="margin-bottom:4px">Boys Team Rankings</h2>
+
+          <h3 id="IssaquahBoysTeam" onclick="hideRankingInfo(this)">1. Issaquah - 1.82</h3>
+          <div id="hiddenIssaquahBoysTeam" style="margin-left:40px">
+            <p id="ConnerRickey" onclick="hideRankingInfo(this)">- Connor Rickey, SR</p>
+            <div id="hiddenConnerRickey" style="margin-left:15px;font-size:0.85em">
+              <p>2023 XC: 8th</p>
+              <p>XC 5000m PR: 15:16.4</p>
+              <p>2024 800m: 4th - 1:54.29</p>
+              <p>2024 1600m: 4th - 4:14.15</p>
+              <p>2024 3200m: 9:11.65</p>
+            </div>
+            <p id="HenryTait" onclick="hideRankingInfo(this)">- Henry Tait, SR</p>
+            <div id="hiddenHenryTait" style="margin-left:15px;font-size:0.85em">
+              <p>2023 XC: 16th</p>
+              <p>XC 5000m PR: 15:30.7</p>
+              <p>2024 800m: 2:04.47</p>
+              <p>2024 1600m: 4:20.13</p>
+              <p>2024 3200m: 7th - 9:16.29</p>
+            </div>
+            <p id="AlexanderYahn" onclick="hideRankingInfo(this)">- Alexander Yahn, SR</p>
+            <div id="hiddenAlexanderYahn" style="margin-left:15px;font-size:0.85em">
+              <p>2023 XC: 29th</p>
+              <p>XC 5000m PR: 15:25.1</p>
+              <p>2024 1600m: 4:22.68</p>
+              <p>2024 3200m: 14th - 9:39.75</p>
+            </div>
+            <p id="NathanielLaursen" onclick="hideRankingInfo(this)">- Nathaniel Laursen, JR</p>
+            <div id="hiddenNathanielLaursen" style="margin-left:15px;font-size:0.85em">
+              <p>2023 XC: 68th</p>
+              <p>XC 5000m PR: 16:28.3</p>
+              <p>2024 1600m: 4:30.75</p>
+              <p>2024 3200m: 9:40.45</p>
+            </div>
+            <p id="RobertFischer" onclick="hideRankingInfo(this)">- Robert Fischer, SR</p>
+            <div id="hiddenRobertFischer" style="margin-left:15px;font-size:0.85em">
+              <p>2023 XC: 100th</p>
+              <p>XC 5000m PR: 16:07.0</p>
+              <p>2024 800m: 2:08.78</p>
+              <p>2024 1600m: 4:32.37</p>
+              <p>2024 3200m: 9:57.94</p>
+            </div>
+            <p id="BenjaminLucas" onclick="hideRankingInfo(this)">- Benjamin Lucas, SR</p>
+            <div id="hiddenBenjaminLucas" style="margin-left:15px;font-size:0.85em">
+              <p>XC 5000m PR: 16:19.0</p>
+              <p>2024 800m: 1:58.63</p>
+              <p>2024 1600m: 4:33.79</p>
+            </div>
+            <p id="ElliotMcIntosh" onclick="hideRankingInfo(this)">- Elliot McIntosh, SR</p>
+            <div id="hiddenElliotMcIntosh" style="margin-left:15px;font-size:0.85em">
+              <p>XC 5000m PR: 17:16.9</p>
+              <p>2024 800m: 2:08.27</p>
+              <p>2024 1600m: 4:30.36</p>
+              <p>2024 3200m: 10:23.48</p>
+            </div>
+          </div>
+
+          <h3 id="KamiakinBoysTeam" onclick="hideRankingInfo(this)">2. Kamiakin - 2.79</h3>
+          <div id="hiddenKamiakinBoysTeam" style="margin-left:40px">
+            <p id="EzraTeeples" onclick="hideRankingInfo(this)">- Ezra Teeples, SR</p>
+            <div id="hiddenEzraTeeples" style="margin-left:15px;font-size:0.85em">
+              <p>2023 XC: 1st</p>
+              <p>XC 5000m PR: 15:26.7</p>
+              <p>2024 800m: 2:00.93</p>
+              <p>2024 1600m: 1st - 4:13.33</p>
+              <p>2024 3200m: 5th - 9:15.53</p>
+            </div>
+            <p id="NoahThomas" onclick="hideRankingInfo(this)">- Noah Thomas, SR</p>
+            <div id="hiddenNoahThomas" style="margin-left:15px;font-size:0.85em">
+              <p>2023 XC: 7th</p>
+              <p>XC 5000m PR: 15:31.8</p>
+              <p>2024 1600m: 4th - 4:31.45</p>
+              <p>2024 3200m: 9:31.35</p>
+            </div>
+            <p id="ReaganDupuy" onclick="hideRankingInfo(this)">- Reagan Dupuy, JR</p>
+            <div id="hiddenReaganDupuy" style="margin-left:15px;font-size:0.85em">
+              <p>2023 XC: 47th</p>
+              <p>XC 5000m PR: 16:25.9</p>
+              <p>2024 1600m: 4:33.60</p>
+              <p>2024 3200m: 9:53.23</p>
+            </div>
+            <p id="ChaseKennard" onclick="hideRankingInfo(this)">- Chase Kennard, SR</p>
+            <div id="hiddenChaseKennard" style="margin-left:15px;font-size:0.85em">
+              <p>2023 XC: 57th</p>
+              <p>XC 5000m PR: 16:32.5</p>
+              <p>2024 1600m: 4:24.50</p>
+              <p>2024 3200m: 13th - 9:30.82</p>
+            </div>
+            <p id="BridgerMelver" onclick="hideRankingInfo(this)">- BridgerMelver, SO</p>
+            <div id="hiddenBridgerMelver" style="margin-left:15px;font-size:0.85em">
+              <p>2023 XC: 116th</p>
+              <p>XC 5000m PR: 17:06.2</p>
+              <p>2024 1600m: 4:59.03</p>
+              <p>2024 3200m: 10:23.08</p>
+            </div>
+            <p id="AustenFlorence" onclick="hideRankingInfo(this)">- Austen Florence, JR</p>
+            <div id="hiddenAustenFlorence" style="margin-left:15px;font-size:0.85em">
+              <p>XC 5000m PR: 17:38.8</p>
+              <p>2024 800m: 2:08.91</p>
+              <p>2024 1600m: 4:34.92</p>
+              <p>2024 3200m: 9:55.03</p>
+            </div>
+            <p id="KalePetersen" onclick="hideRankingInfo(this)">- Kale Petersen, JR</p>
+            <div id="hiddenKalePetersen" style="margin-left:15px;font-size:0.85em">
+              <p>XC 5000m PR: 17:23.6</p>
+              <p>2024 1600m: 4:35.82</p>
+              <p>2024 3200m: 9:57.80</p>
+            </div>
+          </div>
+
+          <h3 id="LewisandClarkBoysTeam" onclick="hideRankingInfo(this)">3. Lewis and Clark - 3.78</h3>
+          <div id="hiddenLewisandClarkBoysTeam" style="margin-left:40px">
+            <p id="ParkerWhitmore" onclick="hideRankingInfo(this)">- Parker Whitmore, SR</p>
+            <div id="hiddenParkerWhitmore" style="margin-left:15px;font-size:0.85em">
+              <p>2023 XC: 15th</p>
+              <p>XC 5000m PR: 16:11.4</p>
+              <p>2024 800m: 2:06.53</p>
+              <p>2024 1600m: 4:33.97</p>
+              <p>2024 3200m: 9:45.98</p>
+            </div>
+            <p id="HarperChurape" onclick="hideRankingInfo(this)">- Harper Churape, SR</p>
+            <div id="hiddenHarperChurape" style="margin-left:15px;font-size:0.85em">
+              <p>2023 XC: 17th</p>
+              <p>XC 5000m PR: 16:14.2</p>
+              <p>2024 800m: 2:00.97</p>
+              <p>2024 1600m: 4:23.19</p>
+              <p>2024 3200m: 9:38.84</p>
+            </div>
+            <p id="TobyMeier" onclick="hideRankingInfo(this)">- Toby Meier, SR</p>
+            <div id="hiddenTobyMeier" style="margin-left:15px;font-size:0.85em">
+              <p>2023 XC: 21st</p>
+              <p>XC 5000m PR: 16:23.6</p>
+              <p>2024 800m: 2:07.46</p>
+              <p>2024 1600m: 4:33.83</p>
+              <p>2024 3200m: 9:42.18</p>
+            </div>
+            <p id="ElijahTobin" onclick="hideRankingInfo(this)">- Elijah Tobin, SO</p>
+            <div id="hiddenElijahTobin" style="margin-left:15px;font-size:0.85em">
+              <p>2023 XC: 92nd</p>
+              <p>XC 5000m PR: 16:55.7</p>
+              <p>2024 800m: 1:55.64</p>
+              <p>2024 1600m: 4:19.49</p>
+            </div>
+            <p id="CorbinEiseman" onclick="hideRankingInfo(this)">- Corbin Eiseman, JR</p>
+            <div id="hiddenCorbinEiseman" style="margin-left:15px;font-size:0.85em">
+              <p>2023 XC: 104th</p>
+              <p>XC 5000m PR: 17:10.5</p>
+            </div>
+            <p id="BrodyGraham" onclick="hideRankingInfo(this)">- Brody Graham, SR</p>
+            <div id="hiddenBrodyGraham" style="margin-left:15px;font-size:0.85em">
+              <p>2023 XC: 146th</p>
+              <p>XC 5000m PR: 16:38.3</p>
+              <p>2024 800m: 2:07.29</p>
+              <p>2024 1600m: 4:31.06</p>
+              <p>2024 3200m: 9:38.81</p>
+            </div>
+            <p id="CaughneryFreese" onclick="hideRankingInfo(this)">- Caughnery Freese, SR</p>
+            <div id="hiddenCaughneryFreese" style="margin-left:15px;font-size:0.85em">
+              <p>2023 XC: 21st</p>
+              <p>XC 5000m PR: 17:26.6</p>
+              <p>2024 800m: 1:59.86</p>
+              <p>2024 1600m: 4:31.19</p>
+              <p>2024 3200m: 10:04.56</p>
+            </div>
+          </div>
+
+          <h3 id="ArlingtonBoysTeam" onclick="hideRankingInfo(this)">4. Arlington - 4.10</h3>
+          <div id="hiddenArlingtonBoysTeam" style="margin-left:40px">
+            <p id="LucasSpurling" onclick="hideRankingInfo(this)">- Lucas Spurling, SR</p>
+            <p id="NoahBumgardner" onclick="hideRankingInfo(this)">- Noah Bumgardner, SR</p>
+            <p id="GradyFournier" onclick="hideRankingInfo(this)">- Grady Fournier, SR</p>
+            <p id="BeauPearson" onclick="hideRankingInfo(this)">- Beau Pearson, SR</p>
+            <p id="LucasWatts" onclick="hideRankingInfo(this)">- Lucas Watts, SR</p>
+            <p id="ElijahAlexander" onclick="hideRankingInfo(this)">- Elijah Alexander, SR</p>
+            <p id="BenjaminCoupaud" onclick="hideRankingInfo(this)">- Benjamin Coupaud, SR</p>
+          </div>
+
+          <h3 id="RedmondBoysTeam" onclick="hideRankingInfo(this)">5. Redmond - 5.10</h3>
+          <div id="hiddenRedmondBoysTeam" style="margin-left:40px">
+            <p id="ZacharyLeader" onclick="hideRankingInfo(this)">- Zachary Leader, SR</p>
+            <p id="MutianGao" onclick="hideRankingInfo(this)">- Mutian Gao, JR</p>
+            <p id="ChaseJoanou" onclick="hideRankingInfo(this)">- Chase Joanou, JR</p>
+            <p id="AustinShaffer" onclick="hideRankingInfo(this)">- Austin Shaffer, SR</p>
+            <p id="BennettBhatia" onclick="hideRankingInfo(this)">- Bennett Bhatia, JR</p>
+            <p id="MitchellRosema" onclick="hideRankingInfo(this)">- Mitchell Rosema, SR</p>
+            <p id="TristanVillecroze" onclick="hideRankingInfo(this)">- Tristan Villecroze, SO</p>
+          </div>
+
+          <h3 id="LakeStevensBoysTeam" onclick="hideRankingInfo(this)">6. Lake Stevens - 7.81</h3>
+          <div id="hiddenLakeStevensBoysTeam" style="margin-left:40px">
+            <p id="WestonBreen" onclick="hideRankingInfo(this)">- Weston Breen, SR</p>
+            <p id="KyleSchwenke" onclick="hideRankingInfo(this)">- Kyle Schwenke, SR</p>
+            <p id="OwenStults" onclick="hideRankingInfo(this)">- Owen Stults, SR</p>
+            <p id="JonathonLong" onclick="hideRankingInfo(this)">- Jonathon Long, SR</p>
+            <p id="TavonSiu" onclick="hideRankingInfo(this)">- Tavon Siu, JR</p>
+            <p id="SeanO'Malley" onclick="hideRankingInfo(this)">- Sean O'Malley, SR</p>
+            <p id="AresVanStraaten" onclick="hideRankingInfo(this)">- Ares Van Straaten, SR</p>
+          </div>
+
+          <h3 id="LincolnBoysTeam" onclick="hideRankingInfo(this)">7. Lincoln - 8.79</h3>
+          <div id="hiddenLincolnBoysTeam" style="margin-left:40px">
+            <p id="CalebHirschfeld" onclick="hideRankingInfo(this)">- Caleb Hirschfeld, SR</p>
+            <p id="AidenJackson" onclick="hideRankingInfo(this)">- Aiden Jackson, JR</p>
+            <p id="KajMontgomery" onclick="hideRankingInfo(this)">- Kaj Montgomery, SR</p>
+            <p id="JasperCabanier" onclick="hideRankingInfo(this)">- Jasper Cabanier, SR</p>
+            <p id="WHanscom" onclick="hideRankingInfo(this)">- W Hanscom, SR</p>
+            <p id="NathanSebe" onclick="hideRankingInfo(this)">- Nathan Sebe, SR</p>
+            <p id="IsaacPreiner" onclick="hideRankingInfo(this)">- Isaac Preiner, SR</p>
+          </div>
+
+          <h3 id="CurtisBoysTeam" onclick="hideRankingInfo(this)">8. Curtis - 10.16</h3>
+          <div id="hiddenCurtisBoysTeam" style="margin-left:40px">
+            <p id="DimaSerafimovici" onclick="hideRankingInfo(this)">- Dima Serafimovici, SR</p>
+            <p id="KellenMcInelly" onclick="hideRankingInfo(this)">- Kellen McInelly, SR</p>
+            <p id="LincolnBosh" onclick="hideRankingInfo(this)">- Lincoln Bosh, SR</p>
+            <p id="TrevorOdom" onclick="hideRankingInfo(this)">- Trevor Odom, JR</p>
+            <p id="SamuelVanValkenburg" onclick="hideRankingInfo(this)">- Samuel Van Valkenburg, SO</p>
+            <p id="OwenMangrum" onclick="hideRankingInfo(this)">- Owen Mangrum, JR</p>
+            <p id="AsherPepin" onclick="hideRankingInfo(this)">- Asher Pepin, SO</p>
+          </div>
+
+          <h3 id="HenryJacksonBoysTeam" onclick="hideRankingInfo(this)">9. Henry Jackson - 11.36</h3>
+          <div id="hiddenHenryJacksonBoysTeam" style="margin-left:40px">
+            <p id="EthanHolmes" onclick="hideRankingInfo(this)">- Ethan Holmes, SR</p>
+            <p id="BenjaminLChristiansen" onclick="hideRankingInfo(this)">- Benjamin L Christiansen, SR</p>
+            <p id="NatePeacocke" onclick="hideRankingInfo(this)">- Nate Peacocke, SR</p>
+            <p id="MatthewFairwell" onclick="hideRankingInfo(this)">- Matthew Fairwell, JR</p>
+            <p id="GavinPepelnjak" onclick="hideRankingInfo(this)">- Gavin Pepelnjak, SR</p>
+            <p id="HunterCollins" onclick="hideRankingInfo(this)">- Hunter Collins, JR</p>
+            <p id="StephanOsterbur" onclick="hideRankingInfo(this)">- Stephan Osterbur, SR</p>
+          </div>
+
+          <h3 id="OlympiaBoysTeam" onclick="hideRankingInfo(this)">10. Olympia - 11.47</h3>
+          <div id="hiddenOlympiaBoysTeam" style="margin-left:40px">
+            <p id="MilesYost" onclick="hideRankingInfo(this)">- Miles Yost, SR</p>
+            <p id="SilasDeJarnatt" onclick="hideRankingInfo(this)">- Silas DeJarnatt, SR</p>
+            <p id="LoganJones" onclick="hideRankingInfo(this)">- Logan Jones, SR</p>
+            <p id="LeoKane" onclick="hideRankingInfo(this)">- Leo Kane, SR</p>
+            <p id="CadenDurocher" onclick="hideRankingInfo(this)">- Caden Durocher, JR</p>
+            <p id="GabrielSchilter" onclick="hideRankingInfo(this)">- Gabriel Schilter, SR</p>
+            <p id="JackMcDurmon" onclick="hideRankingInfo(this)">- Jack Mc Durmon, SO</p>
+          </div>
+
+          <h3 id="SouthKitsapBoysTeam" onclick="hideRankingInfo(this)">11. South Kitsap - 12.62</h3>
+          <div id="hiddenSouthKitsapBoysTeam" style="margin-left:40px">
+            <p id="IsaacBenjamin" onclick="hideRankingInfo(this)">- Isaac Benjamin, JR</p>
+            <p id="BlakeButherus" onclick="hideRankingInfo(this)">- Blake Butherus, SR</p>
+            <p id="LoganBouck" onclick="hideRankingInfo(this)">- Logan Bouck, SR</p>
+            <p id="JamesHardin" onclick="hideRankingInfo(this)">- James Hardin, SR</p>
+            <p id="AndrewDraper" onclick="hideRankingInfo(this)">- Andrew Draper, JR</p>
+            <p id="EzekielWagner" onclick="hideRankingInfo(this)">- Ezekiel Wagner, JR</p>
+            <p id="JeffersonSmith" onclick="hideRankingInfo(this)">- Jefferson Smith, SR</p>
+          </div>
+
+          <h3 id="MeadBoysTeam" onclick="hideRankingInfo(this)">12. Mead - 12.77</h3>
+          <div id="hiddenMeadBoysTeam" style="margin-left:40px">
+            <p id="JaedonPhillips" onclick="hideRankingInfo(this)">- Jaedon Phillips, SR</p>
+            <p id="JovannyLieb" onclick="hideRankingInfo(this)">- Jovanny Lieb, JR</p>
+            <p id="TayvianMurphy" onclick="hideRankingInfo(this)">- Tayvian Murphy, SR</p>
+            <p id="JonahWiser" onclick="hideRankingInfo(this)">- Jonah Wiser, JR</p>
+            <p id="NoahReischman" onclick="hideRankingInfo(this)">- Noah Reischman, JR</p>
+            <p id="EneasSwimptkin" onclick="hideRankingInfo(this)">- Eneas Swimptkin, JR</p>
+            <p id="AaronPooler" onclick="hideRankingInfo(this)">- Aaron Pooler, SO</p>
+          </div>
+
+          <h3 id="EastlakeBoysTeam" onclick="hideRankingInfo(this)">13. Eastlake - 14.99</h3>
+          <div id="hiddenEastlakeBoysTeam" style="margin-left:40px">
+            <p id="ElijahYoon" onclick="hideRankingInfo(this)">- Elijah Yoon, SR</p>
+            <p id="AndrewTalius" onclick="hideRankingInfo(this)">- Andrew Talius, SR</p>
+            <p id="ColinThompson" onclick="hideRankingInfo(this)">- Colin Thompson, SR</p>
+            <p id="PrestonDaniels" onclick="hideRankingInfo(this)">- Preston Daniels, SR</p>
+            <p id="AustinPoppino" onclick="hideRankingInfo(this)">- Austin Poppino, JR</p>
+            <p id="SilasSmith" onclick="hideRankingInfo(this)">- Silas Smith, SR</p>
+            <p id="LukasTalius" onclick="hideRankingInfo(this)">- Lukas Talius, SR</p>
+          </div>
+
+          <h3 id="PuyallupBoysTeam" onclick="hideRankingInfo(this)">14. Puyallup - 15.68</h3>
+          <div id="hiddenPuyallupBoysTeam" style="margin-left:40px">
+            <p id="AkshajMukkollu" onclick="hideRankingInfo(this)">- Akshaj Mukkollu, SR</p>
+            <p id="DominicSaxowsky" onclick="hideRankingInfo(this)">- Dominic Saxowsky, SR</p>
+            <p id="DrewBaker" onclick="hideRankingInfo(this)">- Drew Baker, SR</p>
+            <p id="BrodyAnderson" onclick="hideRankingInfo(this)">- Brody Anderson, JR</p>
+            <p id="JacksonHelle" onclick="hideRankingInfo(this)">- Jackson Helle, JR</p>
+            <p id="ColinVaughan" onclick="hideRankingInfo(this)">- Colin Vaughan, JR</p>
+            <p id="OwenAnspach" onclick="hideRankingInfo(this)">- Owen Anspach, SR</p>
+          </div>
+
+          <h3 id="TahomaBoysTeam" onclick="hideRankingInfo(this)">15. Tahoma - 16.64</h3>
+          <div id="hiddenTahomaBoysTeam" style="margin-left:40px">
+            <p id="CooperBoyle" onclick="hideRankingInfo(this)">- Cooper Boyle, SR</p>
+            <p id="CalebMcDowell" onclick="hideRankingInfo(this)">- Caleb McDowell, JR</p>
+            <p id="NicholasBarnhart" onclick="hideRankingInfo(this)">- Nicholas Barnhart, JR</p>
+            <p id="WilsonHarmer" onclick="hideRankingInfo(this)">- Wilson Harmer, JR</p>
+            <p id="OakleyPalmer" onclick="hideRankingInfo(this)">- Oakley Palmer, SR</p>
+            <p id="HudsonChambers" onclick="hideRankingInfo(this)">- Hudson Chambers, JR</p>
+            <p id="PalladynAdsitt" onclick="hideRankingInfo(this)">- Palladyn Adsitt, SR</p>
+          </div>
+
+          <h3 id="SkylineBoysTeam" onclick="hideRankingInfo(this)">16. Skyline - 18.13</h3>
+          <div id="hiddenSkylineBoysTeam" style="margin-left:40px">
+            <p id="YashveerBrar" onclick="hideRankingInfo(this)">- Yashveer Brar, SO</p>
+            <p id="LoganMucha" onclick="hideRankingInfo(this)">- Logan Mucha, JR</p>
+            <p id="VolodymyrKosolapov" onclick="hideRankingInfo(this)">- Volodymyr Kosolapov, JR</p>
+            <p id="SamuelRyan" onclick="hideRankingInfo(this)">- Samuel Ryan, JR</p>
+            <p id="LincolnFraser" onclick="hideRankingInfo(this)">- Lincoln Fraser, JR</p>
+            <p id="SukshaanBrar" onclick="hideRankingInfo(this)">- Sukshaan Brar, JR</p>
+            <p id="RichardKamm" onclick="hideRankingInfo(this)">- Richard Kamm, JR</p>
+          </div>
+
+          <h3 id="MtSiBoysTeam" onclick="hideRankingInfo(this)">17. Mt Si - 19.01</h3>
+          <div id="hiddenMtSiBoysTeam" style="margin-left:40px">
+            <p id="AndrewKrejci" onclick="hideRankingInfo(this)">- Andrew Krejci, SR</p>
+            <p id="JacksonMartin" onclick="hideRankingInfo(this)">- Jackson Martin, SO</p>
+            <p id="NathanielDillon" onclick="hideRankingInfo(this)">- Nathaniel Dillon, JR</p>
+            <p id="LoganGreen" onclick="hideRankingInfo(this)">- Logan Green, SR</p>
+            <p id="MarcoCreal" onclick="hideRankingInfo(this)">- Marco Creal, SO</p>
+            <p id="DallenJensen" onclick="hideRankingInfo(this)">- Dallen Jensen, SR</p>
+            <p id="DanteHansen" onclick="hideRankingInfo(this)">- Dante Hansen, JR</p>
+          </div>
+
+          <h3 id="BattleGroundBoysTeam" onclick="hideRankingInfo(this)">18. Battle Ground - 19.95</h3>
+          <div id="hiddenBattleGroundBoysTeam" style="margin-left:40px">
+            <p id="SterlingSutton" onclick="hideRankingInfo(this)">- Sterling Sutton, SR</p>
+            <p id="DevontaeKephart" onclick="hideRankingInfo(this)">- Devontae Kephart, JR</p>
+            <p id="TraeCopper" onclick="hideRankingInfo(this)">- Trae Copper, SO</p>
+            <p id="LordKingNanaBaduWeah" onclick="hideRankingInfo(this)">- Lord King Nana-Badu-Weah, SO</p>
+            <p id="ZacharyZamora" onclick="hideRankingInfo(this)">- Zachary Zamora, SR</p>
+            <p id="SorenMatson" onclick="hideRankingInfo(this)">- Soren Matson, SO</p>
+            <p id="TannerLepchenske" onclick="hideRankingInfo(this)">- Tanner Lepchenske, JR</p>
+          </div>
+
+          <h3 id="RogersBoysTeam" onclick="hideRankingInfo(this)">19. Rogers - 20.39</h3>
+          <div id="hiddenRogersBoysTeam" style="margin-left:40px">
+            <p id="ParkerDiseth" onclick="hideRankingInfo(this)">- Parker Diseth, SR</p>
+            <p id="PorterReynolds" onclick="hideRankingInfo(this)">- Porter Reynolds, SR</p>
+            <p id="GabrielLaTour" onclick="hideRankingInfo(this)">- Gabriel LaTour, SR</p>
+            <p id="JaiveerLalli" onclick="hideRankingInfo(this)">- Jaiveer Lalli, SR</p>
+            <p id="AlexanderBray" onclick="hideRankingInfo(this)">- Alexander Bray, SR</p>
+            <p id="JonahJepsen" onclick="hideRankingInfo(this)">- Jonah Jepsen, SR</p>
+            <p id="JackPoyfair" onclick="hideRankingInfo(this)">- Jack Poyfair, SR</p>
+          </div>
+
+          <h3 id="UnionBoysTeam" onclick="hideRankingInfo(this)">20. Union - 21.71</h3>
+          <div id="hiddenUnionBoysTeam" style="margin-left:40px">
+            <p id="BradleyHarris" onclick="hideRankingInfo(this)">- Bradley Harris, SR</p>
+            <p id="SabinKotsovos" onclick="hideRankingInfo(this)">- Sabin Kotsovos, SR</p>
+            <p id="MarcoSolari" onclick="hideRankingInfo(this)">- Marco Solari, JR</p>
+            <p id="EnzoSolari" onclick="hideRankingInfo(this)">- Enzo Solari, JR</p>
+            <p id="CalebHull" onclick="hideRankingInfo(this)">- Caleb Hull, SR</p>
+            <p id="JacksonFortin" onclick="hideRankingInfo(this)">- Jackson Fortin, SR</p>
+            <p id="AllenMoses" onclick="hideRankingInfo(this)">- Allen Moses, SR</p>
+          </div>
+
+          <h3 id="EmeraldRidgeBoysTeam" onclick="hideRankingInfo(this)">21. Emerald Ridge - 22.18</h3>
+          <div id="hiddenEmeraldRidgeBoysTeam" style="margin-left:40px">
+            <p id="AlejandroMiramontes" onclick="hideRankingInfo(this)">- Alejandro Miramontes, JR</p>
+            <p id="LoganJohnson" onclick="hideRankingInfo(this)">- Logan Johnson, JR</p>
+            <p id="WalkerParrick" onclick="hideRankingInfo(this)">- Walker Parrick, SR</p>
+            <p id="HunterSkinner" onclick="hideRankingInfo(this)">- Hunter Skinner, SR</p>
+            <p id="NoahMartins" onclick="hideRankingInfo(this)">- Noah Martins, SR</p>
+            <p id="RomanMargo" onclick="hideRankingInfo(this)">- Roman Margo, JR</p>
+            <p id="JacobWells" onclick="hideRankingInfo(this)">- Jacob Wells, SR</p>
+          </div>
+
+          <h3 id="HanfordBoysTeam" onclick="hideRankingInfo(this)">22. Hanford - 22.50</h3>
+          <div id="hiddenHanfordBoysTeam" style="margin-left:40px">
+            <p id="EthanBrogoitti" onclick="hideRankingInfo(this)">- Ethan Brogoitti, SR</p>
+            <p id="BenPorter" onclick="hideRankingInfo(this)">- Ben Porter, SR</p>
+            <p id="MalekKeller" onclick="hideRankingInfo(this)">- Malek Keller, JR</p>
+            <p id="PhilipBenson" onclick="hideRankingInfo(this)">- Philip Benson, JR</p>
+            <p id="LucaRolonDenchfield" onclick="hideRankingInfo(this)">- Luca Rolon-Denchfield, SR</p>
+            <p id="BlakeMartin" onclick="hideRankingInfo(this)">- Blake Martin, SR</p>
+            <p id="LiamPope" onclick="hideRankingInfo(this)">- Liam Pope, SR</p>
+          </div>
+
+          <h3 id="YelmBoysTeam" onclick="hideRankingInfo(this)">23. Yelm - 22.59</h3>
+          <div id="hiddenYelmBoysTeam" style="margin-left:40px">
+            <p id="SamHall" onclick="hideRankingInfo(this)">- Sam Hall, JR</p>
+            <p id="PatrickWalsh" onclick="hideRankingInfo(this)">- Patric kWalsh, JR</p>
+            <p id="DamonRabalais" onclick="hideRankingInfo(this)">- Damon Rabalais, SR</p>
+            <p id="NicholasCox" onclick="hideRankingInfo(this)">- Nicholas Cox, JR</p>
+            <p id="AlexanderHurd" onclick="hideRankingInfo(this)">- Alexander Hurd, SR</p>
+            <p id="EthanStewart" onclick="hideRankingInfo(this)">- Ethan Stewart, JR</p>
+            <p id="ChristianFlores" onclick="hideRankingInfo(this)">- Christian Flores, SR</p>
+          </div>
+
+          <h3 id="CamasBoysTeam" onclick="hideRankingInfo(this)">24. Camas - 23.32</h3>
+          <div id="hiddenCamasBoysTeam" style="margin-left:40px">
+            <p id="CohenButler" onclick="hideRankingInfo(this)">- Cohen Butler, JR</p>
+            <p id="AndrewHelt" onclick="hideRankingInfo(this)">- Andrew Helt, JR</p>
+            <p id="TannerWerry" onclick="hideRankingInfo(this)">- Tanner Werry, SO</p>
+            <p id="JaydenJones" onclick="hideRankingInfo(this)">- Jayden Jones, SR</p>
+            <p id="NathanBrotherton" onclick="hideRankingInfo(this)">- Nathan Brotherton, SR</p>
+            <p id="LeoChen" onclick="hideRankingInfo(this)">- Leo Chen, JR</p>
+            <p id="ZacharyAgherbi" onclick="hideRankingInfo(this)">- Zachary Agherbi, SO</p>
+          </div>
+
+          <h3 id="MosesLakeBoysTeam" onclick="hideRankingInfo(this)">25. Moses Lake - 23.63</h3>
+          <div id="hiddenMosesLakeBoysTeam" style="margin-left:40px">
+            <p id="JonathanRoueche" onclick="hideRankingInfo(this)">- Jonathan Roueche, SR</p>
+            <p id="AngelVerduzco" onclick="hideRankingInfo(this)">- Angel Verduzco, SR</p>
+            <p id="DuaneZamora" onclick="hideRankingInfo(this)">- Duane Zamora, SO</p>
+            <p id="LiamO'Shea" onclick="hideRankingInfo(this)">- Liam O'Shea, JR</p>
+            <p id="JesseHumpherys" onclick="hideRankingInfo(this)">- Jesse Humpherys, SR</p>
+            <p id="SeanBrumet" onclick="hideRankingInfo(this)">- Sean Brumet, JR</p>
+            <p id="NoahDemchuk" onclick="hideRankingInfo(this)">- Noah Demchuk, SO</p>
+          </div>
+
+        </div>
+
+        <div style="margin-left:20px;display:inline-block;vertical-align:top">
+          <h2 style="margin-bottom:4px">Girls Team Rankings</h2>
+
+          <h3 id="IssaquahGirlsTeam" onclick="hideRankingInfo(this)">1. Issaquah - 1.76</h3>
+          <div id="hiddenIssaquahGirlsTeam" style="margin-left:40px">
+            <p id="SallyDavis" onclick="hideRankingInfo(this)">- Sally Davis, SO</p>
+            <p id="SenaPittman" onclick="hideRankingInfo(this)">- Sena Pittman, SR</p>
+            <p id="AllisonHu" onclick="hideRankingInfo(this)">- Allison Hu, JR</p>
+            <p id="RileyEberhardt" onclick="hideRankingInfo(this)">- Riley Eberhardt, SR</p>
+            <p id="ElenaGehrke" onclick="hideRankingInfo(this)">- Elena Gehrke, SR</p>
+            <p id="LivJensen" onclick="hideRankingInfo(this)">- Liv Jensen, SR</p>
+            <p id="ClaraMichael" onclick="hideRankingInfo(this)">- Clara Michael, JR</p>
+          </div>
+
+          <h3 id="MtSiGirlsTeam" onclick="hideRankingInfo(this)">2. Mt Si - 2.42</h3>
+          <div id="hiddenMtSiGirlsTeam" style="margin-left:40px">
+            <p id="AleeyaCossey" onclick="hideRankingInfo(this)">- Aleeya Cossey, SR</p>
+            <p id="HaileyCossey" onclick="hideRankingInfo(this)">- Hailey Cossey, SR</p>
+            <p id="RyanMclellan" onclick="hideRankingInfo(this)">- Ryan Mclellan, SO</p>
+            <p id="BrightonDance" onclick="hideRankingInfo(this)">- Brighton Dance, SO</p>
+            <p id="AlexaCoughran" onclick="hideRankingInfo(this)">- Alexa Coughran, JR</p>
+            <p id="EllieKampschror" onclick="hideRankingInfo(this)">- Ellie Kampschror, JR</p>
+            <p id="ElizabethBuergi" onclick="hideRankingInfo(this)">- Elizabeth Buergi, SR</p>
+          </div>
+
+          <h3 id="EastlakeGirlsTeam" onclick="hideRankingInfo(this)">3. Eastlake - 3.14</h3>
+          <div id="hiddenEastlakeGirlsTeam" style="margin-left:40px">
+            <p id="SallyRoos" onclick="hideRankingInfo(this)">- Sally Roos, SR</p>
+            <p id="AnnaSchneidler" onclick="hideRankingInfo(this)">- Anna Schneidler, SO</p>
+            <p id="JaneRoos" onclick="hideRankingInfo(this)">- Jane Roos, SR</p>
+            <p id="HollyCarroll" onclick="hideRankingInfo(this)">- Holly Carroll, SR</p>
+            <p id="FionaWolf" onclick="hideRankingInfo(this)">- Fiona Wolf, SR</p>
+            <p id="KieraQuinto" onclick="hideRankingInfo(this)">- Kiera Quinto, JR</p>
+            <p id="SydneyLamb" onclick="hideRankingInfo(this)">- Sydney Lamb, JR</p>
+          </div>
+
+          <h3 id="CamasGirlsTeam" onclick="hideRankingInfo(this)">4. Camas - 8.37</h3>
+          <div id="hiddenCamasGirlsTeam" style="margin-left:40px">
+            <p id="EliisaMarshall" onclick="hideRankingInfo(this)">- Eliisa Marshall, SR</p>
+            <p id="KateWestfall" onclick="hideRankingInfo(this)">- Kate Westfall, SO</p>
+            <p id="EvaMcGeachy" onclick="hideRankingInfo(this)">- Eva McGeachy, SO</p>
+            <p id="ElizabethNava" onclick="hideRankingInfo(this)">- Elizabeth Nava, JR</p>
+            <p id="SophiaShattls" onclick="hideRankingInfo(this)">- Sophia Shattls, SR</p>
+            <p id="RebeccaPeddie" onclick="hideRankingInfo(this)">- Rebecca Peddie, SR</p>
+            <p id="BethanyMcKinstry" onclick="hideRankingInfo(this)">- Bethany McKinstry, SR</p>
+          </div>
+
+          <h3 id="TahomaGirlsTeam" onclick="hideRankingInfo(this)">5. Tahoma - 9.93</h3>
+          <div id="hiddenTahomaGirlsTeam" style="margin-left:40px">
+            <p id="NicolePfeiffer" onclick="hideRankingInfo(this)">- Nicole Pfeiffer, SR</p>
+            <p id="BaileyNettleton" onclick="hideRankingInfo(this)">- Bailey Nettleton, JR</p>
+            <p id="LoreleiGeldien" onclick="hideRankingInfo(this)">- Lorelei Geldien, JR</p>
+            <p id="WillaHeil" onclick="hideRankingInfo(this)">- Willa Heil, JR</p>
+            <p id="NatalieStuard" onclick="hideRankingInfo(this)">- Natalie Stuard, JR</p>
+            <p id="GretaLeonard" onclick="hideRankingInfo(this)">- Greta Leonard, JR</p>
+            <p id="HollieBarkley" onclick="hideRankingInfo(this)">- Hollie Barkley, SO</p>
+          </div>
+
+          <h3 id="ArlingtonGirlsTeam" onclick="hideRankingInfo(this)">6. Arlington - 10.97</h3>
+          <div id="hiddenArlingtonGirlsTeam" style="margin-left:40px">
+            <p id="BrookeHenkin" onclick="hideRankingInfo(this)">- Brooke Henkin, SR</p>
+            <p id="AnabelleKlein" onclick="hideRankingInfo(this)">- Anabelle Klein, SO</p>
+            <p id="RaelynOetzel" onclick="hideRankingInfo(this)">- Raelyn Oetzel, JR</p>
+            <p id="AmeliaPotong" onclick="hideRankingInfo(this)">- Amelia Potong, JR</p>
+            <p id="AvaJensen" onclick="hideRankingInfo(this)">- Ava Jensen, SR</p>
+            <p id="ClaireEly" onclick="hideRankingInfo(this)">- Claire Ely, SO</p>
+            <p id="HeidiMcKinley" onclick="hideRankingInfo(this)">- Heidi McKinley, SR</p>
+          </div>
+
+          <h3 id="WestValleyGirlsTeam" onclick="hideRankingInfo(this)">7. West Valley - 11.04</h3>
+          <div id="hiddenWestValleyGirlsTeam" style="margin-left:40px">
+            <p id="ZoeyMoon" onclick="hideRankingInfo(this)">- Zoey Moon, SO</p>
+            <p id="MargoFillmore" onclick="hideRankingInfo(this)">- Margo Fillmore, JR</p>
+            <p id="HalliePyfer" onclick="hideRankingInfo(this)">- Hallie Pyfer, SO</p>
+            <p id="NatashaKalombo" onclick="hideRankingInfo(this)">- Natasha Kalombo, SR</p>
+            <p id="SageAnderson" onclick="hideRankingInfo(this)">- Sage Anderson, JR</p>
+            <p id="LeilaneValencia" onclick="hideRankingInfo(this)">- Leilane Valencia, SO</p>
+            <p id="AliyaRemillard" onclick="hideRankingInfo(this)">- Aliya Remillard, JR</p>
+          </div>
+
+          <h3 id="LewisandClarkGirlsTeam" onclick="hideRankingInfo(this)">8. Lewis and Clark - 11.10</h3>
+          <div id="hiddenLewisandClarkGirlsTeam" style="margin-left:40px">
+            <p id="KatieLubbe" onclick="hideRankingInfo(this)">- Katie Lubbe, SR</p>
+            <p id="CharlotteBurns" onclick="hideRankingInfo(this)">- Charlotte Burns, SR</p>
+            <p id="AvaNelson" onclick="hideRankingInfo(this)">- Ava Nelson, SO</p>
+            <p id="EllaKizziar" onclick="hideRankingInfo(this)">- Ella Kizziar, SR</p>
+            <p id="KateAnderson" onclick="hideRankingInfo(this)">- Kate Anderson, JR</p>
+            <p id="AmeliaCarlson" onclick="hideRankingInfo(this)">- Amelia Carlson, JR</p>
+            <p id="MollyHeinen" onclick="hideRankingInfo(this)">- Molly Heinen, JR</p>
+          </div>
+
+          <h3 id="StadiumGirlsTeam" onclick="hideRankingInfo(this)">9. Stadium - 11.56</h3>
+          <div id="hiddenStadiumGirlsTeam" style="margin-left:40px">
+            <p id="KatelynGalloway" onclick="hideRankingInfo(this)">- Katelyn Galloway, SR</p>
+            <p id="MaddieMcKenna" onclick="hideRankingInfo(this)">- Maddie McKenna, SR</p>
+            <p id="EvaStokes" onclick="hideRankingInfo(this)">- Eva Stokes, JR</p>
+            <p id="IzabellaQuantz" onclick="hideRankingInfo(this)">- Izabella Quantz, SO</p>
+            <p id="KateErickson" onclick="hideRankingInfo(this)">- Kate Erickson, JR</p>
+            <p id="PiperRussell" onclick="hideRankingInfo(this)">- Piper Russell, JR</p>
+            <p id="AnnaSatterthwaite" onclick="hideRankingInfo(this)">- Anna Satterthwaite, SR</p>
+          </div>
+
+          <h3 id="KamiakinGirlsTeam" onclick="hideRankingInfo(this)">10. Kamiakin - 12.21</h3>
+          <div id="hiddenKamiakinGirlsTeam" style="margin-left:40px">
+            <p id="ElenaTill" onclick="hideRankingInfo(this)">- Elena Till, JR</p>
+            <p id="MeredithStavenger" onclick="hideRankingInfo(this)">- Meredith Stavenger, SR</p>
+            <p id="PreslieJenkins" onclick="hideRankingInfo(this)">- Preslie Jenkins, SO</p>
+            <p id="CamrynSabin" onclick="hideRankingInfo(this)">- Camryn Sabin, SR</p>
+            <p id="MarissaSampson" onclick="hideRankingInfo(this)">- Marissa Sampson, JR</p>
+            <p id="LouesaGledhill" onclick="hideRankingInfo(this)">- Louesa Gledhill, SR</p>
+            <p id="SydneyDeCoria" onclick="hideRankingInfo(this)">- Sydney DeCoria, SO</p>
+          </div>
+
+          <h3 id="RedmondGirlsTeam" onclick="hideRankingInfo(this)">11. Redmond - 12.36</h3>
+          <div id="hiddenRedmondGirlsTeam" style="margin-left:40px">
+            <p id="SofiaVillamizar" onclick="hideRankingInfo(this)">- Sofia Villamizar, JR</p>
+            <p id="AudreyLucas" onclick="hideRankingInfo(this)">- Audrey Lucas, JR</p>
+            <p id="IsabelSchneider" onclick="hideRankingInfo(this)">- Isabel Schneider, SR</p>
+            <p id="KennaBaldwin" onclick="hideRankingInfo(this)">- Kenna Baldwin, JR</p>
+            <p id="PennyAtwood" onclick="hideRankingInfo(this)">- Penny Atwood, JR</p>
+            <p id="SophiaBeyreis" onclick="hideRankingInfo(this)">- Sophia Beyreis, JR</p>
+            <p id="AmyLu" onclick="hideRankingInfo(this)">- Amy Lu, JR</p>
+          </div>
+
+          <h3 id="KamiakGirlsTeam" onclick="hideRankingInfo(this)">12. Kamiak - 13.77</h3>
+          <div id="hiddenKamiakGirlsTeam" style="margin-left:40px">
+            <p id="MollyLesyna" onclick="hideRankingInfo(this)">- Molly Lesyna, JR</p>
+            <p id="JaxinHolloway" onclick="hideRankingInfo(this)">- Jaxin Holloway, SR</p>
+            <p id="ChloeBundy" onclick="hideRankingInfo(this)">- Chloe Bundy, SR</p>
+            <p id="MeganHoang" onclick="hideRankingInfo(this)">- Megan Hoang, JR</p>
+            <p id="AbbyThorson" onclick="hideRankingInfo(this)">- Abby Thorson, SR</p>
+            <p id="CaitlinVu" onclick="hideRankingInfo(this)">- Caitlin Vu, JR</p>
+            <p id="GriffinEdwards" onclick="hideRankingInfo(this)">- Griffin Edwards, SR</p>
+          </div>
+
+          <h3 id="HenryJacksonGirlsTeam" onclick="hideRankingInfo(this)">13. Henry Jackson - 14.47</h3>
+          <div id="hiddenHenryJacksonGirlsTeam" style="margin-left:40px">
+            <p id="SelenaBangerter" onclick="hideRankingInfo(this)">- Selena Bangerter, SR</p>
+            <p id="HarneetPandher" onclick="hideRankingInfo(this)">- Harneet Pandher, SR</p>
+            <p id="MarinLambert" onclick="hideRankingInfo(this)">- Marin Lambert, SR</p>
+            <p id="AnalyciaZavala" onclick="hideRankingInfo(this)">- Analycia Zavala, JR</p>
+            <p id="OliviaFriedrich" onclick="hideRankingInfo(this)">- Olivia Friedrich, SR</p>
+            <p id="AvaEvans" onclick="hideRankingInfo(this)">- Ava Evans, JR</p>
+            <p id="AlyssaWebb" onclick="hideRankingInfo(this)">- Alyssa Webb, SO</p>
+          </div>
+
+          <h3 id="PuyallupGirlsTeam" onclick="hideRankingInfo(this)">14. Puyallup - 15.02</h3>
+          <div id="hiddenPuyallupGirlsTeam" style="margin-left:40px">
+            <p id="MaurinMonaghan" onclick="hideRankingInfo(this)">- Maurin Monaghan, SO</p>
+            <p id="IfechiOkoye" onclick="hideRankingInfo(this)">- Ifechi Okoye, SR</p>
+            <p id="LolaWoodburn" onclick="hideRankingInfo(this)">- Lola Woodburn, SR</p>
+            <p id="KenziBerwick" onclick="hideRankingInfo(this)">- Kenzi Berwick, SO</p>
+            <p id="AvaBray" onclick="hideRankingInfo(this)">- Ava Bray, JR</p>
+            <p id="DelaneyMcGuire" onclick="hideRankingInfo(this)">- Delaney McGuire, JR</p>
+            <p id="AliGriner" onclick="hideRankingInfo(this)">- Ali Griner, SO</p>
+          </div>
+
+          <h3 id="SkylineGirlsTeam" onclick="hideRankingInfo(this)">15. Skyline - 16.27</h3>
+          <div id="hiddenSkylineGirlsTeam" style="margin-left:40px">
+            <p id="SydneyCollier" onclick="hideRankingInfo(this)">- Sydney Collier, SR</p>
+            <p id="JantamaneeStibbe" onclick="hideRankingInfo(this)">- Jantamanee Stibbe, JR</p>
+            <p id="LucyDuong" onclick="hideRankingInfo(this)">- Lucy Duong, SO</p>
+            <p id="SreenithyaKasireddy" onclick="hideRankingInfo(this)">- Sreenithya Kasireddy, SR</p>
+            <p id="AbigailRiley" onclick="hideRankingInfo(this)">- Abigail Riley, JR</p>
+            <p id="MeganVanderMey" onclick="hideRankingInfo(this)">- Megan Vander Mey, JR</p>
+            <p id="EllaMacDonald" onclick="hideRankingInfo(this)">- Ella MacDonald, SR</p>
+          </div>
+
+          <h3 id="LincolnGirlsTeam" onclick="hideRankingInfo(this)">16. Lincoln - 17.29</h3>
+          <div id="hiddenLincolnGirlsTeam" style="margin-left:40px">
+            <p id="AnnaHaber" onclick="hideRankingInfo(this)">- Anna Haber, SO</p>
+            <p id="CleoBaernstein" onclick="hideRankingInfo(this)">- Cleo Baernstein, SR</p>
+            <p id="SarahLindquist" onclick="hideRankingInfo(this)">- Sarah Lindquist, JR</p>
+            <p id="DaphneMaussenet" onclick="hideRankingInfo(this)">- Daphne Maussenet, SO</p>
+            <p id="CarolineJarvis" onclick="hideRankingInfo(this)">- Caroline Jarvis, SR</p>
+            <p id="BijouBolton" onclick="hideRankingInfo(this)">- Bijou Bolton, SR</p>
+            <p id="CaoimhePhilips" onclick="hideRankingInfo(this)">- Caoimhe Philips, JR</p>
+          </div>
+
+          <h3 id="NorthCreekGirlsTeam" onclick="hideRankingInfo(this)">17. North Creek - 17.89</h3>
+          <div id="hiddenNorthCreekGirlsTeam" style="margin-left:40px">
+            <p id="ClaraZiegler" onclick="hideRankingInfo(this)">- Clara Ziegler, JR</p>
+            <p id="AmeliaWray" onclick="hideRankingInfo(this)">- Amelia Wray, SO</p>
+            <p id="MyrteHofman" onclick="hideRankingInfo(this)">- Myrte Hofman, SR</p>
+            <p id="JianiLiu" onclick="hideRankingInfo(this)">- Jiani Liu, JR</p>
+            <p id="CayleKey" onclick="hideRankingInfo(this)">- Cayle Key, SR</p>
+            <p id="DianaArteaga" onclick="hideRankingInfo(this)">- Diana Arteaga, SR</p>
+            <p id="MayaBlacken" onclick="hideRankingInfo(this)">- Maya Blacken, SO</p>
+          </div>
+
+          <h3 id="OlympiaGirlsTeam" onclick="hideRankingInfo(this)">18. Olympia - 19.54</h3>
+          <div id="hiddenOlympiaGirlsTeam" style="margin-left:40px">
+            <p id="CarolineSchilter" onclick="hideRankingInfo(this)">- Caroline Schilter, SO</p>
+            <p id="CeceWallaceBerry" onclick="hideRankingInfo(this)">- Cece Wallace-Berry, SR</p>
+            <p id="AzaleaBarksdale" onclick="hideRankingInfo(this)">- Azalea Barksdale, SO</p>
+            <p id="MaeganShen" onclick="hideRankingInfo(this)">- Maegan Shen, JR</p>
+            <p id="AvaBarr" onclick="hideRankingInfo(this)">- Ava Barr, JR</p>
+            <p id="ClaraMackison" onclick="hideRankingInfo(this)">- Clara Mackison, SR</p>
+            <p id="LucyClinton" onclick="hideRankingInfo(this)">- Lucy Clinton, JR</p>
+          </div>
+
+          <h3 id="LakeStevensGirlsTeam" onclick="hideRankingInfo(this)">19. Lake Stevens - 20.82</h3>
+          <div id="hiddenLakeStevensGirlsTeam" style="margin-left:40px">
+            <p id="PaigeTrumbull" onclick="hideRankingInfo(this)">- Paige Trumbull, SO</p>
+            <p id="HallieCarroll" onclick="hideRankingInfo(this)">- Hallie Carroll, SR</p>
+            <p id="ReaganRich" onclick="hideRankingInfo(this)">- Reagan Rich, SR</p>
+            <p id="KenadiePester" onclick="hideRankingInfo(this)">- Kenadie Pester, SO</p>
+            <p id="JasmineGroenig" onclick="hideRankingInfo(this)">- Jasmine Groenig, JR</p>
+            <p id="TabithaMiller" onclick="hideRankingInfo(this)">- Tabitha Miller, SO</p>
+            <p id="LillieHiester" onclick="hideRankingInfo(this)">- Lillie Hiester, JR</p>
+          </div>
+
+          <h3 id="JoelFerrisGirlsTeam" onclick="hideRankingInfo(this)">20. Joel Ferris - 21.22</h3>
+          <div id="hiddenIssaquahGirlsTeam" style="margin-left:40px">
+            <p id="DarlaKelly" onclick="hideRankingInfo(this)">- Darla Kelly, JR</p>
+            <p id="EllaMenard" onclick="hideRankingInfo(this)">- Ella Menard, JR</p>
+            <p id="BlytheMosar" onclick="hideRankingInfo(this)">- Blythe Mosar, SO</p>
+            <p id="MichelleChen" onclick="hideRankingInfo(this)">- Michelle Chen, SR</p>
+            <p id="OraLefcort" onclick="hideRankingInfo(this)">- Ora Lefcort, SR</p>
+            <p id="EmmaDanaraj" onclick="hideRankingInfo(this)">- Emma Danaraj, JR</p>
+            <p id="EmilyBurns" onclick="hideRankingInfo(this)">- Emily Burns, JR</p>
+          </div>
+
+          <h3 id="EmeraldRidgeGirlsTeam" onclick="hideRankingInfo(this)">21. Emerald Ridge - 21.31</h3>
+          <div id="hiddenEmeraldRidgeGirlsTeam" style="margin-left:40px">
+            <p id="EsabelleCochran" onclick="hideRankingInfo(this)">- Esabelle Cochran, JR</p>
+            <p id="MarenNealon" onclick="hideRankingInfo(this)">- Maren Nealon, SR</p>
+            <p id="AbigailSmith" onclick="hideRankingInfo(this)">- Abigail Smith, JR</p>
+            <p id="LisBarnes" onclick="hideRankingInfo(this)">- Lis Barnes, SR</p>
+            <p id="CianaGallagher" onclick="hideRankingInfo(this)">- Ciana Gallagher, SR</p>
+            <p id="AshleeFenley" onclick="hideRankingInfo(this)">- Ashlee Fenley, SR</p>
+            <p id="CrystalMartinez" onclick="hideRankingInfo(this)">- Crystal Martinez, SO</p>
+          </div>
+
+          <h3 id="MeadGirlsTeam" onclick="hideRankingInfo(this)">22. Mead - 21.67</h3>
+          <div id="hiddenMeadGirlsTeam" style="margin-left:40px">
+            <p id="AveryParker" onclick="hideRankingInfo(this)">- Avery Parker, SO</p>
+            <p id="AdrienneHolden" onclick="hideRankingInfo(this)">- Adrienne Holden, SO</p>
+            <p id="AddyChaffins" onclick="hideRankingInfo(this)">- Addy Chaffins, JR</p>
+            <p id="AvaPhilips" onclick="hideRankingInfo(this)">- Ava Philips, SO</p>
+            <p id="JulieThoet" onclick="hideRankingInfo(this)">- Julie Thoet, SR</p>
+            <p id="RachelJi" onclick="hideRankingInfo(this)">- Rachel Ji, SO</p>
+            <p id="MargoZvonar" onclick="hideRankingInfo(this)">- Margo Zvonar, JR</p>
+          </div>
+
+          <h3 id="SouthKitsapGirlsTeam" onclick="hideRankingInfo(this)">23. South Kitsap - 21.69</h3>
+          <div id="hiddenSouthKitsapGirlsTeam" style="margin-left:40px">
+            <p id="LaurenLaws" onclick="hideRankingInfo(this)">- Lauren Laws, SR</p>
+            <p id="EmmaSchmutz" onclick="hideRankingInfo(this)">- Emma Schmutz, SR</p>
+            <p id="JoanHampton" onclick="hideRankingInfo(this)">- Joan Hampton, SO</p>
+            <p id="LenaBowman" onclick="hideRankingInfo(this)">- Lena Bowman, JR</p>
+            <p id="EmmalaniWagner" onclick="hideRankingInfo(this)">- Emmalani Wagner, SO</p>
+            <p id="ElizabethAuble" onclick="hideRankingInfo(this)">- Elizabeth Auble, SO</p>
+            <p id="IsabelHead" onclick="hideRankingInfo(this)">- Isabel Head, SO</p>
+          </div>
+
+          <h3 id="WenatcheeGirlsTeam" onclick="hideRankingInfo(this)">24. Wenatchee - 22.36</h3>
+          <div id="hiddenWenatcheeGirlsTeam" style="margin-left:40px">
+            <p id="KylahMadariaga" onclick="hideRankingInfo(this)">- Kylah Madariaga, SR</p>
+            <p id="LinneaJarmin" onclick="hideRankingInfo(this)">- Linnea Jarmin, JR</p>
+            <p id="AllieKnoop" onclick="hideRankingInfo(this)">- Allie Knoop, JR</p>
+            <p id="HannahRoche" onclick="hideRankingInfo(this)">- Hannah Roche, JR</p>
+            <p id="BriannaValdez" onclick="hideRankingInfo(this)">- Brianna Valdez, SR</p>
+            <p id="SloanneEppichTalbot" onclick="hideRankingInfo(this)">- Sloanne Eppich-Talbot, SO</p>
+            <p id="BeccaHenning" onclick="hideRankingInfo(this)">- Becca Henning, SR</p>
+          </div>
+
+          <h3 id="UnionGirlsTeam" onclick="hideRankingInfo(this)">25. Union - 23.36</h3>
+          <div id="hiddenUnionGirlsTeam" style="margin-left:40px">
+            <p id="SaraThompson" onclick="hideRankingInfo(this)">- Sara Thompson, JR</p>
+            <p id="EllaKoch" onclick="hideRankingInfo(this)">- Ella Koch, JR</p>
+            <p id="TaylorKnilans" onclick="hideRankingInfo(this)">- Taylor Knilans, SO</p>
+            <p id="KaylaGorchels" onclick="hideRankingInfo(this)">- Kayla Gorchels, SR</p>
+            <p id="ZiaCorum" onclick="hideRankingInfo(this)">- Zia Corum, SR</p>
+            <p id="AnnistonBeem" onclick="hideRankingInfo(this)">- Anniston Beem, JR</p>
+            <p id="AinsleyClough" onclick="hideRankingInfo(this)">- Ainsley Clough, SR</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div style="display:inline-block;vertical-align:top">
+
+        <div style="margin-left:20px;display:inline-block;vertical-align:top">
+          <h2 style="margin-bottom:4px">Boys Individual Rankings</h2>
+
+          <h3 id="EzraTeeplesIdv" onclick="hideRankingInfo(this)">1. Ezra Teeples</h3>
+          <div id="hiddenEzraTeeplesIdv" style="margin-left:40px">
+            <p>- Kamiakin, SR</p>
+            <p>- Reference Time: 15:08.90</p>
+            <p>- 1st at State XC 2023</p>
+            <p>- 33rd at NXR 2023</p>
+            <p>- 1st at 1600m 2024, 4:13.33 PR</p>
+            <p>- 5th at 3200m 2024, 9:15.53 PR</p>
+          </div>
+          <h3 id="ZacharyLeaderIdv" onclick="hideRankingInfo(this)">2. Zachary Leader</h3>
+          <div id="hiddenZacharyLeaderIdv" style="margin-left:40px">
+            <p>- Redmond, SR</p>
+            <p>- Reference Time: 15:13.65</p>
+            <p>- 2nd at State XC 2023</p>
+            <p>- 50th at NXR 2023</p>
+            <p>- 2nd at 1600m 2024, 4:13.95 PR</p>
+            <p>- 1st at 3200m 2024, 8:59.03 PR</p>
+          </div>
+          <h3 id="CooperBoyleIdv" onclick="hideRankingInfo(this)">3. Cooper Boyle</h3>
+          <div id="hiddenCooperBoyleIdv" style="margin-left:40px">
+            <p>- Tahoma, SR</p>
+            <p>- Reference Time: 15:11.84</p>
+            <p>- 3rd at State XC 2023</p>
+            <p>- 35th at NXR 2023</p>
+            <p>- 5th at 1600m 2024, 4:17.00 PR</p>
+            <p>- 2nd at 3200m 2024, 9:08.36 PR</p>
+          </div>
+          <h3 id="ConnorRickeyIdv" onclick="hideRankingInfo(this)">4. Connor Rickey</h3>
+          <div id="hiddenConnorRickeyIdv" style="margin-left:40px">
+            <p>- Issaquah, SR</p>
+            <p>- Reference Time: 15:37.72</p>
+            <p>- 8th at State XC 2023</p>
+            <p>- 4th at 800m 2024, 1:54.29 PR</p>
+            <p>- 4th at 1600m 2024, 4:14.15 PR</p>
+          </div>
+          <h3 id="ColinWearIdv" onclick="hideRankingInfo(this)">5. Colin Wear</h3>
+          <div id="hiddenColinWearIdv" style="margin-left:40px">
+            <p>- Kamiak, JR</p>
+            <p>- Reference Time: 15:27.79</p>
+            <p>- 5th at State XC 2023</p>
+            <p>- 1600m, 4:22.09 PR</p>
+            <p>- 9th at 3200m 2024, 9:17.95 PR</p>
+          </div>
+          <h3 id="NoahThomasIdv" onclick="hideRankingInfo(this)">6. Noah Thomas</h3>
+          <div id="hiddenNoahThomasIdv" style="margin-left:40px">
+            <p>- Kamiakin, SR</p>
+            <p>- Reference Time: 15:27.79</p>
+            <p>- 7th at State XC 2023</p>
+            <p>- 1600m, 4:31.45 PR</p>
+            <p>- 3200m, 9:31.35 PR</p>
+          </div>
+          <h3 id="EthanHolmesIdv" onclick="hideRankingInfo(this)">7. Ethan Holmes</h3>
+          <div id="hiddenEthanHolmesIdv" style="margin-left:40px">
+            <p>- Henry Jackson, SR</p>
+            <p>- Reference Time: 15:33.46</p>
+            <p>- 12th at State XC 2023</p>
+            <p>- 1600m, 4:36.59 PR</p>
+            <p>- 3200m, 9:51.42 PR</p>
+          </div>
+          <h3 id="DimaSerafimoviciIdv" onclick="hideRankingInfo(this)">8. Dima Serafimovici</h3>
+          <div id="hiddenDimaSerafimoviciIdv" style="margin-left:40px">
+            <p>- Curtis, SR</p>
+            <p>- Reference Time: 15:41.62</p>
+            <p>- 9th at State XC 2023</p>
+            <p>- 14th at 1600m 2024, 4:19.24 PR</p>
+            <p>- 3200m, 9:25.66 PR</p>
+          </div>
+          <h3 id="AndrewGarciaIdv" onclick="hideRankingInfo(this)">9. Andrew Garcia</h3>
+          <div id="hiddenAndrewGarciaIdv" style="margin-left:40px">
+            <p>- Sunnyside, SR</p>
+            <p>- Reference Time: 15:46.25</p>
+            <p>- 11th at State XC 2023</p>
+            <p>- 6th at 1600m 2024, 4:18.66 PR</p>
+            <p>- 6th at 3200m 2024, 9:16.14 PR</p>
+          </div>
+          <h3 id="BodenAldersonIdv" onclick="hideRankingInfo(this)">10. Boden Alderson</h3>
+          <div id="hiddenBodenAldersonIdv" style="margin-left:40px">
+            <p>- West Valley, SR</p>
+            <p>- Reference Time: 15:38.76</p>
+            <p>- 19th at State XC 2023</p>
+            <p>- 1600m, 4:19.94 PR</p>
+            <p>- 8th at 3200m 2024, 9:17.38 PR</p>
+          </div>
+          <h3 id="ParkerWhitmoreIdv" onclick="hideRankingInfo(this)">11. Parker Whitmore</h3>
+          <div id="hiddenParkerWhitmoreIdv" style="margin-left:40px">
+            <p>- Lewis and Clark, SR</p>
+            <p>- Reference Time: 15:37.37</p>
+            <p>- 15th at State XC 2023</p>
+            <p>- 1600m, 4:26.82 PR</p>
+            <p>- 3200m, 9:40.25 PR</p>
+          </div>
+          <h3 id="HenryTaitIdv" onclick="hideRankingInfo(this)">12. Henry Tait</h3>
+          <div id="hiddenHenryTaitIdv" style="margin-left:40px">
+            <p>- Issaquah, SR</p>
+            <p>- Reference Time: 15:46.33</p>
+            <p>- 16th at State XC 2023</p>
+            <p>- 1600m, 4:20.13 PR</p>
+            <p>- 7th at 3200m 2024, 9:16.29 PR</p>
+          </div>
+          <h3 id="LucasSpurlingIdv" onclick="hideRankingInfo(this)">13. Lucas Spurling</h3>
+          <div id="hiddenLucasSpurlingIdv" style="margin-left:40px">
+            <p>- Arlington, SR</p>
+            <p>- Reference Time: 15:41.47</p>
+            <p>- 17th at 3A State XC 2023</p>
+            <p>- 1600m, 4:22.67 PR</p>
+            <p>- 3200m, 9:39.14 PR</p>
+          </div>
+          <h3 id="CohenButlerIdv" onclick="hideRankingInfo(this)">14. Cohen Butler</h3>
+          <div id="hiddenCohenButlerIdv" style="margin-left:40px">
+            <p>- Camas, JR</p>
+            <p>- Reference Time: 15:38.55</p>
+            <p>- 41st at State XC 2023</p>
+            <p>- 15th at 1600m 2024, 4:19.54 PR</p>
+            <p>- 4th at 3200m 2024, 9:16.05 PR</p>
+          </div>
+          <h3 id="HarperChurapeIdv" onclick="hideRankingInfo(this)">15. Harper Churape</h3>
+          <div id="hiddenHarperChurapeIdv" style="margin-left:40px">
+            <p>- Lewis and Clark, SR</p>
+            <p>- Reference Time: 15:38.76</p>
+            <p>- 17th at State XC 2023</p>
+            <p>- 1600m, 4:23.19 PR</p>
+            <p>- 3200m, 9:38.45 PR</p>
+          </div>
+          <h3 id="JaedonPhillipsIdv" onclick="hideRankingInfo(this)">16. Jaedon Phillips</h3>
+          <div id="hiddenJaedonPhillipsIdv" style="margin-left:40px">
+            <p>- Mead, SR</p>
+            <p>- Reference Time: 15:49.19</p>
+            <p>- 16th at 3A State XC 2023</p>
+            <p>- 1600m, 4:38.30 PR</p>
+            <p>- 3200m, 9:44.77 PR</p>
+          </div>
+          <h3 id="AlexanderYahnIdv" onclick="hideRankingInfo(this)">17. Alexander Yahn</h3>
+          <div id="hiddenAlexanderYahnIdv" style="margin-left:40px">
+            <p>- Issaquah, SR</p>
+            <p>- Reference Time: 15:45.22</p>
+            <p>- 29th at State XC 2023</p>
+            <p>- 1600m, 4:22.68 PR</p>
+            <p>- 14th at 3200m 2024, 9:17.25 PR</p>
+          </div>
+          <h3 id="NoahBumgardnerIdv" onclick="hideRankingInfo(this)">18. Noah Bumgardner</h3>
+          <div id="hiddenNoahBumgardnerIdv" style="margin-left:40px">
+            <p>- Arlington, SR</p>
+            <p>- Reference Time: 15:49.94</p>
+            <p>- 18th at 3A State XC 2023</p>
+            <p>- 1600m, 4:32.45 PR</p>
+            <p>- 3200m, 9:36.54 PR</p>
+          </div>
+          <h3 id="BradleyHarrisIdv" onclick="hideRankingInfo(this)">19. Bradley Harris</h3>
+          <div id="hiddenBradleyHarrisIdv" style="margin-left:40px">
+            <p>- Union, SR</p>
+            <p>- Reference Time: 15:56.54</p>
+            <p>- 22nd at State XC 2023</p>
+            <p>- 16th at 1600m 2024, 4:19.25 PR</p>
+            <p>- 3200m, 9:32.97 PR</p>
+          </div>
+          <h3 id="TobyMeierIdv" onclick="hideRankingInfo(this)">20. Toby Meier</h3>
+          <div id="hiddenTobyMeierIdv" style="margin-left:40px">
+            <p>- Lewis and Clark, SR</p>
+            <p>- Reference Time: 15:53.32</p>
+            <p>- 21st at State XC 2023</p>
+            <p>- 1600m, 4:33.83 PR</p>
+            <p>- 3200m, 9:42.18 PR</p>
+          </div>
+          <h3 id="BlakeRobertsIdv" onclick="hideRankingInfo(this)">21. Blake Roberts</h3>
+          <div id="hiddenBlakeRobertsIdv" style="margin-left:40px">
+            <p>- Glacier Peak, SO</p>
+            <p>- Reference Time: 15:53.29</p>
+            <p>- 23rd at State XC 2023</p>
+            <p>- 1600m, 4:27.71 PR</p>
+            <p>- 3200m, 9:44.46 PR</p>
+          </div>
+          <h3 id="GradyFournierIdv" onclick="hideRankingInfo(this)">22. Grady Fournier</h3>
+          <div id="hiddenGradyFournierIdv" style="margin-left:40px">
+            <p>- Arlington, SR</p>
+            <p>- Reference Time: 15:58.35</p>
+            <p>- 31st at 3A State XC 2023</p>
+            <p>- 1600m, 4:29.61 PR</p>
+            <p>- 14th at 3A 3200m 2024, 9:24.90 PR</p>
+          </div>
+          <h3 id="AkshajMukkolluIdv" onclick="hideRankingInfo(this)">23. Akshaj Mukkollu</h3>
+          <div id="hiddenAkshajMukkolluIdv" style="margin-left:40px">
+            <p>- Puyallup, SR</p>
+            <p>- Reference Time: 16:01.75</p>
+            <p>- 31st at State XC 2023</p>
+            <p>- 1600m, 4:35.58 PR</p>
+            <p>- 3200m, 9:57.14 PR</p>
+          </div>
+          <h3 id="AlejandroMiramontesIdv" onclick="hideRankingInfo(this)">24. Alejandro Miramontes</h3>
+          <div id="hiddenAlejandroMiramontesIdv" style="margin-left:40px">
+            <p>- Emerald Ridge, JR</p>
+            <p>- Reference Time: 16:06.20</p>
+            <p>- 33rd at State XC 2023</p>
+            <p>- 800m, 1:59.47 PR</p>
+            <p>- 1600m, 4:30.53 PR</p>
+          </div>
+          <h3 id="RileyTricasIdv" onclick="hideRankingInfo(this)">25. Riley Tricas</h3>
+          <div id="hiddenRileyTricasIdv" style="margin-left:40px">
+            <p>- Kentridge, SR</p>
+            <p>- Reference Time: 16:11.88</p>
+            <p>- 38th at State XC 2023</p>
+            <p>- 10th at 800m 2024, 1:54.92 PR</p>
+            <p>- 11th at 1600m 2024, 4:18.94 PR</p>
+          </div>
+
+        </div>
+
+        <div style="margin-left:20px;display:inline-block;vertical-align:top">
+          <h2 style="margin-bottom:4px">Girls Individual Rankings</h2>
+          <h3 id="LathamWestIdv" onclick="hideRankingInfo(this)">1. Latham West</h3>
+          <div id="hiddenLathamWestIdv" style="margin-left:40px">
+            <p>- Bonney Lake, JR</p>
+            <p>- Reference Time: 17:23.76</p>
+            <p>- 4th at 3A State XC 2023</p>
+            <p>- 8th at NXR 2023</p>
+            <p>- 4th at 3A 1600m 2024, 4:53.88 PR</p>
+            <p>- 3rd at 3A 3200m 2024, 10:26.18 PR</p>
+          </div>
+          <h3 id="KylahMadariagaIdv" onclick="hideRankingInfo(this)">2. Kylah Madariaga</h3>
+          <div id="hiddenKylahMadariagaIdv" style="margin-left:40px">
+            <p>- Wenatchee, SR</p>
+            <p>- Reference Time: 17:33.13</p>
+            <p>- 2nd at State XC 2023</p>
+            <p>- 10th at NXR 2023</p>
+            <p>- 5th at 1600m 2024, 5:00.79 PR</p>
+            <p>- 3rd at 3200m 2024, 10:27.02 PR</p>
+          </div>
+          <h3 id="HaileyCosseyIdv" onclick="hideRankingInfo(this)">3. Hailey Cossey</h3>
+          <div id="hiddenHaileyCosseyIdv" style="margin-left:40px">
+            <p>- Mt Si, SR</p>
+            <p>- Reference Time: 17:52.84</p>
+            <p>- 5th at State XC 2023</p>
+            <p>- 22nd at NXR 2023</p>
+            <p>- 10th at 1600m 2024, 4:53.65 PR</p>
+            <p>- 5th at 3200m 2024, 10:41.88 PR</p>
+          </div>
+          <h3 id="AlexaMatoraIdv" onclick="hideRankingInfo(this)">4. Alexa Matora</h3>
+          <div id="hiddenAlexaMatoraIdv" style="margin-left:40px">
+            <p>- Lake Washington, SR</p>
+            <p>- Reference Time: 18:00.61</p>
+            <p>- 7th at 3A State XC 2023</p>
+            <p>- 1st at 3A 800m 2024, 2:09.29 PR</p>
+            <p>- 2nd at 3A 1600m 2024, 4:48.29 PR</p>
+          </div>
+          <h3 id="AleeyaCosseyIdv" onclick="hideRankingInfo(this)">5. Aleeya Cossey</h3>
+          <div id="hiddenAleeyaCosseyIdv" style="margin-left:40px">
+            <p>- Mt Si, SR</p>
+            <p>- Reference Time: 17:53.56</p>
+            <p>- 4th at State XC 2023</p>
+            <p>- 27th at NXR 2023</p>
+            <p>- 1600m, 4:59.54 PR</p>
+            <p>- 4th at 3200m 2024, 10:43.32 PR</p>
+          </div>
+          <h3 id="SelenaBangerterIdv" onclick="hideRankingInfo(this)">6. Selena Bangerter</h3>
+          <div id="hiddenSelenaBangerterIdv" style="margin-left:40px">
+            <p>- Henry Jackson, SR</p>
+            <p>- Reference Time: 18:14.93</p>
+            <p>- 6th at State XC 2023</p>
+            <p>- 1600m, 5:04.87 PR</p>
+            <p>- 10th at 3200m 2024, 10:50.30 PR</p>
+          </div>
+          <h3 id="KatelynGallowayIdv" onclick="hideRankingInfo(this)">7. Katelyn Galloway</h3>
+          <div id="hiddenKatelynGallowayIdv" style="margin-left:40px">
+            <p>- Stadium, SR</p>
+            <p>- Reference Time: 18:28.05</p>
+            <p>- 15th at 3A State XC 2023</p>
+            <p>- 8th at 3A 800m 2024, 2:14.85 PR</p>
+            <p>- 9th at 3A 1600m 2024, 4:55.32 PR</p>
+          </div>
+          <h3 id="AnnaSchneidlerIdv" onclick="hideRankingInfo(this)">8. Anna Schneidler</h3>
+          <div id="hiddenAnnaSchneidlerIdv" style="margin-left:40px">
+            <p>- Eastlake, SO</p>
+            <p>- Reference Time: 18:26.02</p>
+            <p>- 20th at State XC 2023</p>
+            <p>- 1st at 400m 2024, 56.18 PR</p>
+            <p>- 800m, 2:12.25 PR</p>
+          </div>
+          <h3 id="SydneyCollierIdv" onclick="hideRankingInfo(this)">9. Sydney Collier</h3>
+          <div id="hiddenAnnaSchneidlerIdv" style="margin-left:40px">
+            <p>- Skyline, SR</p>
+            <p>- Reference Time: 18:31.24</p>
+            <p>- 8th at State XC 2023</p>
+            <p>- 1600m, 4:57.91 PR</p>
+            <p>- 3200m, 10:28.03 PR</p>
+          </div>
+          <h3 id="EliisaMarshallIdv" onclick="hideRankingInfo(this)">10. Eliisa Marshall</h3>
+          <div id="hiddenEliisaMarshallIdv" style="margin-left:40px">
+            <p>- Camas, SR</p>
+            <p>- Reference Time: 18:33.80</p>
+            <p>- 14th at State XC 2023</p>
+            <p>- 13th at 400m 2024, 58.63 PR</p>
+            <p>- 2nd at 800m 2024, 2:13.17 PR</p>
+          </div>
+          <h3 id="SallyDavisIdv" onclick="hideRankingInfo(this)">11. Sally Davis</h3>
+          <div id="hiddenSallyDavisIdv" style="margin-left:40px">
+            <p>- Issaquah, SO</p>
+            <p>- Reference Time: 18:30.15</p>
+            <p>- 10th at State XC 2023</p>
+            <p>- 1600m, 5:14.27 PR</p>
+            <p>- 3200m, 11:24.41 PR</p>
+          </div>
+          <h3 id="SallyRoosIdv" onclick="hideRankingInfo(this)">12. Sally Roos</h3>
+          <div id="hiddenSallyRoosIdv" style="margin-left:40px">
+            <p>- Eastlake, SR</p>
+            <p>- Reference Time: 18:39.21</p>
+            <p>- 11th at State XC 2023</p>
+            <p>- 3rd at 800m 2024, 2:13.27 PR</p>
+            <p>- 12th at 1600m 2024, 4:52.77 PR</p>
+          </div>
+          <h3 id="KatieLubbeIdv" onclick="hideRankingInfo(this)">13. Katie Lubbe</h3>
+          <div id="hiddenKatieLubbeIdv" style="margin-left:40px">
+            <p>- Lewis and Clark, SR</p>
+            <p>- Reference Time: 18:25.00</p>
+            <p>- 26th at State XC 2023</p>
+            <p>- 1600m, 5:13.27 PR</p>
+            <p>- 9th at 3200m 2024, 11:07.37 PR</p>
+          </div>
+          <h3 id="DaphneEvensonIdv" onclick="hideRankingInfo(this)">14. Daphne Evenson</h3>
+          <div id="hiddenDaphneEvensonIdv" style="margin-left:40px">
+            <p>- Skyview, SR</p>
+            <p>- Reference Time: 18:35.78</p>
+            <p>- 15th at State XC 2023</p>
+            <p>- 9th at 800m 2024, 2:13.93 PR</p>
+            <p>- 7th at 1600m 2024, 4:58.63 PR</p>
+          </div>
+          <h3 id="AnabelleKleinIdv" onclick="hideRankingInfo(this)">15. Anabelle Klein</h3>
+          <div id="hiddenAnabelleKleinIdv" style="margin-left:40px">
+            <p>- Arlington, SO</p>
+            <p>- Reference Time: 18:33.52</p>
+            <p>- 24th at 3A State XC 2023</p>
+            <p>- 1600m, 5:25.89 PR</p>
+            <p>- 3200m, 11:46.06 PR</p>
+          </div>
+          <h3 id="ZoeyMoonIdv" onclick="hideRankingInfo(this)">16. Zoey Moon</h3>
+          <div id="hiddenZoeyMoonIdv" style="margin-left:40px">
+            <p>- West Valley, SO</p>
+            <p>- Reference Time: 18:33.73</p>
+            <p>- 23rd at State XC 2023</p>
+            <p>- 7th at 400m 2024, 58.65 PR</p>
+            <p>- 11th at 800m 2024, 2:15.52 PR</p>
+          </div>
+          <h3 id="SenaPittmanIdv" onclick="hideRankingInfo(this)">17. Sena Pittman</h3>
+          <div id="hiddenSenaPittmanIdv" style="margin-left:40px">
+            <p>- Issaquah, SR</p>
+            <p>- Reference Time: 18:35.01</p>
+            <p>- 21st at State XC 2023</p>
+            <p>- 7th at 200m 2024, 25.05 PR</p>
+            <p>- 2nd at 400m 2024, 56.91 PR</p>
+          </div>
+          <h3 id="RyanMclellanIdv" onclick="hideRankingInfo(this)">18. Ryan Mclellan</h3>
+          <div id="hiddenRyanMclellanIdv" style="margin-left:40px">
+            <p>- Mt Si, SO</p>
+            <p>- Reference Time: 18:40.02</p>
+            <p>- 16th at State XC 2023</p>
+            <p>- 15th at 400m 2024, 59.32 PR</p>
+            <p>- 12th at 800m 2024, 2:15.38 PR</p>
+          </div>
+          <h3 id="LaurenLawsIdv" onclick="hideRankingInfo(this)">19. Lauren Laws</h3>
+          <div id="hiddenLaurenLawsIdv" style="margin-left:40px">
+            <p>- South Kitsap, SR</p>
+            <p>- Reference Time: 18:50.89</p>
+            <p>- 24th at State XC 2023</p>
+            <p>- 5th at 800m 2024, 2:12.51 PR</p>
+            <p>- 4th at 1600m 2024, 4:58.45 PR</p>
+          </div>
+          <h3 id="EmmaGisIdv" onclick="hideRankingInfo(this)">20. Emma Gis</h3>
+          <div id="hiddenEmmaGisIdv" style="margin-left:40px">
+            <p>- Chiawana, SR</p>
+            <p>- Reference Time: 18:51.11</p>
+            <p>- 19th at State XC 2023</p>
+            <p>- 13th at 800m 2024, 2:15.53 PR</p>
+            <p>- 1600m, 5:16.19 PR</p>
+          </div>
+          <h3 id="BrookeHenkinIdv" onclick="hideRankingInfo(this)">21. Brooke Henkin</h3>
+          <div id="hiddenBrookeHenkinIdv" style="margin-left:40px">
+            <p>- Arlington, SR</p>
+            <p>- Reference Time: 18:45.13</p>
+            <p>- 23rd at 3A at State XC 2023</p>
+            <p>- 19th at 3A 1600m 2024, 5:16.43 PR</p>
+            <p>- 11th at 3A 3200m 2024, 11:19.34 PR</p>
+          </div>
+          <h3 id="BrightonDanceIdv" onclick="hideRankingInfo(this)">22. Brighton Dance</h3>
+          <div id="hiddenBrightonDanceIdv" style="margin-left:40px">
+            <p>- Mt Si, SO</p>
+            <p>- Reference Time: 18:53.75</p>
+            <p>- 25th at State XC 2023</p>
+          </div>
+          <h3 id="MaddieMcKennaIdv" onclick="hideRankingInfo(this)">23. Maddie McKenna</h3>
+          <div id="hiddenMaddieMcKennaIdv" style="margin-left:40px">
+            <p>- Stadium, SR</p>
+            <p>- Reference Time: 19:01.67</p>
+            <p>- 29th at 3A at State XC 2023</p>
+            <p>- 1600m, 5:03.01 PR</p>
+            <p>- 17th at 3A 3200m 2024, 11:06.49 PR</p>
+          </div>
+          <h3 id="DarlaKellyIdv" onclick="hideRankingInfo(this)">24. Darla Kelly</h3>
+          <div id="hiddenDarlaKellyIdv" style="margin-left:40px">
+            <p>- Joel Ferris, JR</p>
+            <p>- Reference Time: 18:59.89</p>
+            <p>- 31st at 3A at State XC 2023</p>
+            <p>- 800m, 2:30.41 PR</p>
+            <p>- 18th at 3A 1600m 2024, 5:19.39 PR</p>
+          </div>
+          <h3 id="EmmaSchmutzIdv" onclick="hideRankingInfo(this)">25. Emma Schmutz</h3>
+          <div id="hiddenEmmaSchmutzIdv" style="margin-left:40px">
+            <p>- South Kitsap, SR</p>
+            <p>- Reference Time: 19:03.13</p>
+            <p>- 34th at State XC 2023</p>
+            <p>- 1600m, 5:11.65 PR</p>
+            <p>- 3200m, 11:10.22 PR</p>
+          </div>
+
+
+        </div>
+
+      </div>
+
+      <div class="footer">
+        <p>Skyline Spartan XC<p>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  isTall = false;
+  function increaseFontSize(e) {
+    if(e.id.includes("sidebar")){
+      return
+    }
+    var fo
+    var fontSize = window.getComputedStyle(e, null).getPropertyValue('font-size');
+    var newFontSize = parseInt(fontSize.substring(0, fontSize.length - 2));
+    if(isTall) {newFontSize -= 16;}
+    else {newFontSize += 16;}
+    e.style.fontSize = newFontSize + "px";
+  }
+  window.addEventListener("resize", checkFontSize);
+
+  function checkFontSize(e) {
+    if(isTall && window.innerHeight > window.innerWidth){return;}
+    if(!isTall && window.innerHeight < window.innerWidth){return;}
+    for(var i = 0; i < document.getElementsByTagName("p").length; i++) {
+      increaseFontSize(document.getElementsByTagName("p")[i]);
+    }
+    for(var i = 0; i < document.getElementsByTagName("h1").length; i++) {
+      increaseFontSize(document.getElementsByTagName("h1")[i]);
+    }
+    for(var i = 0; i < document.getElementsByTagName("h2").length; i++) {
+      increaseFontSize(document.getElementsByTagName("h2")[i]);
+    }
+    for(var i = 0; i < document.getElementsByTagName("h3").length; i++) {
+      increaseFontSize(document.getElementsByTagName("h3")[i]);
+    }
+    for(var i = 0; i < document.getElementsByTagName("h4").length; i++) {
+      increaseFontSize(document.getElementsByTagName("h4")[i]);
+    }
+    isTall = !isTall;
+  }
+  checkFontSize();
+
+  var hiddenInfo = [];
+  function hideRankingInfo(e) {
+    return;
+    for(var i = 0; i < hiddenInfo.length; i++) {
+      if(hiddenInfo[i].id.substring(hiddenInfo[i].id.length - 4) == "Team" && e.id.substring(e.id.length - 4) != "Team") {continue;}
+      if(hiddenInfo[i].id.substring(hiddenInfo[i].id.length - 4) != "Team" && e.id.substring(e.id.length - 4) == "Team") {continue;}
+      if(!hiddenInfo[i].hidden) {
+        try {
+          document.getElementById("hidden" + hiddenInfo[i].id).innerHTML = "";
+        } catch (e) {}
+        hiddenInfo[i].hidden = true;
+        hiddenInfo[i].flipped = true;
+      }
+    }
+    for(var i = 0; i < hiddenInfo.length; i++) {
+      if(hiddenInfo[i].id == e.id && !hiddenInfo[i].flipped) {
+        if(hiddenInfo[i].hidden) {
+          document.getElementById("hidden" + hiddenInfo[i].id).innerHTML = hiddenInfo[i].data;
+        } else {
+          document.getElementById("hidden" + hiddenInfo[i].id).innerHTML = "";
+        }
+        hiddenInfo[i].hidden = !hiddenInfo[i].hidden;
+        break;
+      }
+    }
+    for(var i = 0; i < hiddenInfo.length; i++) {
+      hiddenInfo[i].flipped = false;
+    }
+  }
+
+  for(var i = 0; i < document.getElementsByTagName("div").length; i++) {
+    elementId = document.getElementsByTagName("div")[i].id;
+    if(elementId.substring(elementId.length - 4) == "Team"){continue;}
+    if(elementId.substring(0, 6) == "hidden") {
+      hiddenInfo.push(
+        {
+          id: elementId.substring(6),
+          hidden: true,
+          data: document.getElementsByTagName("div")[i].innerHTML,
+          flipped: false
+        }
+      );
+      if(elementId.substring(elementId.length - 3) != "Idv"){
+        document.getElementsByTagName("div")[i].innerHTML = "";
+      }
+
+    }
+  }
+
+  for(var i = 0; i < document.getElementsByTagName("div").length; i++) {
+    elementId = document.getElementsByTagName("div")[i].id;
+    if(elementId.substring(elementId.length - 4) != "Team"){continue;}
+    if(elementId.substring(0, 6) == "hidden") {
+      hiddenInfo.push(
+        {
+          id: elementId.substring(6),
+          hidden: true,
+          data: document.getElementsByTagName("div")[i].innerHTML,
+          flipped: false
+        }
+      );
+      //document.getElementsByTagName("div")[i].innerHTML = "";
+    }
+  }
+</script>
+</html>
